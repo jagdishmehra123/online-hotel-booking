@@ -20,7 +20,7 @@ const Register = () => {
         e.preventDefault()
         console.log(formobj)
         try {
-            const response =await  axios.post('https://online-hotel-booking-server.vercel.app/client-register', formobj)
+            const response =await  axios.post('/client-register', formobj)
             // console.log(response)
             if (response.data.success) {
                 console.log(response.data.message)

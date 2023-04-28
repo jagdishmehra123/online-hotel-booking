@@ -15,7 +15,7 @@ const Login = () => {
     const obj = {
       email: email, password: password
     }
-    const resp = await axios.post("https://online-hotel-booking-server.vercel.app/client-signin", obj)
+    const resp = await axios.post("/client-signin", obj)
     console.log('resp=>', resp.data.data.token)
     localStorage.setItem('token',resp.data.data.token)
     navigate('/')

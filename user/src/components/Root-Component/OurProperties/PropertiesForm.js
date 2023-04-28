@@ -28,7 +28,7 @@ const PropertiesForm = ({ getPropertiesData }) => {
 
   const postPropertyForm = async () => {
     // await axios.post("https://cubagoa-server.onrender.com/hotelbook", resortForm).
-    await axios.post("https://online-hotel-booking-server.vercel.app/hotelbook", resortForm)
+    await axios.post("/hotelbook", resortForm)
       .then((res) => {
         console.log(res)
         setVisibleForm(false)

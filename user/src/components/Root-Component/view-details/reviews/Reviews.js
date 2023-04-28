@@ -8,7 +8,7 @@ const Reviews = ({ reviews, setReviews, id }) => {
 
     const getRatingList = async () => {
         // console.log('id=>', id)
-        const response = await axios.get(`https://online-hotel-booking-server.vercel.app/get-reviews/${id}`)
+        const response = await axios.get(`/get-reviews/${id}`)
         // console.log(response.data.list)
         setReviews(response.data.list)
     }

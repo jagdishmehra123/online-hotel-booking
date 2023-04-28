@@ -12,7 +12,7 @@ export default function SpaDetails() {
     const fetchDetails = async (id) => {
         console.log(spaId)
         try {
-            const response = await axios.get(`https://online-hotel-booking-server.vercel.app/spaDetails/${spaId}`);
+            const response = await axios.get(`/spaDetails/${spaId}`);
             console.log(response.data.data);
             setDetails(response.data.data)
 
@@ -34,7 +34,7 @@ export default function SpaDetails() {
         // Redirect user to booking page
         e.preventDefault()
         try {
-            const response =await axios.post('https://online-hotel-booking-server.vercel.app/spa-booking', spaForm)
+            const response =await axios.post('/spa-booking', spaForm)
             console.log(response.data)
             alert('We reserved your booking')
             navigate('/spa')

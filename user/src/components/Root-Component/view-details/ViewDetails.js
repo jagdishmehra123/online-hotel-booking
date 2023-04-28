@@ -34,7 +34,7 @@ const ViewDetails = () => {
   //GET PROPERTY DETAILS
   const getProperty = async () => {
     try {
-      const response = await axios.get(`https://online-hotel-booking-server.vercel.app/resort-details/${id}`)
+      const response = await axios.get(`/resort-details/${id}`)
       console.log('view details of resort', response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
@@ -108,10 +108,10 @@ const ViewDetails = () => {
       updatedCart[i].room.availableRooms = updatedTotalRooms
     }
     console.log("Updated Rooms =>", updatedCart)
-    await axios.patch(`https://online-hotel-booking-server.vercel.app/updateTotalRoomsinDb/${resort._id}`, updatedCart)
+    await axios.patch(`/updateTotalRoomsinDb/${resort._id}`, updatedCart)
       .then((res) => {
         console.log(res)
-        if (res.data.message == "Total Rooms Data Updation Failed") {
+        if (res.data.message === "Total Rooms Data Updation Failed") {
           return (false)
         }
         return (true)
@@ -154,7 +154,7 @@ const ViewDetails = () => {
         if (i.quantity > 0) return i
       })
       updateTotalRoomsinDb(data.cart)
-      const response = await axios.post('https://online-hotel-booking-server.vercel.app/booking-form', data, {
+      const response = await axios.post('/booking-form', data, {
         headers: {
           authorization: token
         }

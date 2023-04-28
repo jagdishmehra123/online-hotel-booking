@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { Card, Col, Image } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 // import axios from "axios"
 import "./spaCard.css";
 

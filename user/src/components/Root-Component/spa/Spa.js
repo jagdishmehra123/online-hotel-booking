@@ -13,7 +13,7 @@ const Spa = () => {
 
   const getSpaList = async () => {
     try {
-      const response = await axios.get("https://online-hotel-booking-server.vercel.app/allSpaList");
+      const response = await axios.get("/allSpaList");
       if (response.data.success) {
         console.log(response.data.data);
         setData(response.data.data);

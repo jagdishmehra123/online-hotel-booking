@@ -23,7 +23,7 @@ const OurProperties = () => {
 
   const getPropertiesData = async () => {
     // await axios(`https://cubagoa-server.onrender.com/hotelbook`)
-    await axios.get(`https://online-hotel-booking-server.vercel.app/hotelbook`)
+    await axios.get(`/hotelbook`)
       .then((res) => {
         console.log('property list', res.data)
         setAllProperties(res.data)

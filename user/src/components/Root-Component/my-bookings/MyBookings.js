@@ -11,7 +11,7 @@ const MyBookings = () => {
 
     const token = localStorage.getItem('token')
     const getBookingData = async () => {
-        const response = await axios.get('https://online-hotel-booking-server.vercel.app/get-bookings', {
+        const response = await axios.get('/get-bookings', {
             headers: {
                 authorization: token
             }
