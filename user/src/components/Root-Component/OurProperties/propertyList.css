@@ -1,0 +1,11 @@
+.card-wrapper{
+    /* border:1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.card-wrapper h3{
+text-align: center;
+margin: auto;
+margin-top: 3rem;
+}

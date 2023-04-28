@@ -1,0 +1,68 @@
+.review-wrapper{
+    /* border:1px solid black; */
+    width:85%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.review-wrapper h5{
+    background-color: lightblue;
+    padding: 0.5rem 1rem;
+    height: 3rem;
+}
+.review-wrapper .wrapper{
+    display: flex;
+    overflow-x: auto;
+}
+.review-wrapper .card{
+    width:23%;
+    margin-left: 0.5rem;
+}
+
+.review-wrapper .card div:first-child{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 1rem;
+}
+.review-wrapper .card div:first-child div{
+    display: flex;
+}
+
+.review-wrapper .card div:last-child{
+    padding: 0.1rem 1rem;
+}
+
+@media only screen and (max-width:900px) {
+    .review-wrapper{
+        /* border:1px solid black; */
+        width:100%;
+    }
+
+    .review-wrapper h5{
+        background-color: lightblue;
+        padding: 0.5rem 1rem;
+        height: 3rem;
+    }
+    .review-wrapper .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: none;
+        overflow-y: auto;
+        height: 10rem;
+    }
+    .review-wrapper .card{
+        width:48%;
+        margin-left: 0.3rem;
+    }
+    
+    .review-wrapper .card div:first-child{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.1rem 0.5rem;
+    }
+    
+    .review-wrapper .card div:last-child{
+        padding: 0.1rem 0.5rem;
+    }
+    
+}

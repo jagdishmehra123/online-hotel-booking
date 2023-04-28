@@ -1,0 +1,84 @@
+.rating-form-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:45%;  
+    border:1px solid rgb(251, 251, 251);
+    margin: auto;
+    padding: 1rem;
+    margin-top: 10rem;
+    box-shadow: 1px 1px 0.5px 0.5px grey;
+
+}
+.rating-form-wrapper div{
+    width: 100%;
+}
+.rating-form-wrapper div input{
+    width:90%;
+    margin-top: 1rem;
+    padding: 0.2rem 1rem;
+}
+.rating-form-wrapper div:nth-child(3){
+    margin-top: 1rem;
+    
+}
+.rating-form-wrapper div:nth-child(3)>div>select{
+        width: 90%;
+        margin-top: 0.5rem;
+    padding: 0.2rem 1rem;
+
+}
+.rating-form-wrapper div textarea{
+    width: 90%;
+    margin-top: 1rem;
+    padding: 0.2rem 1rem;
+
+}
+
+.rating-form-wrapper button{
+    margin-top: 1rem;
+}
+
+@media only screen  and (max-width:900px){
+    .rating-form-wrapper{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width:100%;  
+        border:1px solid rgb(251, 251, 251);
+        margin: auto;
+        padding: 1rem;
+        margin-top: 10rem;
+        box-shadow: 1px 1px 0.5px 0.5px grey;
+    
+    }
+    .rating-form-wrapper div{
+        width: 100%;
+    }
+    .rating-form-wrapper div input{
+        width:90%;
+        margin-top: 1rem;
+        padding: 0.2rem 1rem;
+    }
+    .rating-form-wrapper div:nth-child(3){
+        margin-top: 1rem;
+        
+    }
+    .rating-form-wrapper div:nth-child(3)>div>select{
+            width: 90%;
+            margin-top: 0.5rem;
+        padding: 0.2rem 1rem;
+    
+    }
+    .rating-form-wrapper div textarea{
+        width: 90%;
+        margin-top: 1rem;
+        padding: 0.2rem 1rem;
+    
+    }
+    
+    .rating-form-wrapper button{
+        margin-top: 1rem;
+    }
+    
+}

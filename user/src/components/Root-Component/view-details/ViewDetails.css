@@ -1,0 +1,334 @@
+.view-details-wrapper {
+    /* border: 1px solid black; */
+    padding-bottom: 2rem;
+}
+
+.view-details-wrapper .section2 {
+    /* border: 1px solid black; */
+    width: 85%;
+    margin: auto;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.view-details-wrapper .section2 .property-info {
+    /* border:1px solid black; */
+    padding-right: 1rem;
+    width: 70%;
+}
+
+.view-details-wrapper .section2 .property-info div {}
+
+.view-details-wrapper .section2 .property-info p {
+    padding: 1rem 1rem 1rem 1rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+.view-details-wrapper .section2 .map {
+    /* border: 1px solid black; */
+    width: 35%;
+    position: relative;
+}
+
+.view-details-wrapper .section2 .map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+.view-details-wrapper .section3>h3 {
+    background-color: lightblue;
+    line-height: 3rem;
+    padding: 0.5rem 1rem;
+}
+
+.view-details-wrapper .section3 {
+    width: 85%;
+    margin: auto;
+    margin-top: 2rem;
+    /* border: 1px solid black; */
+}
+
+.view-details-wrapper .section3 .booking-wrapper {
+    display: flex;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+    /* border: 1px solid black;  */
+    padding-left: 1rem;
+    width: 100%;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper {
+    background-color: rgb(243, 242, 242);
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper>div h4 {
+    margin: auto;
+    height: 3rem;
+    text-align: center;
+    /* border:1px solid black; */
+    color: darkblue;
+
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper .booking-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper .booking-cards .minicard {
+    border-bottom: 1px solid black;
+    /* background-color: rgb(230, 245, 250); */
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper>p {
+    /* border:1px solid black; */
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper ul {
+    opacity: 0.5;
+    margin: auto;
+    margin-top: 3rem;
+    /* border:1px solid black; */
+    padding-left: 1rem;
+    /* list-style-type: none; */
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper ul li {
+    padding-left: 1rem;
+    line-height: 2rem;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form {
+    text-align: center;
+    /* border:1px solid black; */
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: rgb(219, 241, 249);
+    padding-top: 1rem;
+
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form div {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form div input {
+    margin-top: 0.5rem;
+    padding: 0.1rem 1rem 0.1rem 1rem;
+    outline: none;
+}
+
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form .reserveBtn {
+    /* border:1px solid black; */
+    margin-top: 2rem;
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form .reserveBtn button {
+    margin: auto;
+    width: 60%;
+    background-color: rgb(3, 3, 100);
+    color: white;
+    /* border: 1px solid black; */
+    border-radius: 0rem;
+    margin-top: 1rem;
+
+}
+
+.view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper .reserveBtn button:hover {
+    background-color: green;
+}
+
+#deleteicon:hover {
+    color: red;
+}
+
+
+
+@media only screen and (max-width:900px) {
+
+    .view-details-wrapper .section2 {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .view-details-wrapper .section2 .property-info {
+        /* border:1px solid black; */
+        padding-right: 0.5rem;
+        width: 100%;
+        padding-left: 0.5rem;
+    }
+
+    .view-details-wrapper .section2 .property-info div {}
+
+    .view-details-wrapper .section2 .property-info p {
+        padding: 1rem 0.5rem 1rem 0rem;
+        text-align: justify;
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+
+    .view-details-wrapper .section2 .map {
+        /* border: 1px solid black; */
+        width: 100%;
+        height: 15rem;
+    }
+
+    .view-details-wrapper .section2 .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .view-details-wrapper .section3 {
+        margin-top: 1rem;
+    }
+
+    .view-details-wrapper .section3 {
+        width: 100%;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+        /* border: 1px solid black;  */
+        padding-left: 0rem;
+        width: 100%;
+        margin: auto;
+    }
+
+
+
+    .view-details-wrapper .section3 {
+        width: 100%;
+        margin: auto;
+        margin-top: 2rem;
+        /* border: 1px solid black; */
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper {
+        display: flex;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .room-card-wrapper {
+        /* border: 1px solid black;  */
+        padding-left: 1rem;
+        width: 100%;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper {
+        background-color: rgb(243, 242, 242);
+        width: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper h3 {
+        opacity: 0.3;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper ul {
+        opacity: 0.5;
+        margin: auto;
+        margin-top: 3rem;
+        /* border:1px solid black; */
+        padding-left: 1rem;
+        /* list-style-type: none; */
+        font-size: 1.2rem;
+        margin-left: 2rem;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper ul li {
+        padding-left: 1rem;
+        line-height: 2rem;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form {
+        text-align: center;
+        /* border:1px solid black; */
+        width: 100%;
+        margin: auto;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        background-color: rgb(219, 241, 249);
+        padding-top: 1rem;
+
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form div {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form div input {
+        margin-top: 0.5rem;
+        padding: 0.1rem 1rem 0.1rem 1rem;
+        outline: none;
+    }
+
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form .reserveBtn {
+        /* border:1px solid black; */
+        margin-top: 2rem;
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper form .reserveBtn button {
+        margin: auto;
+        width: 90%;
+        background-color: rgb(3, 3, 100);
+        color: white;
+        /* border: 1px solid black; */
+        border-radius: 0rem;
+
+    }
+
+    .view-details-wrapper .section3 .booking-wrapper .booking-cart-wrapper .reserveBtn button:hover {
+        background-color: green;
+    }
+
+
+
+}

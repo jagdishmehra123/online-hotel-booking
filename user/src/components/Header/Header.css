@@ -1,0 +1,192 @@
+.app-bar {
+  width: 100%;
+  z-index: 100 !important;
+  /* border: 1px solid black; */
+  margin: auto;
+  position: fixed;
+  top:0%;
+}
+
+/* desktop navbar */
+
+.app-bar .desktop-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-bar .desktop-section .appbar-col-1 {
+  height: fit-content;
+  margin-top: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.app-bar .desktop-section .appbar-col-1 .title {
+  /* display: none; */
+  display: block;
+  /* border: 1px solid black; */
+  font-family: 'Prata';
+  font-size:large;
+  letter-spacing: 10px;
+  margin-left: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+
+}
+
+.app-bar .desktop-section .appbar-col-1 .logoWrapper {
+  width: 8rem;
+  height: 4rem;
+  margin-left: 3rem;
+}
+
+.app-bar .desktop-section .appbar-col-1 .logoWrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.app-bar .desktop-section .appbar-col-2 .menu {
+  display: none;
+}
+
+
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box {
+  /* border:1px solid black; */
+  height: 100%;
+  display: flex;
+}
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item {
+  /* border:1px solid black; */
+  height: 2rem;
+  margin: auto;
+  margin-inline-end: 1rem;
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:last-child {
+  /* border: 1px solid black; */
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 1rem;
+}
+
+.app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:hover {
+  background-color: rgb(103, 186, 212);
+  outline: none;
+  border: none;
+  color: black;
+}
+
+
+@media only screen and (max-width:900px) {
+  .app-bar {
+      width: 100%;
+      z-index: 10;
+      /* border: 1px solid black; */
+      margin: auto;
+      position: fixed;
+      padding: 1rem 0rem;
+  }
+
+  /* desktop navbar */
+
+  .app-bar .desktop-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+  }
+
+  .app-bar .desktop-section .appbar-col-1 {
+      height: fit-content;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+  }
+
+  .app-bar .desktop-section .appbar-col-1 .logoWrapper {
+      width: 8rem;
+      height: 4rem;
+      margin-left: 0rem;
+      display: none;
+  }
+
+  .app-bar .desktop-section .appbar-col-1 .title {
+      display: block;
+      /* border: 1px solid black; */
+      font-family: 'calibri';
+      font-size: larger;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+      margin-left: 1rem;
+  }
+
+  .app-bar .desktop-section .appbar-col-1 .logoWrapper img {
+      width: 100%;
+      height: 100%;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 {
+      display: flex;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box {
+      /* border:1px solid black; */
+      display: none;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Nunito Sans", Arial, sans-serif;
+      /* border: 1px solid black; */
+      font-weight: 600;
+      font-size: 2rem;
+      opacity: 0.5;
+      margin-right: 1rem;
+  }
+
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item {
+      /* border:1px solid black; */
+      height: 2rem;
+      margin: auto;
+      margin-inline-end: 1rem;
+      color: black;
+      font-size: 1.1rem;
+      font-family: "Nunito Sans", Arial, sans-serif;
+  }
+
+  .app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:hover {
+      background-color: rgb(200, 241, 200);
+      outline: none;
+      border: none;
+  }
+
+
+  /* mobile view navbar */
+
+  .app-bar .right-side-navbar{
+      background-color: white;
+      width:100%;
+      position: fixed;
+      right: 0%;
+      top:10%;
+  }
+
+  .app-bar .right-side-navbar .col-2-box{
+      padding: 0.5rem 0rem;
+  }
+  .app-bar .right-side-navbar .col-2-box .btn-item{
+      /* border:1px solid black; */
+      width: fit-content;
+      margin: auto;
+      color:black;
+  }
+}
