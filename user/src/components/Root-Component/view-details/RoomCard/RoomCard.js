@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './RoomCard.css'
 
 import { Icon } from 'react-icons-kit'
 import { user } from 'react-icons-kit/icomoon/user'
 import { circleLeft } from 'react-icons-kit/icomoon/circleLeft'
 import { circleRight } from 'react-icons-kit/icomoon/circleRight'
+import { FaCheck } from 'react-icons/fa';
+import { FaTimes} from 'react-icons/fa';
 
-import { useNavigate } from 'react-router'
+// import { useNavigate } from 'react-router'
 
 
 
 const RoomCard = ({ room, cart, setCart, setMsg, setroomstatus, activeBtn, setActiveBtn }) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const capacity = Number(room.adultCapacity)
 
 
   //HANDLE RESERVE BUTTON
   const handleReserve = (room, id) => {
-    
-      const exixstingRoom = cart.find((item) => item.room.roomId === id)
-      if (exixstingRoom) {
-        setCart(
-          cart.map((item) =>
-            item.room.roomId === id ? { ...item, quantity: item.quantity + 1 } : item
-          )
+
+    const exixstingRoom = cart.find((item) => item.room.roomId === id)
+    if (exixstingRoom) {
+      setCart(
+        cart.map((item) =>
+          item.room.roomId === id ? { ...item, quantity: item.quantity + 1 } : item
         )
-      }
-      else {
-        setCart([...cart, { room, quantity: 1 }])
-      }
+      )
+    }
+    else {
+      setCart([...cart, { room, quantity: 1 }])
+    }
   }
 
 
@@ -81,15 +83,21 @@ const RoomCard = ({ room, cart, setCart, setMsg, setroomstatus, activeBtn, setAc
         </div>
 
         <div className='row2 row'>
-          <div >Sea View</div>
-          <div >Gym</div>
-          <div >Wifi</div>
-          <div >Room service</div>
-          <div >Swimming Pool</div>
-          <div >Breakfast</div>
-          <div >Room service</div>
-          <div >Swimming Pool</div>
-          <div >Breakfast</div>
+          <div>Wifi {room.Wifi ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>AC {room.airconditioned ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Balcony {room.balcony ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Bedside Table {room.bedsideTable ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Breakfast {room.breakfast ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Fitness Center {room.fitnessCenter ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>24 hrs Hot & Cold Shower {room.hotNcoldshower_24hrs ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>House Keeping {room.houseKeeping ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Mosquito Net {room.mosquitonet ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Non-Refundable {room.nonRefundable ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Room Service {room.roomService ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>sea View {room.seaView ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div> 
+          <div>Spa {room.spa ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
+          <div>Swimming Pool {room.swimmingPool ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> :  <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div> 
+          <div>Wardrobe {room.wardrobe ? <span className="room-amenities-yes"><FaCheck style={{color:'green'}} /></span> : <span className="room-amenities-no"><FaTimes style={{color:'darkred'}} /></span>}</div>
         </div>
 
 

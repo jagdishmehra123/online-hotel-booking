@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Spa.css";
-import { useNavigate } from "react-router-dom";
 import axios from "../../../helpers/axios";
 import SpaCard from "./SpaCard";
 import { Row } from "react-bootstrap";
-import massageImg from '../../../assets/Massage.jpg'
-import { CButton } from "@coreui/react";
 
 const Spa = () => {
-  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   const getSpaList = async () => {

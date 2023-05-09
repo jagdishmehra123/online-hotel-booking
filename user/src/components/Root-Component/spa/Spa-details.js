@@ -22,6 +22,7 @@ export default function SpaDetails() {
     };
     useEffect(() => {
         fetchDetails();
+        // eslint-disable-next-line
     }, [spaId])
 
     const [spaForm, setSpaForm] = useState({

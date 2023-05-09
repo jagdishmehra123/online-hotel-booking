@@ -22,6 +22,7 @@ const MyBookings = () => {
 
     useEffect(() => {
         getBookingData()
+        // eslint-disable-next-line
     }, [])
 
 
