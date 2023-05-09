@@ -55,7 +55,7 @@ const OurProperties = () => {
           </div>
           <div className='properties-to-book'>
             {/* filter section do at veyr last */}
-            <input type='text' placeholder='Search City' name='searchCity' value={searchCity}
+            <input type='text' placeholder='Search' name='searchCity' value={searchCity}
               onChange={(e) => setSearchCity(e.target.value)} style={{width:'90%', paddingLeft:'1rem'}} />
           </div>
           <PropertyList currentList={currentList} searchCity={searchCity}   />
