@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom'
 // import logo from '../../assets/logo.png';
 import { FaAlignJustify } from 'react-icons/fa';
 
-
+import { Icon } from 'react-icons-kit'
+import { cross } from 'react-icons-kit/icomoon/cross'
 
 
 const Header = ({ auth, setAuth }) => {
@@ -19,6 +20,7 @@ const Header = ({ auth, setAuth }) => {
     //eslint-disable-next-line
   }, [token])
 
+  
 
 
 
@@ -96,6 +98,10 @@ const Header = ({ auth, setAuth }) => {
       {/* mobile view navbar */}
       <div className='right-side-navbar' style={{ display: showNavbar }}>
         <Box className='col-2-box' style={{ display: 'flex', flexDirection: 'column' }}>
+        <div>
+            <Icon icon={cross} size={15} style={{ float: 'right', paddingRight: '1rem' }}
+              onClick={handleCloseNavbar} />
+          </div>
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
