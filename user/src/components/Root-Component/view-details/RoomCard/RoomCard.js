@@ -75,11 +75,7 @@ const RoomCard = ({ room, cart, setCart, setMsg, setroomstatus, activeBtn, setAc
             </p>
           </div>
 
-          <div className='images-icon'>
-            {(room.nonRefundable === true) ? (<p style={{ color: 'green', border: '1px solid green', padding: '0rem 0.5rem' }}>Non refundable</p>) : (
-              <p style={{ color: 'red', border: '1pc solid red' }}>Refundable</p>)}
-            {/* <Icon icon={images} size={25} style={{ float: 'right' }}></Icon> */}
-          </div>
+          
         </div>
 
         <div className='row2 row'>
