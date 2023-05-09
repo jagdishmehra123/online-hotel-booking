@@ -26,7 +26,7 @@ const Header = ({ auth, setAuth }) => {
   const [navBackground, setNavBackground] = useState('transparent');
   //handle scroll
   const handleScroll = () => {
-    if (window.pageYOffset > 20) {
+    if (window.pageYOffset > 10) {
       setNavBackground('lightblue');
     } else {
       setNavBackground('transparent');

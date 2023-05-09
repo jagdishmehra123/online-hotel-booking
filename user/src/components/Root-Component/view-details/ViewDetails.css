@@ -179,6 +179,7 @@
         margin: auto;
         display: flex;
         flex-direction: column;
+        
     }
 
     .view-details-wrapper .section2 .property-info {

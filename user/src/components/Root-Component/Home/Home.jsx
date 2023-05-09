@@ -3,7 +3,7 @@ import './Home.css'
 import Video from '../../Video'
 import { useState, useEffect } from 'react'
 // import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import { Image } from 'react-bootstrap'
 import axios from '../../../helpers/axios';
 import HomeList from '../home-list/HomeList';
