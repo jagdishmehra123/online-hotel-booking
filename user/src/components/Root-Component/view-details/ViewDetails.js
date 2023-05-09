@@ -203,7 +203,7 @@ const ViewDetails = () => {
 
         <div className='section2'>
           <div className='property-info'>
-            <div>
+            {/* <div>
               {
                 [...Array(5)].map((star, index) => {
                   return (
@@ -211,7 +211,7 @@ const ViewDetails = () => {
                   )
                 })
               }
-            </div>
+            </div> */}
             <p>{resort.resortDescription}</p>
           </div>
           <div className='map'>
