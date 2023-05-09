@@ -17,7 +17,7 @@ const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
 const About = React.lazy(() => import('./components/Root-Component/About/About'))
 const Spa = React.lazy(() => import('./components/Root-Component/spa/Spa'))
 
-const Resorts = React.lazy(() => import('./components/Root-Component/Resorts/Resorts'))
+// const Resorts = React.lazy(() => import('./components/Root-Component/Resorts/Resorts'))
 const OurProperties = React.lazy(() => import('./components/Root-Component/OurProperties/OurProperties'))
 const ContactUs = React.lazy(() => import('./components/Root-Component/Contact/ContactUs'))
 const Gallery = React.lazy(() => import('./components/Root-Component/Gallery/Gallery'))

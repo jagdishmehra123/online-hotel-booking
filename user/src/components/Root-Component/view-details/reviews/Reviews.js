@@ -8,7 +8,7 @@ const Reviews = ({ reviews, setReviews, id }) => {
 
     const getRatingList = async () => {
         // console.log('id=>', id)
-        const response = await axios.get(`/get-reviews/${id}`)
+        const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/get-reviews/${id}`)
         // console.log(response.data.list)
         setReviews(response.data.list)
     }
@@ -22,7 +22,7 @@ const Reviews = ({ reviews, setReviews, id }) => {
             <div className='wrapper' >
                 {reviews.map((item, i) => {
                     return (
-                        <div className='card'>
+                        <div className='card' key={i+1}>
                             <div>
                                 <h6>{item.name}</h6>
                                 <div>

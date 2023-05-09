@@ -34,7 +34,7 @@ const ViewDetails = () => {
   //GET PROPERTY DETAILS
   const getProperty = async () => {
     try {
-      const response = await axios.get(`/resort-details/${id}`)
+      const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
       console.log('view details of resort', response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
@@ -58,7 +58,7 @@ const ViewDetails = () => {
   //HANDLE ADD( same as handle reserve from RoomCard componenet)
   const handleAdd = (room, id) => {
     // console.log(cart)
-   
+
     console.log(room)
     const exixstingRoom = cart.find((item) => item.room.roomId === id)
     if (exixstingRoom) {
@@ -150,8 +150,12 @@ const ViewDetails = () => {
     }
     else {
       console.log(data)
+       // eslint-disable-next-line
       data.cart = data.cart.filter((i) => {
-        if (i.quantity > 0) return i
+        if (i.quantity > 0) 
+        
+        return i
+
       })
       updateTotalRoomsinDb(data.cart)
       const response = await axios.post('/booking-form', data, {
@@ -212,7 +216,7 @@ const ViewDetails = () => {
           </div>
           <div className='map'>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.322638967591!2d73.84549917483974!3d15.520825285081965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfbff9d6aaaaab%3A0xf4df13671d607b52!2sCASA%20BOUTIQUE%20HOTELS!5e0!3m2!1sen!2sin!4v1682384101319!5m2!1sen!2sin"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='google-map'></iframe>
+              allowFullScreen="" loading="lazy" title='google-map'></iframe>
           </div>
         </div>
 

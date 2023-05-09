@@ -1,0 +1,48 @@
+.homecard {
+    border: 1px solid black;
+    height: 15rem;
+    width: 22%;
+    margin: 0rem 1rem 0.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.homecard .content-wrapper {
+    /* border:1px solid red; */
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: orange;
+    padding: 0rem 0.5rem;
+}
+
+.homecard .content-wrapper h5,
+.homecard .content-wrapper h6 {
+    text-shadow: 2px 2px 2px black;
+}
+@media only screen and (max-width:900px) {
+    .homecard {
+        border: 1px solid black;
+        height: 15rem;
+        width: 100%;
+        margin: 0rem 0rem 0rem 0rem;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 2px 2px 20px 2px lightgrey;
+        margin: auto;
+        margin-top: 1rem;
+    }
+
+    .homecard .content-wrapper {
+        /* border:1px solid red; */
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        color: orange;
+        padding: 0rem 0.5rem;
+    }
+}
+
+

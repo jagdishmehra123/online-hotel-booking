@@ -5,6 +5,7 @@
     margin: auto;
     display: flex;
     position: relative;
+    margin-top: 3rem;
 }
 
 .imagesWrapper .roomimg {
