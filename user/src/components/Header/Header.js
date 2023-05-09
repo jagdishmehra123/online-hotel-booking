@@ -76,6 +76,7 @@ const Header = ({ auth, setAuth }) => {
             <Button className='btn-item' onClick={() => navigate('/our-properties')}>OUR PROPERTIES</Button>
             <Button className='btn-item' onClick={() => navigate('/spa')}>SPA</Button>
             {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings') }}>MY BOOKINS</Button>) : (null)}
+            <Button className='btn-item' onClick={() => navigate('/aboutus')}>About Us</Button>
 
             {auth ?
               (<Button className='btn-item' onClick={() => {
@@ -99,6 +100,7 @@ const Header = ({ auth, setAuth }) => {
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
           {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>) : (null)}
+          <Button className='btn-item' onClick={() => navigate('/aboutus')}>About Us</Button>
 
           {auth ?
             (<Button className='btn-item' onClick={() => {

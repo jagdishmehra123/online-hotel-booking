@@ -74,7 +74,7 @@ const Home = () => {
         <Video />
 
         {/* list of home cards */}
-        <div style={{marginTop:'1rem'}} className='featured-properties'>
+        <div style={{marginTop:'1rem'}} className=''>
           <h2 style={{textAlign:'center', marginTop:'2rem',marginBottom:'2.5rem'}}>FEATURED PROPERTIES</h2>
           <HomeList currentList={currentList} />
           <Pagination totalPosts={allProperties.length} postPerPage={postPerPage}  setCurrentPage={setCurrentPage} currentPage={currentPage}/>
@@ -95,6 +95,10 @@ const Home = () => {
               of home. Enjoy stress-free and virtually maintenance-free cottage ownership along with all-inclusive amenities,
               full family entertainment and more!  Choose from nine great Ontario locations in highly sought after Muskoka,
               Prince Edward County, The Kawarthas, Perth and Saugeen Shores.
+            </p>
+
+            <p>
+            The land of sun, sand, and sea – Goa is synonymous with unhindered beauty and splendid recreation. Cuba Hotels Goa is a captivating paradise for unwinding and revelling, perfect for an idyllic family vacation and conducting important business meetings. Cocooned in the lap of nature, offering a medley of flavours through its world cuisine and regional specialities that are paired with exotic concoctions and cocktails in setting that are relaxing, Cuba Hotels Goa is an oasis of luxury covering Baga in North Goa to Palolem, and Patnem and Agonda in South Goa. Embrace the languid and laid-back life that is characteristic of Goa, while our service takes care of your needs round the clock. The unique bungalows and splendid beach huts with sun beds are certain to redefine the experience of a truly enjoyable holiday leaving you in a state of wonderment and awe. A buoyant haven for an unwinding retreat, Cuba Goa perfectly imbues Goa’s much anticipated laidback vibe. A vibrant concoction of colours & comfort, all five properties spread across South Goa make for the best suit for a relaxed chilling experience. Bridging the gap between luxury & rustic, our whimsical Beach huts, bungalows, & resorts at Palolem, Agonda, and Patnem are truly cocooned in the lap of nature. Grab a drink, feast on exotic seafood & other delicious delicacies and just chill by the golden sands and the waves; & we, at Cuba Goa, will ensure you the best staycations ever! We do entertain you with band performances, happy hours, & special requests too!
             </p>
             {/* <p>So what are you waiting for? View available
             <a href="/own">cottage models for sale</a>
