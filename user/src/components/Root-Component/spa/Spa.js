@@ -62,12 +62,7 @@ const Spa = () => {
                 loosen up. Choose from below:
               </p>
             </div>
-            <div className="spa-quots-img">
-              <img
-                alt="Agonda Beach Resort"
-                src={massageImg}
-              />
-            </div>
+           
           </div>
         </section>
         

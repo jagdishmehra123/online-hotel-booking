@@ -19,8 +19,12 @@ overflow-x: hidden;
   color: rgb(255, 255, 255);
   background-size: 100%;
   background-image: url('../../../assets/spaCloud.jpg');
+  background-size: cover;
+  background-position: 'center center';
   text-align: center;
-  font-family: 'Satisfy', cursive;    
+  font-family: 'Satisfy', cursive; 
+  padding: 1rem; 
+  margin-top: 3rem;  
 }
 
 /* .entry-point-spa {
