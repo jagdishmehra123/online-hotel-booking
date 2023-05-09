@@ -10,11 +10,11 @@ border-radius: 5%;
 
 
 }
-.homecard:hover{
+/* .homecard:hover{
 border-radius: 50%;
 
 overflow: hidden;
-}
+} */
 
 .homecard .content-wrapper {
     /* border:1px solid red; */
