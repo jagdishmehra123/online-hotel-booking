@@ -119,7 +119,7 @@ const Home = () => {
               <p >This exciting opportunity allows owners to select their preferred lot and new <br />cottage model within the phase.</p>
               <p>&nbsp;</p>
               <p>
-                <Link className="learn-more" to='/leran-More' >Learn More</Link>
+                {/* <Link className="learn-more" to='/leran-More' >Learn More</Link> */}
               </p>
             </div>
           </div>

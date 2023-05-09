@@ -70,7 +70,7 @@ const Footer = () => {
 
       <div className="newsletter">
 
-        <h4>
+        {/* <h4>
           Helpful links
         </h4>
         <p>
@@ -80,8 +80,8 @@ const Footer = () => {
           <a href="/about/" title="About">About</a><br />
           <a href="/about/careers/" title="Careers">Job Postings</a><br />
           <a href="/contact/" title="Contact">Contact</a>
-        </p>
-      </div>
+        </p>*/}
+      </div> 
 
     </div >
 
