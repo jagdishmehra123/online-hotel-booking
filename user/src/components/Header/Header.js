@@ -99,7 +99,7 @@ const Header = ({ auth, setAuth }) => {
       <div className='right-side-navbar' style={{ display: showNavbar }}>
         <Box className='col-2-box' style={{ display: 'flex', flexDirection: 'column' }}>
         <div>
-            <Icon icon={cross} size={15} style={{ float: 'right', paddingRight: '1rem' }}
+            <Icon icon={cross} size={15} style={{ float: 'left', paddingLeft: '1rem',marginTop:'1rem' }}
               onClick={handleCloseNavbar} />
           </div>
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>

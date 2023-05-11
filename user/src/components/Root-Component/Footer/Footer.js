@@ -5,7 +5,7 @@ import logo from '../../../assets/logo.png'
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   return (
     <>
       <div className='fintPrintBar'>
@@ -31,23 +31,33 @@ const Footer = () => {
 
           <div className="social page">
             <h3>Let's Get Social</h3>
+
             <div class="socialLinks">
-              <a href="https://www.facebook.com/greatblueresorts" target="_blank" title="Like us on facebook">
-                <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/facebook-2.png" alt="Facebook" />
-              </a>
-              <a href="https://instagram.com/greatblueresorts/" target="_blank" title="Follow us on instagram">
-                <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/instagram-2.png" alt="instagram" />
-              </a>
-              <a href="https://www.twitter.com/greatblueresort" target="_blank" title="Follow us on twitter">
-                <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/twitter-2.png" alt="twitter" />
-              </a>
-              <a href="https://www.youtube.com/channel/UCStX7YFUTZkhCoVSnz971iA" target="_blank" title="Watch our videos on youtube">
-                <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/youtube-2.png" alt="youtube" />
-              </a>
+
+              {// eslint-disable-next-line
+                <a href="https://www.facebook.com/greatblueresorts" target="_blank" title="Like us on facebook">
+                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/facebook-2.png" alt="Facebook" />
+                </a>
+              }
+              {// eslint-disable-next-line
+                <a href="https://instagram.com/greatblueresorts/" target="_blank" title="Follow us on instagram">
+                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/instagram-2.png" alt="instagram" />
+                </a>
+              }
+              {// eslint-disable-next-line
+                <a href="https://www.twitter.com/greatblueresort" target="_blank" title="Follow us on twitter">
+                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/twitter-2.png" alt="twitter" />
+                </a>
+              }
+              {// eslint-disable-next-line
+                <a href="https://www.youtube.com/channel/UCStX7YFUTZkhCoVSnz971iA" target="_blank" title="Watch our videos on youtube">
+                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/youtube-2.png" alt="youtube" />
+                </a>
+              }
             </div>
             <div className="translate">
               <h4>Choose Your Preferred Language</h4>
-              <div id="google_language_translator" class="default-language-en">
+              <div id="google_language_translator" className="default-language-en">
                 <div className="skiptranslate goog-te-gadget" >
                   <div id="targetLanguage" >
                     <select className="goog-te-combo" aria-label="Language Translate Widget">
@@ -61,9 +71,11 @@ const Footer = () => {
                   </div>
                   &nbsp;&nbsp;Powered by
                   <span >
-                    <a className="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank">
-                      <img className="img1" src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" alt="Google Translate" />
-                      Translate</a>
+                    { // eslint-disable-next-line 
+                      <a className="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank">
+                        <img className="img1" src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" alt="Google Translate" />
+                        Translate</a>
+                    }
                   </span>
                 </div>
               </div>

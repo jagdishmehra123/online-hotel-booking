@@ -65,7 +65,7 @@ border: none;
  }
  .contact-info-of{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     padding-top: 100px;

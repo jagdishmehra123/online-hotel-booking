@@ -1,501 +1,533 @@
-* {
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gruppo&family=Indie+Flower&family=Montserrat:wght@500&display=swap');
+
+.home-content {
+    height: 25rem;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.Home {
-    background-color: rgb(242, 242, 245);
-    min-height: 100vh;
+.home-content .heading {
+    width: 40%;
+    font-family: 'sans-serif';
+    padding: 2rem 2rem 1rem 2rem;
+    position: absolute;
+    top: 2%;
+    left: 100%;
+    transition: left 1s ease-in-out;
 }
 
-.entry-content {
-    background-color: #fff;
-    color: black;
-    display: grid;
-    grid-template-columns: 45% 50%;
-    padding: 45px 30px;
-    gap: 5%;
+.heading.animate {
+    left: 5%;
+    font-style: italic;
+}
+
+.home-content div {
+    /* border: 1px solid black; */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: absolute;
+    top: 30%;
+    left: -100%;
+    transition: left 1s ease-in-out;
+}
+
+.content-wrapper.animate {
+    left: 30%;
+}
+
+.home-content div p {
+    text-align: justify;
+    padding-right: 2rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10rem;
+}
+
+.card:nth-child(n) {
+    width: 85%;
+    height: 25rem;
+    margin-top: 2.5rem;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 3s;
+    display: flex;
+    flex-direction: row;
+    border: 0;
+}
+
+.card:nth-child(2n) {
+    width: 85%;
+    height: 25rem;
+    padding: 0.5rem;
+    margin-top: 2.5rem;
+    transform: translateX(-900px);
+    opacity: 0;
+    transition: 4s;
+    display: flex;
+    flex-direction: row;
+    margin-left: 13rem;
+    border: 0;
+}
+
+.card.show:nth-child(n) {
+    transform: translate(0);
+    opacity: 1;
 }
 
 
-.entry-title {
-    color: rgb(61, 60, 60);
-    font-size: 35px;
+
+.card:nth-child(n) .img-wrap1 {
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid black; */
 }
 
-
-
-.npCallout {
-    background-color: #009fe1;
-    max-width: 100%;
-    position: relative
+.card:nth-child(n) .img-wrap1 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
 }
 
-.img-slider {
-    background: url('../../../assets/animate1.jpg');
-    height: 450px;
-    background-color: #009fe1;
-    background-repeat: no-repeat;
-    background-position: right;
-    animation: changebackground 15s infinite alternate-reverse forwards running ease-in-out;
-
+.card:nth-child(n) .img-wrap2 {
+    width: 40%;
+    height: 100%;
+    display: none;
+    /* border: 1px solid black; */
 }
 
-@keyframes changebackground {
+.card:nth-child(n) .img-wrap2 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: none;
+}
+
+.card:nth-child(2n) .img-wrap1 {
+    width: 40%;
+    height: 100%;
+    display: none;
+    /* border: 1px solid black; */
+}
+
+.card:nth-child(2n) .img-wrap1 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: none;
+}
+
+.card:nth-child(2n) .img-wrap2 {
+    width: 40%;
+    height: 100%;
+    display: block;
+    /* border: 1px solid black; */
+}
+
+.card:nth-child(2n) .img-wrap2 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: block;
+}
+
+.card:nth-child(n) .content {
+    width: 60%;
+    height: 100%;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin-top: 1.5rem;
+    background-color: rgb(243, 233, 221);
+    /* border: 1px solid black; */
+}
+
+.card:nth-child(2n) .content {
+    width: 60%;
+    height: 100%;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin-top: 1.5rem;
+    background-color: rgb(243, 233, 221);
+    /* border: 1px solid black; */
+}
+
+.card .content .button-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3rem;
+    /* border: 1px solid black; */
+}
+
+.card .content .button-wrap div {
+    width: 1rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    /* border: 1px solid black; */
+    animation: expand 4s infinite;
+}
+
+@keyframes expand {
     0% {
-        background: url('../../../assets/animate1.jpg');
-        background-size: cover;
-        background-position: right;
-
+        width: 1rem;
     }
 
-    25% {
-        background: url('../../../assets/animate3.jpg');
-        background-size: cover;
-        background-position: right;
-
-    }
-
-    75% {
-        background: url('../../../assets/animate4.jpg');
-        background-size: cover;
-        background-position: right;
-
+    50% {
+        width: 3rem;
     }
 
     100% {
-        background: url('../../../assets/animate2.jpg');
-        background-size: cover;
-        background-position: right;
-
+        width: 1rem;
     }
 }
 
 
-.img-slider-content {
-    position: absolute;
-    top: 0;
-    background-color: #009fe1;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+
+
+.card .content .button-wrap div img {
+    width: 100%;
     height: 100%;
-    padding: 20px;
-    width: 50%;
-    text-align: start;
+    padding: 0;
+}
+
+/* property-locations */
+
+.property-locations {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+
+    /* border: 1px solid black; */
+}
+
+
+.property-locations .location-header {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.learn-more {
-    color: white;
-    background-color: orange;
-    text-decoration: none;
-    padding: 10px 40px;
-
-}
-
-.learn-more:hover {
-    color: white;
-    background-color: #003f5e;
-
-}
-
-.card-cottages-slider-parent {
-    height: fit-content;
-    padding: 10px;
-    overflow: hidden;
-}
-
-
-.cottages-slider {
-    height: 100%;
-    display: flex;
-    position: relative;
-    transition: 0.5s;
-}
-
-.cottages-card {
-    background-color: #fff;
-    height: 100%;
-    margin: 10px;
-    box-shadow: 1px 1px 5px 4px rgba(51, 51, 90, 0.076);
-    min-width: 300px;
-    min-height: 530px;
-    width: fit-content;
-    padding-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.cottages-img-parent {
-    height: 200px;
-    width: 100%;
-    display: flex;
-
-
-}
-
-.cottages-img-parent img {
-    object-fit: cover;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-}
-
-.info {
-    color: black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-.dot-parnet {
-    width: 300px;
-    height: 100px;
+.property-locations .dummy-border {
+    width: 10%;
     margin: auto;
+    border: 1px solid grey;
+}
+
+.property-locations .location-header div:first-child {
+    /* border: 1px solid black; */
+}
+
+.property-locations .location-header h3 {
+    margin-left: 1rem;
+    font-family: 'Playfair Display, serif';
+    color: black;
+}
+
+
+.property-locations .location-addresses {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px 10px;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: rgb(171, 171, 170);
-    cursor: pointer;
+    margin-top: 3rem;
+    /* border: 1px solid black; */
 
 }
 
-.active-dot {
-    background-color: orange;
+.property-locations .location-addresses .address-section {
+    width: 17%;
+    padding: 0.5rem;
 }
 
-.dot:hover {
-    background-color: orange;
-}
-
-.priceBox {
-    color: gray;
-    font-size: 20px;
-}
-
-.room-title {
-    font-size: 21px;
-}
-
-.title-card-cottages {
+.property-locations .location-addresses .address-section h6 {
     color: black;
-    font-size: 25px;
-    text-align: center;
-    margin: 60px 0px;
-    font-size: 40px;
-}
-
-.summaryPrices {
-    font-size: 15px;
-}
-
-.cottages-button {
-    padding: 5px 20px;
-    background-color: orange;
-    border: none;
-    font-size: 20px;
-}
-
-.cottages-button:hover {
-    background-color: rgb(44, 78, 216);
-
-}
-
-.comments {
-    padding-bottom: 50px;
-}
-
-.comment-container {
-    background-color: #019ad2;
-    display: flex;
-    height: 100%;
-    align-items: center;
-
-
-}
-
-.comment-image {
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-    min-height: 450px;
-    width: 40%;
-    background: url(https://cdn.trendir.com/wp-content/uploads/old/house-design/wood-and-glass-cabin-home-brings-luxury-to-nature-1.jpg);
-    background-size: 100% 100%;
-
-
-}
-
-.comment-box {
-    height: inherit;
-    width: 60%;
-    color: white;
-    display: flex;
-    padding: 20px;
-}
-
-.comment-message {
-    font-size: 20px;
-}
-
-.comments-button {
-    font-size: 60px;
-    margin: 20px;
-    border: none;
-    background-color: transparent;
-}
-
-.greatbluesort-section {
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 150px);
-    grid-auto-rows: 150px;
-    gap: 10px;
-    padding: 10px;
-    height: fit-content;
-    place-content: center;
-
-}
-
-.greatbluesort-title {
-    color: black;
-    text-align: center;
-}
-
-.card-cottages-slider-parent .info {
-    padding: 10px;
+    opacity: 0.9;
 }
 
 
-.add-new-cottages-parent {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: end;
+
+.property-locations .location-addresses section div {
+    width: 90%;
+    border-collapse: collapse;
+    border: 0.1px solid rgb(220, 218, 218);
 
 }
 
-.add-cottages-button {
-    background-color: orange;
-    padding: 10px 40px;
-    border: none;
+.property-locations .location-addresses section p {
+    padding: 0.2rem;
 }
 
-.add-cottages-button:hover {
-    background-color: #019ad2;
-}
-
-
-@media (min-width:1100px) {
-    .card-cottages-slider-parent {
-        height: fit-content;
-        overflow: hidden;
-    }
-
-    .card-cottages-slider-parent .info .priceBox {
-        font-size: 25px;
-    }
-
-    .card-cottages-slider-parent .info h3 {
-        font-size: 20px;
-    }
-
-    .card-cottages-slider-parent .info {
-        padding: 10px;
-    }
-
-}
-
-
-@media (max-width:1000px) {
-    .entry-content {
-        background-color: #fff;
-        color: black;
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 45px 30px;
-        gap: 5%;
-    }
-
-    .img-slider-content {
-        position: absolute;
-        top: 0;
-        background-color: #009fe1;
-    }
-
-    .img-slider {
-        background: url(https://i.insider.com/5a61087d55ac562d008b4794?width=700);
-        height: 300px;
-    }
-
-    .cottages-slide-1 {
-        display: none;
-    }
-
-
-
-    .cottages-slider {
-        width: 750%;
-
-    }
-
-    .comment-container {
-        background-color: #019ad2;
-        display: flex;
-        height: 80%;
-    }
-
-    .comment-image {
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-        min-height: 350px
-    }
-
-    .comment-message {
-        font-size: 15px;
-    }
-
-
-}
-
-@media (max-width:850px) {
-
-    .comment-container {
-        background-color: #019ad2;
-        display: block;
-        height: 80%;
-
-
-    }
-
-    .comment-image {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        min-height: 300px;
-        width: 100%;
-
-    }
-
-    .comment-message {
-        font-size: 15px;
-    }
-
-    .comment-box {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 5px;
-
-    }
-
-    .comments-button {
-        font-size: 30px;
-    }
-
-}
-
-@media (max-width:680px) {
-    .img-slider-content {
-        position: relative;
-        top: 0;
-        background-color: #009fe1;
-        text-align: center;
-        width: 100%;
-
-
-    }
-
-    .img-slider {
-        background: url(https://i.insider.com/5a61087d55ac562d008b4794?width=700);
-        height: 200px;
-    }
-
-    .cottages-slider {
-        width: 1500%;
-    }
-
-    .dot-parnet {
-        width: 90%;
-    }
-
-}
-
-.cottages-content {
-    height: 250px;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    background-color: white;
-    margin-top: -20px;
-    border-radius: 20px;
-    width: 100%;
-    padding: 30px;
-
-}
-
-.button-parent {
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-.book-button-2 {
-    text-decoration: none;
-    padding: 5px 40px;
-    background-color: orange;
-    font-size: 18px;
-    color: white;
-    border: none;
-}
-
-.book-button-2:hover {
-    background-color: #009fe1;
-}
-
-.amminities {
-    padding: 10px 0;
-}
-
-.rec-dot {
-    box-shadow: 0px 0px 0px 2px orange !important;
-}
-
-.rec-dot_active {
-    background-color: orange !important;
-    box-shadow: 0px 0px 0px 2px orange !important;
-}
-
-.sc-beqWaB {
-    background-color: transparent !important;
-}
-
-.sc-beqWaB:hover {
-    background-color: transparent !important;
-}
 
 
 
 @media only screen and (max-width:900px) {
-    .featured-properties {
-        margin-top: 0rem;
-        margin-bottom: 0rem;
+
+    .home-content {
+        height: 40rem;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .home-content .heading {
+        width: 100%;
+        font-family: 'sans-serif';
+        padding: 2rem 2rem 1rem 2rem;
+        position: absolute;
+        top: 2%;
+        left: 100%;
+        transition: left 1s ease-in-out;
+    }
+
+    .heading.animate {
+        left: 0%;
+        font-style: italic;
+    }
+
+    .home-content div {
+        /* border: 1px solid black; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        position: absolute;
+        top: 15%;
+        left: 0%;
+        transition: left 3s ease-in-out;
+        margin-top: 2rem;
+    }
+
+    .content-wrapper.animate {
+        left: 0%;
+    }
+
+    .home-content div p {
+        text-align: justify;
+        padding-right: 0rem;
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10rem;
+        margin-top: 1rem;
+    }
+
+    .card:nth-child(n) {
+        width: 100%;
+        height: fit-content;
+        transform: translateY(500);
+        transform: translateX(0);
+        opacity: 0;
+        transition: 2s;
+        display: flex;
+        flex-direction: column;
+        border: 0;
+        margin-top: 2.5rem;
+
+    }
+
+    .card:nth-child(2n) {
+        width: 100%;
+        height: fit-content;
+        padding: 0.5rem;
+        transform: translateX(0);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 2s;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0rem;
+        border: 0;
+        margin-top: 2.5rem;
+        /* border:1px solid black; */
+
+    }
+
+    .card.show:nth-child(n) {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+
+
+    .card:nth-child(n) .img-wrap1 {
+        width: 90%;
+        height: 100%;
+        margin-right: 3rem;
+        /* border: 1px solid black; */
+    }
+
+
+
+    .card:nth-child(n) .img-wrap1 img {
+        height: 100%;
+        width: 100%;
         padding: 0;
     }
 
-    .featured-properties h2{
-        border:1px solid black;
-        margin-bottom: 0;
-        padding: 0;
-        padding-top: 1rem;
-        padding-bottom: 0rem;
+    .card:nth-child(n) .img-wrap2 {
+        width: 100%;
+        height: 100%;
+        display: none;
+        /* border: 1px solid black; */
     }
+
+    .card:nth-child(n) .img-wrap2 img {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        display: none;
+    }
+
+    .card:nth-child(2n) .img-wrap1 {
+        width: 95%;
+        height: 20rem;
+        margin-left: 2rem;
+        display: block;
+        /* border: 1px solid black; */
+    }
+
+    .card:nth-child(2n) .img-wrap1 img {
+        height: 20rem;
+        width: 100%;
+        padding: 0;
+        display: block;
+    }
+
+    .card:nth-child(2n) .img-wrap2 {
+        width: 100%;
+        height: 100%;
+        display: none;
+        /* border: 1px solid black; */
+    }
+
+    .card:nth-child(2n) .img-wrap2 img {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        display: none;
+    }
+
+    .card:nth-child(n) .content {
+        width: 90%;
+        height: fit-content;
+        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        margin-top: 0rem;
+        margin-left: 2.85rem;
+        background-color: rgb(243, 233, 221);
+        /* border: 1px solid black; */
+    }
+
+    .card:nth-child(2n) .content {
+        width: 95;
+        height: fit-content;
+        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        margin-top: 0rem;
+        margin-right: 5rem;
+        margin-left: 0rem;
+        background-color: rgb(243, 233, 221);
+        /* border: 1px solid black; */
+    }
+
+    .card .content .button-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 3rem;
+        /* border: 1px solid black; */
+    }
+
+    .card .content .button-wrap div {
+        /* border: 1px solid black; */
+        width: 2rem;
+        height: 1.5rem;
+        margin-left: 1rem;
+    }
+
+
+
+    .card .content .button-wrap div img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+
+
+    /* property-locations */
+
+    .property-locations {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+
+        /* border: 1px solid black; */
+    }
+
+
+    .property-locations .location-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .property-locations .dummy-border {
+        width: 25%;
+        margin: auto;
+        border: 1px solid grey;
+    }
+
+    .property-locations .location-header div:first-child {
+        /* border: 1px solid black; */
+    }
+
+    .property-locations .location-header h3 {
+        margin-left: 1rem;
+        font-family: 'Playfair Display, serif';
+        color: black;
+    }
+
+
+    .property-locations .location-addresses {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+        /* border: 1px solid black; */
+
+    }
+
+    .property-locations .location-addresses .address-section {
+        width: 90%;
+        margin: auto;
+        padding: 0.5rem;
+        text-align: center;
+        margin-top: 2rem;
+
+    }
+
+    .property-locations .location-addresses .address-section h6 {
+        color: black;
+    }
+
+
+
+    .property-locations .location-addresses section div {
+        width: 70%;
+        border-collapse: collapse;
+        margin: auto;
+        border: 0.1px solid rgb(220, 218, 218);
+
+    }
+
+    .property-locations .location-addresses section p {
+        padding: 0.2rem;
+    }
+
+
 }

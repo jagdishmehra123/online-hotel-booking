@@ -21,8 +21,9 @@
     margin: auto;
     padding: 20px;
     display: flex;
-    justify-content: end; 
+    justify-content: flex-end; 
 }
+
 
 .our-properties-content{
     font-size: 18px;
@@ -320,5 +321,5 @@ color: gray;
 .room-overview-controls{
     display: flex;
     padding: 15px 0;
-    justify-content: end;
+    justify-content: flex-end;
 }

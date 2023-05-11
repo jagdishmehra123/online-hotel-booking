@@ -62,14 +62,14 @@
   margin: auto;
   margin-inline-end: 1rem;
   color: black;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-family: "Nunito Sans", Arial, sans-serif;
 }
 
 
 .app-bar .desktop-section .appbar-col-2 .col-2-box .btn-item:last-child {
   /* border: 1px solid black; */
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   padding: 0.2rem;
   background-color: black;
   color: white;
@@ -173,20 +173,25 @@
   /* mobile view navbar */
 
   .app-bar .right-side-navbar{
-      background-color: white;
-      width:100%;
+      background-color: rgba(7, 97, 126, 0.9);
+      width:60%;
+      height: 50rem;
       position: fixed;
       right: 0%;
       top:0%;
+      padding-right: 2rem;
   }
 
   .app-bar .right-side-navbar .col-2-box{
       padding: 0.5rem 0rem;
+
   }
   .app-bar .right-side-navbar .col-2-box .btn-item{
       /* border:1px solid black; */
       width: fit-content;
-      margin: auto;
-      color:black;
+      color:rgb(217, 237, 245);
+      border-bottom: 0.1px solid rgb(217, 237, 245);
+      display: block;
+      align-self: flex-end;
   }
 }

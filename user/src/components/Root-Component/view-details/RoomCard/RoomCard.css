@@ -110,7 +110,7 @@
         margin: auto;
         margin-top: 1rem;
         flex-direction: column;
-        height: 37rem;
+        height: fit-content;
         margin-left: 0rem;
 
     }
