@@ -101,9 +101,9 @@ const Footer = () => {
 
 
       </footer >
-      <div className='formTab tellMe open'>
+      {/* <div className='formTab tellMe open'>
         <h3 className="mainFormTitle open" onClick={() => navigate('/spa')}> DISCOVER MORE {<AiOutlineRight />}</h3>
-      </div>
+      </div> */}
     </>
   )
 }

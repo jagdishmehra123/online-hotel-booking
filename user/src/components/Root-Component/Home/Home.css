@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gruppo&family=Indie+Flower&family=Montserrat:wght@500&display=swap');
 
+
+
+
+
 .home-content {
     padding: 1rem 10rem;
 }
@@ -240,13 +244,14 @@
     .home-content {
         padding: 1rem 1rem;
     }
-    
+
     .home-content .content-wrapper p {
         font-family: "Nunito Sans", Arial, sans-serif;
         text-align: justify;
         line-height: 1.5rem;
         font-size: 1.1rem;
     }
+
     .container {
         display: flex;
         flex-direction: column;

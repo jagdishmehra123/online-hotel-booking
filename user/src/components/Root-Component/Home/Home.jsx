@@ -71,32 +71,31 @@ const Home = () => {
   return (
     <>
       <Video />
-
       {/* <div style={{ marginTop: '1rem' }} className=''>
         <h2 style={{ textAlign: 'center', marginTop: '2rem', marginBottom: '2.5rem' }}>FEATURED PROPERTIES</h2>
         <HomeList currentList={currentList} />
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
       <div className='home-content' >
-      <div className='content-wrapper' data-aos='zoom-in' data-aos-delay='850'>
-        <p  >
-          Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
-          With breathtaking views and plentiful outdoor adventures available for rent,
-          this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
-          With hospitality services that exude grandeur, we offer a respite from the mundane.
-          Goa, a destination known for its sun-kissed beaches and breathtaking scenery,
-          is a treasure trove of relaxation. Cuba Hotels Goa is an unmatched haven for both leisure and business, crafting a perfect getaway
-          for families and fruitful conclaves. Nestled in the arms of nature,
-          delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
-          complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
-        </p>
+        <div className='content-wrapper' data-aos='zoom-in' data-aos-delay='850'>
+          <p  >
+            Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
+            With breathtaking views and plentiful outdoor adventures available for rent,
+            this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
+            With hospitality services that exude grandeur, we offer a respite from the mundane.
+            Goa, a destination known for its sun-kissed beaches and breathtaking scenery,
+            is a treasure trove of relaxation. Cuba Hotels Goa is an unmatched haven for both leisure and business, crafting a perfect getaway
+            for families and fruitful conclaves. Nestled in the arms of nature,
+            delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
+            complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
+          </p>
 
-      </div>
+        </div>
       </div>
 
       <div className='' >
-        <h3 style={{textAlign:'center'}}>Featured Properties</h3>
-        <div style={{border:'0.2px solid lightgrey', width:'30%', margin:'auto'}}></div>
+        <h3 style={{ textAlign: 'center' }}>Featured Properties</h3>
+        <div style={{ border: '0.2px solid lightgrey', width: '30%', margin: 'auto' }}></div>
         <div className='container1' >
           {allProperties.map((property, index) => {
             return (
