@@ -27,7 +27,7 @@ const Home = () => {
   const [allProperties, setAllProperties] = useState([])
   const getPropertiesData = async () => {
     await axios(`https://cuba-goa-server.onrender.com/hotelbook`)
-    // await axios(`http://localhost:4001/hotelbook`)
+      // await axios(`http://localhost:4001/hotelbook`)
       .then((res) => {
         // console.log(res.data)
         setAllProperties(res.data)
@@ -78,34 +78,34 @@ const Home = () => {
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
       <div className='home-content' >
-        <h3 className='heading' 
-        >At Cuba Goa, We Provide The Most Luxurious Hospitality Services</h3>
-        <div className='content-wrapper'>
-          <p  >
-            Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
-            With breathtaking views and plentiful outdoor adventures available for rent,
-            this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
-            With hospitality services that exude grandeur, we offer a respite from the mundane.
-            Goa, a destination known for its sun-kissed beaches and breathtaking scenery,
-            is a treasure trove of relaxation. Cuba Hotels Goa is an unmatched haven for both leisure and business, crafting a perfect getaway
-            for families and fruitful conclaves. Nestled in the arms of nature,
-            delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
-            complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
-          </p>
+      <div className='content-wrapper' data-aos='zoom-in' data-aos-delay='850'>
+        <p  >
+          Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
+          With breathtaking views and plentiful outdoor adventures available for rent,
+          this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
+          With hospitality services that exude grandeur, we offer a respite from the mundane.
+          Goa, a destination known for its sun-kissed beaches and breathtaking scenery,
+          is a treasure trove of relaxation. Cuba Hotels Goa is an unmatched haven for both leisure and business, crafting a perfect getaway
+          for families and fruitful conclaves. Nestled in the arms of nature,
+          delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
+          complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
+        </p>
 
-        </div>
+      </div>
       </div>
 
       <div className='' >
+        <h3 style={{textAlign:'center'}}>Featured Properties</h3>
+        <div style={{border:'0.2px solid lightgrey', width:'30%', margin:'auto'}}></div>
         <div className='container1' >
           {allProperties.map((property, index) => {
             return (
-              <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="300" >
+              <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="20" >
                 <div className='img-wrap1'>
                   <img src={property.resortImgURL} alt='resortImg'></img>
                 </div>
                 <div className='content'>
-                  <h3>{property.resortName}</h3>
+                  <h3 style={{ fontFamily: "Nunito Sans, Arial, sans-serif" }}>{property.resortName}</h3>
                   <p>
                     {property.resortDescription}
                   </p>
