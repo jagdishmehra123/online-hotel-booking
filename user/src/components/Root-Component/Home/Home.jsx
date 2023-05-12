@@ -101,7 +101,6 @@ const Home = () => {
           {allProperties.map((property, index) => {
             return (
               <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="300" >
-              <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="300"  >
                 <div className='img-wrap1'>
                   <img src={property.resortImgURL} alt='resortImg'></img>
                 </div>
