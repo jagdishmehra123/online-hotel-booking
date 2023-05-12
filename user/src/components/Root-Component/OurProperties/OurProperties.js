@@ -12,7 +12,7 @@ const Footer = React.lazy(() => import('../Footer/Footer'))
 const OurProperties = () => {
   const [allProperties, setAllProperties] = useState("")
   const [showRoomForm, setRoomForm] = useState(false)
-  const [searchCity, setSearchCity] = useState('')
+  const [searchResortName, setSearchResortName] = useState('')
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1)
@@ -55,10 +55,10 @@ const OurProperties = () => {
           </div>
           <div className='properties-to-book'>
             {/* filter section do at veyr last */}
-            <input type='text' placeholder='Search' name='searchCity' value={searchCity}
-              onChange={(e) => setSearchCity(e.target.value)} style={{width:'90%', paddingLeft:'1rem'}} />
+            <input type='text' placeholder='Search' name='searchResortName' value={searchResortName}
+              onChange={(e) => setSearchResortName(e.target.value)} style={{width:'90%', paddingLeft:'1rem'}} />
           </div>
-          <PropertyList currentList={currentList} searchCity={searchCity}   />
+          <PropertyList currentList={currentList} searchResortName={searchResortName}   />
           <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} />
         </div>
       </main >
