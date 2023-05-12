@@ -26,8 +26,8 @@ const Home = () => {
 
   const [allProperties, setAllProperties] = useState([])
   const getPropertiesData = async () => {
-    // await axios(`https://cuba-goa-server.onrender.com/hotelbook`)
-    await axios(`http://localhost:4001/hotelbook`)
+    await axios(`https://cuba-goa-server.onrender.com/hotelbook`)
+    // await axios(`http://localhost:4001/hotelbook`)
       .then((res) => {
         // console.log(res.data)
         setAllProperties(res.data)
@@ -100,7 +100,7 @@ const Home = () => {
         <div className='container1' >
           {allProperties.map((property, index) => {
             return (
-              <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="300" >
+              <div className='card' key={index + 1}  >
                 <div className='img-wrap1'>
                   <img src={property.resortImgURL} alt='resortImg'></img>
                 </div>
