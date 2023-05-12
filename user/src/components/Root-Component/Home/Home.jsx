@@ -27,7 +27,7 @@ const Home = () => {
   const [allProperties, setAllProperties] = useState([])
   const getPropertiesData = async () => {
     // await axios(`https://cuba-goa-server.onrender.com/hotelbook`)
-      await axios(`http://localhost:4001/hotelbook`)
+    await axios(`http://localhost:4001/hotelbook`)
       .then((res) => {
         // console.log(res.data)
         setAllProperties(res.data)
@@ -42,31 +42,28 @@ const Home = () => {
     getPropertiesData()
   }, [])
 
+  // useEffect(() => {
+  //   const boxes = document.querySelectorAll('.card')
+  //   window.addEventListener('scroll', checkBoxes)
+  //   checkBoxes()
+  //   function checkBoxes() {
+  //     const triggerBottom = window.innerHeight / 5 * 6
+  //      boxes.forEach(box => {
+  //       const boxTop = box.getBoundingClientRect().top
+  //       if (boxTop < triggerBottom) {
+  //         box.classList.add('show')
+  //       }
+  //       else {
+  //         box.classList.remove('show')
+  //       }
+  //     })
+  //   }
+  // }, [])
 
-  // Intersection Observer
-
-  useEffect(() => {
-    const cards = document.querySelectorAll('.card')
-    const observer = new IntersectionObserver(entries => {
-      console.log(entries)
-      entries.forEach(entry => {
-        entry.target.classList.toggle("show", entry.isIntersecting)
-      })
-    })
-    //cards will show smoothly on page scrolling
-    cards.forEach(card => {
-      observer.observe(card)
-    })
-
-  }, [])
 
 
-  const [showContent, setShowContent] = useState(false);
-  const [showHeading, setShowHeading] = useState(false)
-  useEffect(() => {
-    setShowContent(true);
-    setShowHeading(true)
-  },[])
+
+
 
 
 
@@ -81,22 +78,29 @@ const Home = () => {
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
       <div className='home-content' >
-        <h3 className={`heading ${showHeading ? "animate" : ""}`}>At Cuba Goa, We Provide The Most Luxurious Hospitality Services</h3>
-        <div className={`content-wrapper ${showContent ? "animate" : ""}`}>
-          <p>
-            Welcome to Cuba goa where you will find the perfect city escape that includes all the amenities your family comes to expect from a resort – heated pools, multi-sports courts and playgrounds, and best of all, sandy combed beaches. Think stunning views, beautiful surroundings and endless options for outdoor adventure, for sale or rent.
+        <h3 className='heading' data-aos="zoom-in" data-aos-delay="1000"
+        >At Cuba Goa, We Provide The Most Luxurious Hospitality Services</h3>
+        <div className='content-wrapper'>
+          <p  >
+            Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
+            With breathtaking views and plentiful outdoor adventures available for rent,
+            this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
+            With hospitality services that exude grandeur, we offer a respite from the mundane.
+            Goa, a destination known for its sun-kissed beaches and breathtaking scenery,
+            is a treasure trove of relaxation. Cuba Hotels Goa is an unmatched haven for both leisure and business, crafting a perfect getaway
+            for families and fruitful conclaves. Nestled in the arms of nature,
+            delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
+            complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
           </p>
-          <p>We provide the most luxurious hospitality services.
-            The land of sun, sand, and sea – Goa is synonymous with unhindered beauty and splendid recreation. Cuba Hotels Goa is a captivating paradise for unwinding and revelling, perfect for an idyllic family vacation and conducting important business meetings. Cocooned in the lap of nature, offering a medley of flavours through its world cuisine and regional specialities that are paired with exotic concoctions and cocktails in setting that are relaxing, Cuba Hotels Goa is an oasis of luxury covering Baga in North Goa to Palolem, and Patnem and Agonda in South Goa.
-          </p>
+
         </div>
       </div>
 
       <div className='' >
-        <div className='container1'>
-          {allProperties.map((property, i) => {
+        <div className='container1' >
+          {allProperties.map((property, index) => {
             return (
-              <div className='card' key={i + 1}>
+              <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="300" >
                 <div className='img-wrap1'>
                   <img src={property.resortImgURL} alt='resortImg'></img>
                 </div>
