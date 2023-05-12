@@ -78,7 +78,7 @@ const Home = () => {
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
       <div className='home-content' >
-        <h3 className='heading' data-aos="zoom-in" data-aos-delay="1000"
+        <h3 className='heading' data-aos="zoom-in" data-aos-delay="800"
         >At Cuba Goa, We Provide The Most Luxurious Hospitality Services</h3>
         <div className='content-wrapper'>
           <p  >
