@@ -14,10 +14,10 @@ const PropertyCard = ({ property }) => {
         console.log(resortname, id)
     }
 
-   
+
 
     return (
-        <div className="property-card-container" >
+        <div className="property-card-container">
             <div id="property-card-img" style={{
                 background: `url(${property.resortImgURL})`,
                 backgroundSize: 'cover',

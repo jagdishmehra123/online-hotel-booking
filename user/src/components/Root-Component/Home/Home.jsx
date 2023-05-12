@@ -78,7 +78,7 @@ const Home = () => {
       </div> */}
       <div className='home-content' >
         <div className='content-wrapper' data-aos='zoom-in' data-aos-delay='850'>
-          <p  >
+          <p>
             Find the ultimate escape at Cuba Goa, where sandy beaches, multi-sports courts, and playgrounds await you and your family.
             With breathtaking views and plentiful outdoor adventures available for rent,
             this resort is the ideal city getaway. Expect all the amenities you desire in a vacation destination, including stunning surroundings.
@@ -89,12 +89,11 @@ const Home = () => {
             delightful flavors await across a diverse international and regional menu. These delectable dishes perfectly pair with our exotic cocktails,
             complementing the serene ambiance that spans across South Goa - an oasis of refined luxury.
           </p>
-
         </div>
       </div>
 
       <div className='' >
-        <h3 style={{ textAlign: 'center' }}>Featured Properties</h3>
+        <h2 style={{ fontFamily: 'Geomanist', textAlign: 'center' }}>Featured Properties</h2>
         <div style={{ border: '0.2px solid lightgrey', width: '30%', margin: 'auto' }}></div>
         <div className='container1' >
           {allProperties.map((property, index) => {
@@ -108,9 +107,10 @@ const Home = () => {
                   <p>
                     {property.resortDescription}
                   </p>
-                  <div className='button-wrap'>
+                  <div className='button-wrap' style={{ cursor: 'pointer' }}
+                    onClick={() => viewRooms(property._id, property.resortName)}>
                     <p style={{ color: 'red' }}>view room </p>
-                    <div onClick={() => viewRooms(property._id, property.resortName)}
+                    <div
                       style={{ cursor: 'pointer' }}>
                       <img src={arrow} alt='' /></div>
                   </div>
@@ -129,7 +129,7 @@ const Home = () => {
       <div className='property-locations'>
         <div className='location-header'>
           <div><Icon icon={location2} size={30} style={{ color: 'orange' }}></Icon></div>
-          <h3>Cuba Goa Propery Locations</h3>
+          <h3 style={{ fontFamily: 'Geomanist' }}>Cuba Goa Propery Locations</h3>
         </div>
         <div className='dummy-border' ></div>
 

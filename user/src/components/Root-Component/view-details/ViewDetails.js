@@ -150,11 +150,11 @@ const ViewDetails = () => {
     }
     else {
       console.log(data)
-       // eslint-disable-next-line
+      // eslint-disable-next-line
       data.cart = data.cart.filter((i) => {
-        if (i.quantity > 0) 
-        
-        return i
+        if (i.quantity > 0)
+
+          return i
 
       })
       updateTotalRoomsinDb(data.cart)
@@ -195,6 +195,10 @@ const ViewDetails = () => {
   return (
     <>
       <div className='view-details-wrapper'>
+        <div className='resort-name'>
+          <h2 data-aos="fade-down">
+            {resortname}</h2>
+        </div>
 
         {/* section1 */}
         <Images imgArr={imgArr} resort={resort} />
@@ -214,16 +218,13 @@ const ViewDetails = () => {
             </div> */}
             <p>{resort.resortDescription}</p>
           </div>
-          <div className='map'>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.322638967591!2d73.84549917483974!3d15.520825285081965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfbff9d6aaaaab%3A0xf4df13671d607b52!2sCASA%20BOUTIQUE%20HOTELS!5e0!3m2!1sen!2sin!4v1682384101319!5m2!1sen!2sin"
-              allowFullScreen="" loading="lazy" title='google-map'></iframe>
-          </div>
+
         </div>
 
 
 
         <div className='booking-setion section3' id='booking-section' >
-          <h3>Room Availability</h3>
+          <h3 data-aos="zoom-in" data-aos-delay='50' style={{ fontFamily: 'Geomainist' }}>Choose Your Room</h3>
           <div className='booking-wrapper'>
             <div className='room-card-wrapper'>
               {roomArr.map((room, i) => {
@@ -347,8 +348,9 @@ const ViewDetails = () => {
         {/* section3 booking section ends */}
 
 
-
-        <Reviews reviews={reviews} setReviews={setReviews} id={id} />
+        {(reviews.length <= 0) ? (null) : (
+          <Reviews reviews={reviews} setReviews={setReviews} id={id} />
+        )}
       </div>
     </>
   )

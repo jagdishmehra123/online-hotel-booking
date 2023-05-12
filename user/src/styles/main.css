@@ -32,7 +32,6 @@ video {
   flex-direction: column;
   margin-top: 100px;
   padding: 2rem 2rem 1rem 2rem;
-
   /* border:1px solid red; */
   /* font-family: 'Satisfy', cursive;     */
 
@@ -41,22 +40,27 @@ video {
 .home-text h1 {
   font-size: 60px;
   text-shadow: 2px 2px 2px black;
+  font-family: 'Geomanist';
+
 }
 
-.home-text h4{
+.home-text h4 {
   text-shadow: 2px 2px 2px black;
+  font-family: 'Geomanist';
+
+
 
 }
 
 
-.main .content-wrapper{
+.main .content-wrapper {
   /* border:1px solid black; */
   padding: 1rem 10rem;
   position: absolute;
-  top:46%;
+  top: 46%;
 }
 
-.main  .content-wrapper p{
+.main .content-wrapper p {
   text-align: center;
   font-weight: 600;
   font-size: 1rem;

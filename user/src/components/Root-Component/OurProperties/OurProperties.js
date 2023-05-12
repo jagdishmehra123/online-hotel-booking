@@ -1,10 +1,7 @@
 import './OurProperties.css'
 import React, { useState, useEffect } from 'react'
-import PropertyList from './PropertyList'
 import axios from "../../../helpers/axios";
-import Pagination from './Pagination'
-
-
+import PropertyCard from './Property-Card/PropertyCard'
 
 const Footer = React.lazy(() => import('../Footer/Footer'))
 
@@ -14,16 +11,11 @@ const OurProperties = () => {
   const [showRoomForm, setRoomForm] = useState(false)
   const [searchResortName, setSearchResortName] = useState('')
 
-  //Pagination
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(8)
-  const lastPostIndex = currentPage * postPerPage
-  const firstPostIndex = lastPostIndex - postPerPage
-  const currentList = allProperties.slice(firstPostIndex, lastPostIndex)
 
   const getPropertiesData = async () => {
     // await axios(`https://cubagoa-server.onrender.com/hotelbook`)
-    await axios.get(`/hotelbook`)
+    await axios.get(`http://localhost:4001/hotelbook`)
+
       .then((res) => {
         console.log('property list', res.data)
         setAllProperties(res.data)
@@ -54,12 +46,17 @@ const OurProperties = () => {
             <h6 style={{ margin: '20px 0' }}>BEACH HUTS, BUNGALOWS & RESORTS</h6>
           </div>
           <div className='properties-to-book'>
-            {/* filter section do at veyr last */}
             <input type='text' placeholder='Search' name='searchResortName' value={searchResortName}
-              onChange={(e) => setSearchResortName(e.target.value)} style={{width:'90%', paddingLeft:'1rem'}} />
+              onChange={(e) => setSearchResortName(e.target.value)} style={{ width: '90%', paddingLeft: '1rem' }} />
           </div>
-          <PropertyList currentList={currentList} searchResortName={searchResortName}   />
-          <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} />
+
+          <div className='property-card-wrapper' data-aos='zoom-in-down'>
+            {allProperties.map((property, index) => {
+              return (
+                <PropertyCard property={property} />
+              )
+            })}
+          </div>
         </div>
       </main >
       <Footer />

@@ -12,7 +12,7 @@ import ViewDetails from './components/Root-Component/view-details/ViewDetails';
 import Header from './components/Header/Header';
 import SpaDetails from './components/Root-Component/spa/Spa-details';
 import About from './components/Root-Component/About/About';
-// import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
+import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
 
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
 const Spa = React.lazy(() => import('./components/Root-Component/spa/Spa'))
@@ -53,9 +53,9 @@ function App() {
           } />
           <Route path='/rating-form/:resortId' element={<RatingForm />}> </Route>
           <Route path='/my-bookings' element={<MyBookings />}> </Route>
-          <Route path='/aboutus' element={<About/>}></Route>
+          <Route path='/aboutus' element={<About />}></Route>
 
-          
+          <Route path='/booking-page' element={<BookingPage />}></Route>
 
           <Route path="/spa" element={
             <Suspense fallback={<p>Loading....</p>}>
@@ -134,7 +134,7 @@ function App() {
               <LearnMore />
             </Suspense>
           } />
-          
+
 
 
 

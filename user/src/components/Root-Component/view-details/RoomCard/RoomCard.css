@@ -12,14 +12,12 @@
 }
 
 .RoomCard .imgwrap {
-    width: 40rem;
+    width: 50rem;
     height: 19rem;
     /* border:1px solid black; */
     padding: 0rem;
     position: relative;
     /* border: 0.5px solid rgb(58, 105, 149); */
-
-
 }
 
 .RoomCard .imgwrap img {

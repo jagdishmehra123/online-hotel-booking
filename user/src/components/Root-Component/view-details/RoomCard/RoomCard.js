@@ -48,8 +48,8 @@ const RoomCard = ({ room, cart, setCart, setMsg, setroomstatus, activeBtn, setAc
 
 
   return (
-    <div className='RoomCard'>
-      <div className='imgwrap'>
+    <div className='RoomCard' data-aos='slide-right' data-aos-delay='1'>
+      <div className='imgwrap' data-aos='fade-in' data-aos-delay='400'>
         <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={20} /></div>
         <img src={room.imgUrl[current]} alt='roomimage' />
         <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={20} /></div>

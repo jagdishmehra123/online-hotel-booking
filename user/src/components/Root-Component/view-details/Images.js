@@ -21,29 +21,10 @@ const Images = ({ imgArr ,resort}) => {
 
 
   return (
-    <div className='imagesWrapper'>
+    <div className='imagesWrapper' data-aos='zoom-in' data-aos-delay='200' data-aos-offset='10'>
       <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={25}/></div>
       <div className='roomimg'><img src={imgArr[current]} alt='' /></div>
       <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={25}/></div>
-
-      <div className='titles'>
-        <h3>{resort.resortName}</h3>
-        <div className='location'>
-          <div>
-            <Icon icon={location} size={20} style={{color:'darkgrey'}}/></div>
-            <h6>{resort.resortLocation}</h6>
-          </div>
-      </div>
-
-
-      <div className='titles2'>
-        <h3>{resort.resortName}</h3>
-        <div className='location'>
-          <div>
-            <Icon icon={location}/></div>
-            <h6>{resort.resortLocation}</h6>
-          </div>
-      </div>
     </div>
 
   )

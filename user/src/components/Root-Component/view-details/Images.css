@@ -1,11 +1,11 @@
 .imagesWrapper {
-    /* border:1px solid black; */
+    border: 1px solid black;
     height: 35rem;
-    width: 85%;
+    width: 75%;
     margin: auto;
     display: flex;
     position: relative;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .imagesWrapper .roomimg {
@@ -16,6 +16,7 @@
 .imagesWrapper .roomimg img {
     height: 100%;
     width: 100%;
+    padding: 0;
 }
 
 .imagesWrapper .icon1 {
