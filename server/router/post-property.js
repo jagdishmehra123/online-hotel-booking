@@ -113,7 +113,7 @@ router.patch("/updateTotalRoomsinDb/:id", async (req, res) => {
       res.status(200).json({
         message: "Total Rooms Data Updated Successfully"
       })
-    }else{
+    } else {
       res.status(200).json({
         message: "Total Rooms Data Updation Failed"
       })
@@ -146,6 +146,30 @@ router.delete("/hotelbook/:id", async (req, res) => {
 });
 
 
+
+//get specific room details
+router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
+  const { resortId, roomId } = req.params
+  console.log(resortId, roomId)
+  try {
+    const resort = await HotelBook.findOne({ _id: resortId })
+    let resortRoom;
+    for (let i = 0; i < resort.rooms.length; i++) {
+      if (resort.rooms[i].roomId === roomId) {
+        console.log('room found', resort.rooms[i])
+        resortRoom = resort.rooms[i]
+        break;
+      }
+      else {
+        console.log('room not found width this id')
+      }
+    }
+    resp.json({ success: true, data:resortRoom })
+  }
+  catch (err) {
+    resp.json({ success: false, message: `cannot find data ${err}`, })
+  }
+})
 
 
 
