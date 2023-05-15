@@ -26,7 +26,7 @@ const MyBookings = () => {
     }, [])
 
 
-    const handleFeedbackButton=(id)=>{
+    const handleFeedbackButton = (id) => {
         console.log(id)
         navigate(`/rating-form/${id}`)
     }

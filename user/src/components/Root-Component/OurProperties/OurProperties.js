@@ -8,13 +8,13 @@ const Footer = React.lazy(() => import('../Footer/Footer'))
 
 const OurProperties = () => {
   const [allProperties, setAllProperties] = useState("")
-  const [showRoomForm, setRoomForm] = useState(false)
+  // const [showRoomForm, setRoomForm] = useState(false)
   const [searchResortName, setSearchResortName] = useState('')
 
 
   const getPropertiesData = async () => {
-    // await axios(`https://cubagoa-server.onrender.com/hotelbook`)
-    await axios.get(`http://localhost:4001/hotelbook`)
+    await axios(`https://cubagoa-server.onrender.com/hotelbook`)
+    // await axios.get(`http://localhost:4001/hotelbook`)
 
       .then((res) => {
         console.log('property list', res.data)
@@ -50,7 +50,7 @@ const OurProperties = () => {
               onChange={(e) => setSearchResortName(e.target.value)} style={{ width: '90%', paddingLeft: '1rem' }} />
           </div>
 
-          <div className='property-card-wrapper' data-aos='zoom-in-down'>
+          <div className='property-card-wrapper' >
             {allProperties.map((property, index) => {
               return (
                 <PropertyCard property={property} />

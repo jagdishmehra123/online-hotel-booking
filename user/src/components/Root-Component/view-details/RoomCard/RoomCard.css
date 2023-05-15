@@ -67,7 +67,7 @@
     width: fit-content;
     margin-top: 0.5rem;
     font-size: 0.8rem;
-    border: 0.2px solid black;
+    border: 0.2px solid grey;
     border-collapse: collapse;
     margin-left: 5px;
     color: rgb(10, 85, 119);
@@ -93,6 +93,7 @@
     height: 2rem;
     margin-top: 0.7rem;
     padding-top: 0.3rem;
+    font-family: 'Lucida Sans';
 }
 
 .RoomCard div .row4 button:hover {

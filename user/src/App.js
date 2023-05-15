@@ -55,7 +55,7 @@ function App() {
           <Route path='/my-bookings' element={<MyBookings />}> </Route>
           <Route path='/aboutus' element={<About />}></Route>
 
-          <Route path='/booking-page' element={<BookingPage />}></Route>
+          <Route path='/booking-summary/:resortname/:resortId/:roomId' element={<BookingPage />}></Route>
 
           <Route path="/spa" element={
             <Suspense fallback={<p>Loading....</p>}>

@@ -216,7 +216,7 @@ const ViewDetails = () => {
                 })
               }
             </div> */}
-            <p>{resort.resortDescription}</p>
+            <p >{resort.resortDescription}</p>
           </div>
 
         </div>
@@ -224,12 +224,12 @@ const ViewDetails = () => {
 
 
         <div className='booking-setion section3' id='booking-section' >
-          <h3 data-aos="zoom-in" data-aos-delay='50' style={{ fontFamily: 'Geomainist' }}>Choose Your Room</h3>
+          <h3 data-aos="zoom-in" data-aos-delay='20' style={{ fontFamily: 'Geomainist' }}>Choose Your Room</h3>
           <div className='booking-wrapper'>
             <div className='room-card-wrapper'>
               {roomArr.map((room, i) => {
                 return (
-                  <RoomCard
+                  <RoomCard resortId={id} resortname={resortname}
                     room={room}
                     cart={cart} setCart={setCart}
                     roomArr={roomArr}
@@ -240,109 +240,6 @@ const ViewDetails = () => {
               })}
             </div>
 
-
-            <div className='booking-cart-wrapper'>
-              <div >
-                <h4>MY BOOKINGS</h4>
-                {/* <div>Rooms</div> */}
-              </div>
-
-              <div className='booking-cards'>
-
-                {
-                  (cart.length > 0) ? (
-                    cart.map((item, i) => {
-                      return (
-                        <div className='minicard'>
-                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <h5>{item.room.roomType}</h5>
-                            <Icon icon={bin} id='deleteicon' onClick={() => { handleDelete(i) }}></Icon>
-                          </div>
-                          <div style={{ display: 'flex' }}>
-                            <p>
-                              No of Rooms :
-                              <span style={{ paddingLeft: '1rem', fontSize: '1.1rem', fontWeight: 'bold' }}>{item.quantity}</span>
-                            </p>
-                            <p>
-                              Price:
-                              <span style={{ paddingLeft: '1rem', fontSize: '1.1rem', fontWeight: 'bold' }}>
-                                Rs.{(item.room.ratePerNight) * (item.quantity)}
-                              </span>
-                            </p>
-                          </div>
-                          {roomstatus && <p style={{ color: 'red' }}>{msg}</p>}
-                          <div style={{ display: 'flex', justifyContent: 'end' }}>
-                            <button onClick={() => handleAdd(item.room, item.room.roomId)}
-                              style={{
-                                marginRight: '1rem',
-                                backgroundColor: 'lightgrey',
-                                padding: '0.1rem 0.5rem', color: 'black'
-                              }}>+</button>
-                            <button onClick={() => handleRemove(item.room, item.room.roomId, i)}
-                              style={{
-                                marginRight: '1rem',
-                                backgroundColor: 'lightgrey',
-                                padding: '0.1rem 0.5rem', color: 'black'
-                              }}
-                            >-</button>
-                          </div>
-                        </div>
-                        //  {item.quantity}
-                        //  {(item.room.ratePerNight) * (item.quantity)}
-
-                      )
-                    })
-
-                  ) : (
-                    <ul>
-                      <li>Immediate confirmation</li>
-                      <li>No extra booking charges</li>
-                    </ul>
-                  )
-                }
-              </div>
-              {cart.length > 0 ? (<p onClick={handleReset}
-                style={{ textAlign: 'right', cursor: 'pointer' }}>
-                RESET
-              </p>) : (null)}
-              {(cart.length > 0) ? (
-                <p style={{
-                  backgroundColor: 'lightblue',
-                  padding: '0.7rem', paddingBottom: '0.4rem', fontSize: '1.2rem',
-                  border: '0px',
-                  marginTop: '1rem',
-                }}>
-                  Your Total Amount:
-                  <p style={{
-                    float: 'right', fontWeight: 'bold', letterSpacing: '2px'
-                  }}>Rs. {cart.reduce((total, item) => total + item.room.ratePerNight * item.quantity, 0)}</p>
-                </p>
-
-              ) : (null)}
-
-
-              {(cart.length > 0) ? (
-                <form onSubmit={handleBooking}>
-                  <h6>Please fill your details for confirmation</h6>
-
-                  <div className='form'>
-                    <input type='text' placeholder='Full Name' name='name'
-                      value={bookingForm.name} onChange={handleInputs} />
-                    <input type='email' placeholder='Email' name='email'
-                      value={bookingForm.email} onChange={handleInputs} />
-                    <input type='text' placeholder='Contact' name='contact'
-                      value={bookingForm.contact} onChange={handleInputs} />
-                  </div>
-
-                  <div className='reserveBtn'>
-                    {formErr && <p
-                      style={{ color: 'red' }}>Form Fields cannot be empty</p>}
-                    <button type='submit'>BOOK NOW</button>
-                  </div>
-                </form>
-              ) :
-                (null)}
-            </div>
           </div>
         </div>
         {/* section3 booking section ends */}

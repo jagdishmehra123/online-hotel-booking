@@ -50,6 +50,8 @@
     font-size: 1.2rem;
     font-family: 'calibri';
     background-color: rgba(0, 0, 0,0.1);
+    font-family: "Rajdhani, sans-serif";
+
 
 }
 
@@ -67,11 +69,15 @@
 .card-footer-lb>:nth-child(1){
     text-align: left;
     font-size: 16px;
+    font-family: "Rajdhani, sans-serif";
+
 }
 
 .card-footer-lb>:nth-child(2){
     font-size: 20px;
     font-weight: 500;
+    font-family: "Rajdhani, sans-serif";
+
 }
 
 
@@ -81,12 +87,15 @@
 .property-card-container
 .card-footer-rb>div:nth-child(2){
     margin-top: 5px;
+    font-family: "Rajdhani, sans-serif";
+
 }
 
 .property-card-container
     #property-card-add-btn{
     background-color: rgb(250, 199, 106);
     color: rgb(49, 49, 49);
+
 }
 
 .property-card-container
