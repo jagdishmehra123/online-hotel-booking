@@ -151,7 +151,7 @@
         width: 100%;
         margin: auto;
         margin-top: 0rem;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     .view-details-wrapper .section3>h3 {
