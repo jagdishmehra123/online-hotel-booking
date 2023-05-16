@@ -77,8 +77,10 @@ const Header = ({ auth, setAuth }) => {
             <Button className='btn-item' onClick={() => navigate('/')}>Home</Button>
             <Button className='btn-item' onClick={() => navigate('/our-properties')}>OUR PROPERTIES</Button>
             <Button className='btn-item' onClick={() => navigate('/spa')}>SPA</Button>
-            {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings') }}>MY BOOKINGS</Button>) : (null)}
+            <Button className='btn-item' onClick={() => navigate('/gallery')}>GALLERY</Button>
+
             <Button className='btn-item' onClick={() => navigate('/aboutus')}>About Us</Button>
+            {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings') }}>MY BOOKINGS</Button>) : (null)}
 
             {auth ?
               (<Button className='btn-item' onClick={() => {

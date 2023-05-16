@@ -20,6 +20,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
     "react-icons-kit": "^2.0.0",
+    "react-image-gallery": "^1.2.11",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",

@@ -11,12 +11,12 @@ const MyBookings = () => {
 
     const token = localStorage.getItem('token')
     const getBookingData = async () => {
-        const response = await axios.get('/get-bookings', {
+        const response = await axios.get('https://online-hotel-booking-puce.vercel.app/get-bookings', {
             headers: {
                 authorization: token
             }
         })
-        console.log(response.data.list[0].cart)
+        console.log(response)
         setList(response.data.list)
     }
 

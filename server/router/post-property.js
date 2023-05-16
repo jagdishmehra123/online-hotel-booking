@@ -164,10 +164,32 @@ router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
         console.log('room not found width this id')
       }
     }
-    resp.json({ success: true, data:resortRoom })
+    resp.json({ success: true, data: resortRoom })
   }
   catch (err) {
     resp.json({ success: false, message: `cannot find data ${err}`, })
+  }
+})
+
+
+
+
+router.get('/images', async (req, resp) => {
+  const imgArr = []
+  try {
+    const Data = await HotelBook.find()
+    for (let property of Data) {
+      for (let i = 0; i < property.rooms.length; i++) {
+        for (let j = 0; j < property.rooms[i].imgUrl.length; j++) {
+          imgArr.push(property.rooms[i].imgUrl[j])
+        }
+      }
+    }
+    console.log('imgArr=>', imgArr)
+    resp.json({success:true, data:imgArr})
+  }
+  catch (err) {
+    resp.json({ success: false, message: err })
   }
 })
 

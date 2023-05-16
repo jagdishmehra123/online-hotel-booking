@@ -13,6 +13,7 @@ import Header from './components/Header/Header';
 import SpaDetails from './components/Root-Component/spa/Spa-details';
 import About from './components/Root-Component/About/About';
 import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
+import Gallary from './components/Root-Component/Gallary/Gallary'
 import { Toaster } from 'react-hot-toast';
 
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -21,7 +22,6 @@ const Spa = React.lazy(() => import('./components/Root-Component/spa/Spa'))
 // const Resorts = React.lazy(() => import('./components/Root-Component/Resorts/Resorts'))
 const OurProperties = React.lazy(() => import('./components/Root-Component/OurProperties/OurProperties'))
 const ContactUs = React.lazy(() => import('./components/Root-Component/Contact/ContactUs'))
-const Gallery = React.lazy(() => import('./components/Root-Component/Gallery/Gallery'))
 // const BookingPage = React.lazy(() => import('./components/Root-Component/BookingPage/BookingPage'))
 const Signin = React.lazy(() => import('./components/Root-Component/signin/Signin'))
 const ShowInfoOfRoomCart = React.lazy(() => import('./components/Root-Component/Home/ShowInfoOfRoomCart'))
@@ -61,7 +61,7 @@ function App() {
           <Route path='/aboutus' element={<About />}></Route>
 
           <Route path='/booking-summary/:resortname/:resortId/:roomId' element={<BookingPage />}></Route>
-
+          <Route path='/gallery' element={<Gallary />}></Route>
           <Route path="/spa" element={
             <Suspense fallback={<p>Loading....</p>}>
               <>
@@ -120,13 +120,7 @@ function App() {
 
           } />
 
-          <Route path='/gallery' element={
-            <Suspense fallback={<p>Loading....</p>}>
-              <>
-                <Gallery />
-                <Footer />
-              </>
-            </Suspense>} />
+
 
           <Route path='/view-room-info/:id/:idChild'
             element={
