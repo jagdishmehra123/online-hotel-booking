@@ -17,39 +17,7 @@ const Reviews = ({ reviews, setReviews, id }) => {
         //eslint-disable-next-line
     }, [])
     return (
-        <div className='review-wrapper'>
-            <h5>Reviews</h5>
-            <div className='wrapper' >
-                {reviews.map((item, i) => {
-                    return (
-                        <div className='card' key={i + 1} style={{ border: '1px solid lightgrey' }}>
-                            <div>
-                                <div>
-                                    <div>
-                                        <img src={user} alt='userIcon' />
-                                    </div>
-                                    <h6>{item.name}</h6>
-                                </div>
-
-                                <div>
-                                    {/* <span>{item.rating}</span> */}
-                                    {[...Array(item.rating)].map((_, i) => {
-                                        return (
-                                            <FaStar size={17} style={{ color: 'orange' }} key={i + 1} />
-
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            <div>
-                                {item.additionalComments}
-                            </div>
-                        </div>
-                    )
-                }
-                )}
-            </div>
-        </div >
+       <div></div>
     )
 }
 
