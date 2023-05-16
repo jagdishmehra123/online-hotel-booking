@@ -2,13 +2,13 @@ import axios from '../../../../helpers/axios'
 import './Reviews.css'
 import React, { useEffect } from 'react'
 import { FaStar } from 'react-icons/fa';
-
+import user from '../../../../assets/profile.png'
 const Reviews = ({ reviews, setReviews, id }) => {
 
 
     const getRatingList = async () => {
         // console.log('id=>', id)
-        const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/get-reviews/${id}`)
+        const response = await axios.get(`/get-reviews/${id}`)
         // console.log(response.data.list)
         setReviews(response.data.list)
     }
@@ -22,14 +22,20 @@ const Reviews = ({ reviews, setReviews, id }) => {
             <div className='wrapper' >
                 {reviews.map((item, i) => {
                     return (
-                        <div className='card' key={i+1}>
+                        <div className='card' key={i + 1} style={{ border: '1px solid lightgrey' }}>
                             <div>
-                                <h6>{item.name}</h6>
+                                <div>
+                                    <div>
+                                        <img src={user} alt='userIcon' />
+                                    </div>
+                                    <h6>{item.name}</h6>
+                                </div>
+
                                 <div>
                                     {/* <span>{item.rating}</span> */}
                                     {[...Array(item.rating)].map((_, i) => {
                                         return (
-                                            <FaStar size={19} style={{ color: 'orange' }} key={i + 1} />
+                                            <FaStar size={17} style={{ color: 'orange' }} key={i + 1} />
 
                                         )
                                     })}
@@ -37,13 +43,13 @@ const Reviews = ({ reviews, setReviews, id }) => {
                             </div>
                             <div>
                                 {item.additionalComments}
-                                </div>
+                            </div>
                         </div>
                     )
                 }
                 )}
             </div>
-        </div>
+        </div >
     )
 }
 

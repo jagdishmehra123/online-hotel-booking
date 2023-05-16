@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './BookingPage.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from '../../../../helpers/axios'
-import { TextField } from '@mui/material'
-import StripeCheckout from 'react-stripe-checkout';
+import { Button, TextField } from '@mui/material'
+import { toast } from 'react-hot-toast'
+
 
 const BookingPage = ({ }) => {
+    const navigate = useNavigate()
     const { resortname, resortId, roomId } = useParams()
     const [room, setRoom] = useState('a')
+
     //get room details
     const getRoom = async () => {
         try {
@@ -29,6 +32,48 @@ const BookingPage = ({ }) => {
         console.log('setroom', room)
         // eslint-disable-next-line
     }, [])
+
+
+
+    //booking form
+    const [bookingForm, setBookingForm] = useState({
+        specialRequest: '',
+        email: '', name: '', contact: '', checkIn: '', checkOut: ''
+    })
+    //handle inputs
+    const handleInputs = (e) => {
+        setBookingForm(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
+    }
+    //handle checkout
+    const checkout = async () => {
+        const token = localStorage.getItem('token')
+        console.log(bookingForm)
+        const bookingData = {
+            name: bookingForm.name,
+            email: bookingForm.email,
+            contact: bookingForm.contact,
+            resortname: resortname,
+            resortId: resortId,
+            roomType: room.roomType,
+            checkIn: bookingForm.checkIn,
+            checkOut: bookingForm.checkOut,
+            specialRequest: bookingForm.specialRequest,
+            totalAmount: room.ratePerNight
+        }
+        try {
+            const response = await axios.post('/booking-form', bookingData, {
+                headers: {
+                    authorization: token
+                }
+            })
+            console.log(response)
+            toast.success('Thanks! we reserved a room for you')
+            navigate('/my-bookings')
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 
 
 
@@ -91,7 +136,7 @@ const BookingPage = ({ }) => {
                     <h3>Special Request</h3>
                     <h6>Please explain your request: arrival time, flight details, food preferences, membership number...</h6>
                     <div>
-                        <textarea />
+                        <textarea name='specialRequest' value={bookingForm.specialRequest} onChange={handleInputs} />
                     </div>
                 </div>
             </div>
@@ -107,25 +152,31 @@ const BookingPage = ({ }) => {
                         <h6>Personal Details</h6>
                         <form className='guestform'>
                             <div><TextField type='email' className='form-input'
-                                id="outlined-basic" label="Email address" variant="outlined" required />
+                                id="outlined-basic" label="Email address" variant="outlined" required
+                                name='email' value={bookingForm.email} onChange={handleInputs} />
                             </div>
                             <div>
                                 <TextField type='text' className='form-input'
-                                    id="outlined-basic" label="Full Name" variant="outlined" required />
+                                    id="outlined-basic" label="Full Name" variant="outlined" required
+                                    name='name' value={bookingForm.name} onChange={handleInputs} />
                             </div>
                             <div>
                                 <TextField type='number' className='form-input'
-                                    id="outlined-basic" label="Phone Number" variant="outlined" required />
+                                    id="outlined-basic" label="Phone Number" variant="outlined" required
+                                    name='contact' value={bookingForm.contact} onChange={handleInputs} />
+
                             </div>
                             <div>
                                 <lable>Check-in date</lable>
                                 <TextField type='date' className='form-input'
-                                    id="outlined-basic" variant="outlined" required />
+                                    id="outlined-basic" variant="outlined" required
+                                    name='checkIn' value={bookingForm.checkIn} onChange={handleInputs} />
                             </div>
-                            <div style={{marginTop:'2rem'}}>
+                            <div style={{ marginTop: '2rem' }}>
                                 <lable>Check-out date</lable>
                                 <TextField type='date' className='form-input'
-                                    id="outlined-basic" variant="outlined" required />
+                                    id="outlined-basic" variant="outlined" required
+                                    name='checkOut' value={bookingForm.checkOut} onChange={handleInputs} />
                             </div>
                         </form>
                     </div>
@@ -140,6 +191,12 @@ const BookingPage = ({ }) => {
                     {/* payment infomation ends */}
 
                 </div>
+
+
+                <div className='checkout-btn'>
+                    <Button className='button' onClick={checkout}>CheckOut</Button>
+                </div>
+
 
             </div>
 

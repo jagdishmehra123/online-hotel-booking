@@ -170,6 +170,7 @@
     "minizlib": "^2.1.2",
     "mkdirp": "^1.0.4",
     "mkdirp-classic": "^0.5.3",
+    "moment": "^2.29.4",
     "mongodb": "^5.1.0",
     "mongodb-connection-string-url": "^2.6.0",
     "mongoose": "^7.0.5",

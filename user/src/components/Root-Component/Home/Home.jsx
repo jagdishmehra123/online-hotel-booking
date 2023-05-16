@@ -26,7 +26,7 @@ const Home = () => {
 
   const [allProperties, setAllProperties] = useState([])
   const getPropertiesData = async () => {
-    await axios(`https://cuba-goa-server.onrender.com/hotelbook`)
+    await axios.get(`/hotelbook`)
       // await axios(`http://localhost:4001/hotelbook`)
       .then((res) => {
         // console.log(res.data)

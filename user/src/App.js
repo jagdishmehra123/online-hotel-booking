@@ -13,6 +13,7 @@ import Header from './components/Header/Header';
 import SpaDetails from './components/Root-Component/spa/Spa-details';
 import About from './components/Root-Component/About/About';
 import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
+import { Toaster } from 'react-hot-toast';
 
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
 const Spa = React.lazy(() => import('./components/Root-Component/spa/Spa'))
@@ -28,10 +29,14 @@ const LearnMore = React.lazy(() => import('./components/Root-Component/Home/Lear
 
 
 
+
+
 function App() {
+
   const [auth, setAuth] = useState('')
   return (
     <div style={{ position: 'relative' }}>
+      <Toaster position="top-center" reverseOrder={false} />
 
       <BrowserRouter>
         <Header auth={auth} setAuth={setAuth} />

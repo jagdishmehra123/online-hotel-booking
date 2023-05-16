@@ -13,8 +13,8 @@ const OurProperties = () => {
 
 
   const getPropertiesData = async () => {
-    await axios(`https://cubagoa-server.onrender.com/hotelbook`)
-    // await axios.get(`http://localhost:4001/hotelbook`)
+    await axios.get(`/hotelbook`)
+      // await axios.get(`http://localhost:4001/hotelbook`)
 
       .then((res) => {
         console.log('property list', res.data)
@@ -51,11 +51,21 @@ const OurProperties = () => {
           </div>
 
           <div className='property-card-wrapper' >
-            {allProperties.map((property, index) => {
-              return (
-                <PropertyCard property={property} />
+            {allProperties.filter((property) => {
+              if (searchResortName === "") {
+                return property
+              }
+              else {
+                if (property.resortName.includes(searchResortName)) {
+                  return property
+                }
+              }
+            }).map((property) => {
+              return(
+              <PropertyCard property={property} />
               )
             })}
+
           </div>
         </div>
       </main >

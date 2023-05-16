@@ -8,12 +8,12 @@ const Footer = () => {
   const navigate = useNavigate()
   return (
     <>
-      <div className='fintPrintBar'>
+      {/* <div className='fintPrintBar'>
         <div className='row'>
           <p><strong>Please note the current interest rate as of November 2022:</strong></p>
           <p >From 7.99% OAC with amortization of 180 months for new cottages. Maximum to finance $200,000. These rates are subject to change without notice. E &amp; O.E. For down payments, a maximum of $20,000 can be paid using a credit card. Any further payments can be paid by transfer or certified cheque.</p>
         </div>
-      </div>
+      </div> */}
 
 
       <footer id='footer'>

@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './RatingForm.css'
 import { FaStar } from 'react-icons/fa';
 import axios from "../../../helpers/axios";
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-hot-toast'
+
 
 const RatingForm = () => {
+  const navigate=useNavigate()
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
   const { resortId } = useParams()
@@ -22,12 +25,15 @@ const RatingForm = () => {
   const handleSubmit = async () => {
     console.log(ratingform)
     // try{
-    const response = await axios.post('/rate-us', ratingform, {
+    const response = await axios.post('http://localhost:4001/rate-us', ratingform, {
       headers: {
         authorization: token
       }
     })
     console.log(response)
+    toast.success('Thank you for your feedback!')
+    navigate('/our-properties')
+
     // }
     // catch(err){
     //   console.log(err)

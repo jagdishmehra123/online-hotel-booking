@@ -1,145 +1,30 @@
-.imagesWrapper {
-    /* border: 1px solid black; */
-    height: 35rem;
-    width: 75%;
-    margin: auto;
-    display: flex;
+.slider {
     position: relative;
-    margin-top: 1rem;
+    width: 70%;
+    height: 30rem;
+    margin: auto;
 }
 
-.imagesWrapper .roomimg {
-    /* border:1px solid black; */
+.slider img {
+    position: absolute;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    opacity: 0;
     width: 100%;
-}
-
-.imagesWrapper .roomimg img {
     height: 100%;
-    width: 100%;
-    padding: 0;
 }
 
-.imagesWrapper .icon1 {
-    display: flex;
-    position: absolute;
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    color: white;
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.imagesWrapper .icon2 {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 0%;
-    top: 50%;
-    color: white;
-}
-
-.imagesWrapper .titles {
-    position: absolute;
-    bottom: 0%;
-    color: orange;
-    /* border:1px solid white; */
-    height: fit-content;
-    width: fit-content;
-    padding: 2rem 10rem 2rem 2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    letter-spacing: 4px;
-    display: block;
-    box-shadow: 0px 0px 10000px 0px white;
-}
-
-
-.imagesWrapper .titles h3 {
-    text-align: left;
-    font-size: 1.8;
-    text-shadow: 1px 1px 1px black;
-}
-
-.imagesWrapper .titles .location {
-    display: flex;
-}
-
-.imagesWrapper .titles .location h6 {
-    font-size: 1.2rem;
-    padding-top: 0.2rem;
-    margin-left: 1rem;
-}
-
-.imagesWrapper .titles2 {
-    display: none;
-}
-
-
-@media only screen and (max-width:900px) {
-    .imagesWrapper {
-        /* border:1px solid black; */
-        height: 30rem;
-        width: 100%;
-        display: flex;
-        position: relative;
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .imagesWrapper .roomimg {
-        /* border:1px solid black; */
-        width: 100%;
-        height: 30rem;
-    }
-
-    .imagesWrapper .roomimg img {
-        height: 100%;
-        width: 100%;
-    }
-
-    .imagesWrapper .icon1 {
-        display: flex;
-        position: absolute;
-        position: absolute;
-        left: 0%;
-        top: 50%;
-        color: white;
-    }
-
-    .imagesWrapper .icon2 {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: 0%;
-        top: 50%;
-        color: white;
-    }
-
-
-    .imagesWrapper .titles {
-        display: none;
-    }
-
-    .imagesWrapper .titles2 {
-        display: block;
-        /* border: 1px solid black; */
-        padding: 1rem 1rem 0rem 0.5rem;
-    }
-
-
-
-    .imagesWrapper .titles2 h3 {
-        text-align: left;
-        font-size: 1.8;
-        text-shadow: 1px 1px 1px black;
-    }
-
-    .imagesWrapper .titles2 .location {
-        display: flex;
-    }
-
-    .imagesWrapper .titles2 .location h6 {
-        padding-top: 0.2rem;
-        margin-left: 0.5rem;
-    }
-
+.slider img.active {
+    z-index: 1;
+    opacity: 1;
 }

@@ -31,11 +31,11 @@ export default function SpaDetails() {
     const handleInputs = (e) => {
         setSpaForm(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
     }
-    const handleBooking = async(e) => {
+    const handleBooking = async (e) => {
         // Redirect user to booking page
         e.preventDefault()
         try {
-            const response =await axios.post('/spa-booking', spaForm)
+            const response = await axios.post('/spa-booking', spaForm)
             console.log(response.data)
             alert('We reserved your booking')
             navigate('/spa')
@@ -52,14 +52,12 @@ export default function SpaDetails() {
                 <div className="spa-details-img">
                     <img src={details.imgUrl} alt="Spa" />
                 </div>
-
-                <div className="spa-details-content">
+                <div className='headings'>
                     <h2>{details.name}</h2>
                     <h4>AYURVEDIC SPA TREATMENT AT CUBA GOA</h4>
-                    <p>
-                        Welcome to a World of Rejuvenation. At Kalpaka Spa– Find Yourself In
-                        The Hands Of Our Expert Masseurs – All The Way From Kerala.
-                    </p>
+                </div>
+                <div className="spa-details-content">
+
                     <ul>
                         <li>{details.details}</li>
                         <li>

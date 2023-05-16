@@ -34,7 +34,7 @@ const ViewDetails = () => {
   //GET PROPERTY DETAILS
   const getProperty = async () => {
     try {
-      const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
+      const response = await axios.get(`/resort-details/${id}`)
       console.log('view details of resort', response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
@@ -189,7 +189,6 @@ const ViewDetails = () => {
   }
 
 
-  //GET RATING
 
 
   return (
@@ -201,7 +200,7 @@ const ViewDetails = () => {
         </div>
 
         {/* section1 */}
-        <Images imgArr={imgArr} resort={resort} />
+        <Images images={imgArr} interval={1800} />
         {/* section1 ends*/}
 
 
@@ -245,9 +244,7 @@ const ViewDetails = () => {
         {/* section3 booking section ends */}
 
 
-        {(reviews.length <= 0) ? (null) : (
           <Reviews reviews={reviews} setReviews={setReviews} id={id} />
-        )}
       </div>
     </>
   )

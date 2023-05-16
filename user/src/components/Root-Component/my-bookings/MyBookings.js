@@ -1,5 +1,5 @@
-import './MyBookings.css'
 import React, { useState, useEffect } from 'react'
+import './MyBookings.css'
 import { useNavigate } from 'react-router-dom'
 import axios from "../../../helpers/axios";
 
@@ -25,7 +25,7 @@ const MyBookings = () => {
         // eslint-disable-next-line
     }, [])
 
-
+    //handle add review button
     const handleFeedbackButton = (id) => {
         console.log(id)
         navigate(`/rating-form/${id}`)
@@ -33,48 +33,25 @@ const MyBookings = () => {
 
     return (
         <div className='my-bookings-wrapper'>
-            <h3>MY BOOKINGS</h3>
+            <div className='heading'><h3 style={{ fontFamily: 'Geomanist', textAlign: 'center' }}>MY BOOKINGS</h3></div>
 
             <div className='wrapper'>
                 {list.map((booking, i) => {
                     return (
-                        <div className='card' key={i + 1}>
-                            <div className='row1'>
-                                <p>Total Amount</p>
-                                <h5>Rs.  {booking.totalAmount}</h5>
+                        <div className="booking-card">
+                            <div className="resort-details">
+                                <h4 style={{ fontFamily: 'Geomanist', opacity: '0.6', textAlign: 'center' }}>{booking.resortname}</h4>
+                                <p className="room-type">Room Type: {booking.roomType}</p>
+                                <p className='.booking-dates' style={{ fontFamily: "Rajdhani, sans-serif" }}>Check-in: {booking.checkIn}</p>
+                                <p className='.booking-dates' style={{ fontFamily: "Rajdhani, sans-serif" }}>Check-out: 17 May 2023</p>
                             </div>
-                            <div className='row2'>
-                                <h5>{booking.resortname}</h5>
-                                <p></p>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Room Type</th>
-                                            <th>No of Rooms</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {booking.cart.map((item, i) => {
-                                            return (
-                                                <tr key={i + 1}>
-                                                    <td>{item.room.roomType}</td>
-                                                    <td>{item.quantity}</td>
-                                                    <td>{item.quantity}*{item.room.ratePerNight}
-                                                        <br />
-                                                        =
-                                                        <span style={{ marginLeft: '0.3rem', fontWeight: 'bold' }}
-                                                        >{(item.quantity) * (item.room.ratePerNight)}</span></td>
-                                                </tr>
-                                            )
-                                        })
-                                        }
-                                    </tbody>
-                                </table>
+
+                            <div className="booking-rate">
+                                <p className="rate">Rate per night: $300</p>
+                                <p className="total-amount" style={{ fontFamily: "Rajdhani, sans-serif" }}>Total amount paid: $600</p>
                             </div>
-                            <div className='row3' >
-                                <button id='rateusbtn' onClick={() => handleFeedbackButton(booking.resortId)}>Share Feedback</button>
-                            </div>
+                            <div className='revbtn-wrap'><button className="review-btn"
+                                onClick={() => handleFeedbackButton(booking.resortId)}>Add Review</button></div>
                         </div>
                     )
                 })}

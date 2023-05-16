@@ -5,10 +5,13 @@ const BookingSchema = {
   name:String,
   email:String,
   contact:Number,
-  totalAmount:Number,
   resortname:String,
   resortId:String,
-  cart:Array,
+  roomType:String,
+  checkIn:String,
+  checkOut:String,
+  specialRequest:String,
+  totalAmount:Number,
   client:mongoose.Schema.Types.ObjectId
 };
 

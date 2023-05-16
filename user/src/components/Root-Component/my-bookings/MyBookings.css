@@ -1,130 +1,228 @@
 .my-bookings-wrapper {
     /* border: 1px solid black; */
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
 
 .my-bookings-wrapper h3 {
     text-align: center;
 }
 
-.my-bookings-wrapper .wrapper {
-    /* border: 1px solid black; */
-    margin-top: 1.5rem;
+.my-bookings-wrapper .wrapper{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
 }
 
-.my-bookings-wrapper .wrapper .card {
-    width: 23%;
-    margin-left: 1.5rem;
-    background-color: rgb(252, 252, 252);
-    box-shadow: 1px 1px 1px 1px grey;
-    padding-bottom: 0.5rem;
-    margin-top: 1rem;
-
-}
-
-.my-bookings-wrapper .wrapper .card .row1 {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid grey;
-}
-
-.my-bookings-wrapper .wrapper .card .row1 p,
-.my-bookings-wrapper .wrapper .card .row1 h5 {
-    /* border: 1px solid black; */
-    width: 50%;
-    padding: 1rem 1rem 0.5rem 1rem;
-}
-
-.my-bookings-wrapper .wrapper .card .row1 h5 {
-    text-align: right;
-    text-align: center;
-}
-
-.my-bookings-wrapper .wrapper .card .row2 {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
-
-}
-
-.my-bookings-wrapper .card .row2 table {
-    border: 1px solid rgb(183, 183, 183);
-    width: 100%;
-    margin-bottom: 0.5rem;
-
-}
-
-.my-bookings-wrapper .card .row2 table thead {
-    /* border: 0.5px solid black; */
-}
-
-.my-bookings-wrapper .card .row2 table thead tr th {
-    border-collapse: collapse;
-    border: 1px solid grey;
-    padding-left: 0.3rem;
-}
-
-.my-bookings-wrapper .card .row2 table thead tr th:first-child {
-    width: 40%;
-}
-
-.my-bookings-wrapper .card .row2 table thead tr th:nth-child(2) {
+.booking-card {
     width: 25%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.my-bookings-wrapper .card .row2 table tbody tr td {
-    border-collapse: collapse;
-    border: 1px solid grey;
-    padding-left: 0.3rem;
+.booking-card:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-.my-bookings-wrapper .card .row2 table tbody tr td:first-child {
-    padding-left: 0.3rem;
-}
-
-.my-bookings-wrapper .card .row2 table tbody tr td:nth-child(2) {
+.booking-card .resort-details div{
     text-align: center;
+    border:1px solid black;
+    width: 100%;
 }
 
-.my-bookings-wrapper .card .row2 table tbody tr td:last-child {
-    height: 3rem;
+
+.booking-card .row1{
+    display: flex;
 }
 
-.my-bookings-wrapper .card .row3 #rateusbtn {
-    background-color: orange;
-    border-radius: 0.1rem;
-    float: right;
-    margin-right: 1rem;
-    padding: 0.2rem 1rem;
-    font-weight: normal;
+
+.resort-details {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+.room-type {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.capacity {
+    color: #666;
+    font-size: 1.1em;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.booking-dates {
+    margin-bottom: 20px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.booking-rate {
+    margin-bottom: 20px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.rate {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Rajdhani, sans-serif";
+
+}
+
+.total-amount {
+    color: #666;
+    font-size: 1em;
+    font-family: "Rajdhani, sans-serif";
+
+}
+.revbtn-wrap{
+    /* border:1px solid black; */
+    display: flex;
+    align-items: right;
+    justify-content: center;
+}
+.review-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.3rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-
+    transition: background-color 0.3s ease-in-out;
 }
 
-@media only screen and (max-width:900px) {
+.review-btn:hover {
+    background-color: #3e8e41;
+}
+
+
+
+@media only screen and (max-width:900px){
     .my-bookings-wrapper {
         /* border: 1px solid black; */
-        margin-top: 7rem;
-
+        margin-top: 6rem;
     }
-
-    .my-bookings-wrapper .wrapper {
-        /* border: 1px solid black; */
-        margin-top: 0rem;
+    
+    .my-bookings-wrapper h3 {
+        text-align: center;
+    }
+    
+    .my-bookings-wrapper .wrapper{
         display: flex;
         flex-direction: column;
+        margin: auto;
+    }
+    
+    .booking-card {
+        width: 95%;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    
+    .booking-card:hover {
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .booking-card .resort-details div{
+        text-align: center;
+        border:1px solid black;
         width: 100%;
     }
-
-    .my-bookings-wrapper .wrapper .card {
-        width: 100%;
-        margin-left: 0rem;
-        margin-top: 1rem;
-    }
-
-    .my-bookings-wrapper .wrapper .card .row1 {
+    
+    
+    .booking-card .row1{
         display: flex;
-        justify-content: space-around;
+    }
+    
+    
+    .resort-details {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    
+    
+    .room-type {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    
+    .capacity {
+        color: #666;
+        font-size: 1.1em;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    
+    .booking-dates {
+        margin-bottom: 20px;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    
+    .booking-rate {
+        margin-bottom: 20px;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    
+    .rate {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    
+    .total-amount {
+        color: #666;
+        font-size: 1em;
+        font-family: "Rajdhani, sans-serif";
+    
+    }
+    .revbtn-wrap{
+        /* border:1px solid black; */
+        display: flex;
+        align-items: right;
+        justify-content: center;
+    }
+    .review-btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 0.3rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .review-btn:hover {
+        background-color: #3e8e41;
     }
 }
