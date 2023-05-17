@@ -1,34 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import './Gallary.css'
-import ImageGallery from 'react-image-gallery';
+import './Gallery.css'
 import 'react-image-gallery/styles/css/image-gallery.css';
 import axios from '../../../helpers/axios';
+import { Icon } from 'react-icons-kit'
+import { circleLeft } from 'react-icons-kit/icomoon/circleLeft'
+import { circleRight } from 'react-icons-kit/icomoon/circleRight'
 
-const galleryStyles = {
-    width: '100%',
-    height: '100%',
-    padding: '0',
-    objectFit: 'contain'
-}
-
-const slideWrapStyle = {
-    width: '100%',
-    height: '100%'
-}
-
-const imageStyles = {
-    width: '70%',
-    height: '34rem',
-    padding: '0',
-}
 
 
 const Gallery = ({ images }) => {
     const [imgData, setImgData] = useState([])
+    const [current, setCurrent] = useState(0)
 
     const getImages = async () => {
         try {
-            const response = await axios.get('http://localhost:4001/images')
+            const response = await axios.get('/images')
             console.log(response)
             setImgData(response.data.data)
         }
@@ -40,23 +26,38 @@ const Gallery = ({ images }) => {
         getImages();
     }, [])
 
-    const galleryImages = imgData.map((image) => ({
-        original: image,
-        thumbnail: image,
-    }));
+
+
+    const prevBtn = () => {
+        setCurrent((current === 0) ? (imgData.length - 1) : (current - 1))
+    }
+    const nextBtn = () => {
+        setCurrent((current === imgData.length) ? (0) : (current + 1))
+    }
+
+
+    //handle on click image. it will set the index of image to currentImg
+    const handleCurrentImg = (index) => {
+        setCurrent(index)
+        console.log(index)
+    }
+
 
     return (
         <div className='gallary-wrap'>
-            <ImageGallery items={galleryImages}
-                style={galleryStyles}
-                slideWrapStyle={slideWrapStyle}
-                renderItem={(item) => (
-                    <div className='image-gallery-image' >
-                        <img src={item.thumbnail} alt=''
-                            style={imageStyles} />
-                    </div>
-                )}
-            />
+            <div className='img-wrap' >
+                <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={25} /></div>
+                <img src={imgData[current]} alt='roomimage' />
+                <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={25} /></div>
+            </div>
+            <div className='images-wrap'>
+                {imgData.length>0 && imgData.map((image, index) => {
+                    return (
+                        <img src={image} alt='' 
+                        onClick={()=>handleCurrentImg(index)}/>
+                    )
+                })}
+            </div>
         </div>
     );
 };
