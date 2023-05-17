@@ -107,7 +107,7 @@ const Header = ({ auth, setAuth }) => {
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
-<Button className='btn-item' onClick={() => navigate('/gallery')}>GALLERY</Button>
+<Button className='btn-item' onClick={() => navigate('/gallery');handleCloseNavbar()}>GALLERY</Button>
 
 
           <Button className='btn-item' onClick={() => {navigate('/aboutus');handleCloseNavbar()}}>About Us</Button>
