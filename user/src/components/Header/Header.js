@@ -107,8 +107,12 @@ const Header = ({ auth, setAuth }) => {
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
-          {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>) : (null)}
+<Button className='btn-item' onClick={() => navigate('/gallery')}>GALLERY</Button>
+
+
           <Button className='btn-item' onClick={() => {navigate('/aboutus');handleCloseNavbar()}}>About Us</Button>
+          {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>)
+          :(null)} 
 
           {auth ?
             (<Button className='btn-item' onClick={() => {
