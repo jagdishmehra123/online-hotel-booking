@@ -29,10 +29,10 @@ const Gallery = ({ images }) => {
 
 
     const prevBtn = () => {
-    setCurrent((current === imgData.length) ? (0) : (current + 1))
+    setCurrent((current === 0) ? (imgData.length-1) : (current - 1))
   }
   const nextBtn = () => {
-    setCurrent((current === 0) ? (imgData.length - 1) : (current - 1))
+    setCurrent((current === imgData.length-1) ? (0) : (current +1))
   }
 
 
