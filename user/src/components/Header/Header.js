@@ -108,19 +108,10 @@ const Header = ({ auth, setAuth }) => {
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
-<<<<<<< HEAD
+          <Button className='btn-item' onClick={() => { navigate('/gallery'); handleCloseNavbar() }}>GALLERY</Button>
           <Button className='btn-item' onClick={() => { navigate('/aboutus'); handleCloseNavbar() }}>About Us</Button>
-          <Button className='btn-item' onClick={() => { navigate('/contactus'); handleCloseNavbar(); }}>Contact Us</Button>
-          {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>) : (null)}
-
-=======
-<Button className='btn-item' onClick={() => navigate('/gallery');handleCloseNavbar()}>GALLERY</Button>
-
-
-          <Button className='btn-item' onClick={() => {navigate('/aboutus');handleCloseNavbar()}}>About Us</Button>
           {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>)
-          :(null)} 
->>>>>>> 10f6582fb23eafe95ee6cf843f34f85d78bde153
+            : (null)}
 
           {auth ?
             (<Button className='btn-item' onClick={() => {
@@ -138,7 +129,7 @@ const Header = ({ auth, setAuth }) => {
 
 
 
-    </div>
+    </div >
   )
 }
 
