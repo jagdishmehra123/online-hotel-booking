@@ -54,7 +54,7 @@ export default function Register() {
         event.preventDefault();
 
         if (inputData.password === inputData.confirmPassword) {
-            const response = await axios.post(`http://localhost:4001/register`, inputData);
+            const response = await axios.post(`/register`, inputData);
             if (response.data.success) {
                 toast.success(response.data.message)
                 navigate('/signin')
