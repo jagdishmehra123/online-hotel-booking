@@ -1,0 +1,24 @@
+.policy-wrap{
+    /* border:1px solid black; */
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+    padding: 1rem;
+}
+
+.policy-wrap h3{
+        font-family: "Rajdhani, sans-serif";
+}
+
+
+.policy-wrap div{
+    padding: 1rem;
+}
+
+.policy-wrap div h5{
+
+}
+
+.policy-wrap div ul li{
+    font-family: 'Ysabeau', sans-serif;
+font-size: 1.1rem;
+}
