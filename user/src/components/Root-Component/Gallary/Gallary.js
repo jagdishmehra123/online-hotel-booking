@@ -5,7 +5,7 @@ import axios from '../../../helpers/axios';
 import { Icon } from 'react-icons-kit'
 import { circleLeft } from 'react-icons-kit/icomoon/circleLeft'
 import { circleRight } from 'react-icons-kit/icomoon/circleRight'
-
+import Footer from '../Footer/Footer';
 
 
 const Gallery = ({ images }) => {
@@ -44,21 +44,24 @@ const Gallery = ({ images }) => {
 
 
     return (
-        <div className='gallary-wrap'>
-            <div className='img-wrap' >
-                <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={25} /></div>
-                <img src={imgData[current]} alt='roomimage' />
-                <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={25} /></div>
+        <>
+            <div className='gallary-wrap'>
+                <div className='img-wrap' >
+                    <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={25} /></div>
+                    <img src={imgData[current]} alt='roomimage' />
+                    <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={25} /></div>
+                </div>
+                <div className='images-wrap'>
+                    {imgData.length > 0 && imgData.map((image, index) => {
+                        return (
+                            <img src={image} alt=''
+                                onClick={() => handleCurrentImg(index)} />
+                        )
+                    })}
+                </div>
             </div>
-            <div className='images-wrap'>
-                {imgData.length>0 && imgData.map((image, index) => {
-                    return (
-                        <img src={image} alt='' 
-                        onClick={()=>handleCurrentImg(index)}/>
-                    )
-                })}
-            </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 

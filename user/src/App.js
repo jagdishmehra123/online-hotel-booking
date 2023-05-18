@@ -14,6 +14,7 @@ import SpaDetails from './components/Root-Component/spa/Spa-details';
 import About from './components/Root-Component/About/About';
 import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
 import Gallary from './components/Root-Component/Gallary/Gallary'
+import TermsConditions from './components/Root-Component/terms-conditions/TermsConditions';
 import { Toaster } from 'react-hot-toast';
 
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -59,7 +60,7 @@ function App() {
           <Route path='/rating-form/:resortId' element={<RatingForm />}> </Route>
           <Route path='/my-bookings' element={<MyBookings />}> </Route>
           <Route path='/aboutus' element={<About />}></Route>
-
+          <Route path='/terms' element={<TermsConditions />}></Route>
           <Route path='/booking-summary/:resortname/:resortId/:roomId' element={<BookingPage />}></Route>
           <Route path='/gallery' element={<Gallary />}></Route>
           <Route path="/spa" element={
@@ -110,7 +111,7 @@ function App() {
             </Suspense>
 
           } />
-          <Route path='/contact-us' element={
+          <Route path='/contactus' element={
             <Suspense fallback={<p>Loading....</p>}>
               <>
                 <ContactUs />

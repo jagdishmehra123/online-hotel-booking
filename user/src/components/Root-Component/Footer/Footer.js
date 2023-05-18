@@ -29,73 +29,43 @@ const Footer = () => {
 
           </div>
 
+
+
+          <div className="newsletter">
+            <h4>
+              Helpful links
+            </h4>
+            <p>
+              <p onClick={() => { navigate('/') }}>Home</p>
+              <p onClick={() => { navigate('/our-properties') }}>Properties</p>
+              <p onClick={() => { navigate('/spa') }}>Spa</p>
+              <p onClick={() => { navigate('/gallery') }}>Gallery</p>
+              <p onClick={() => { navigate('/aboutus') }}>Abouts us</p>
+              <p onClick={() => { navigate('/contactus') }}>Contact us</p>
+              <p onClick={() => { navigate('/terms') }}>Term and Conditions</p>
+            </p>
+          </div>
           <div className="social page">
             <h3>Let's Get Social</h3>
 
             <div class="socialLinks">
 
               {// eslint-disable-next-line
-                <a href="https://www.facebook.com/greatblueresorts" target="_blank" title="Like us on facebook">
+                <a style={{ marginRight: '2rem' }}
+                  href="https://www.facebook.com/cubagoa/" target="_blank" title="Like us on facebook">
                   <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/facebook-2.png" alt="Facebook" />
                 </a>
               }
               {// eslint-disable-next-line
-                <a href="https://instagram.com/greatblueresorts/" target="_blank" title="Follow us on instagram">
+                <a href="https://www.instagram.com/cubagoa/?hl=en" target="_blank" title="Follow us on instagram">
                   <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/instagram-2.png" alt="instagram" />
                 </a>
               }
-              {// eslint-disable-next-line
-                <a href="https://www.twitter.com/greatblueresort" target="_blank" title="Follow us on twitter">
-                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/twitter-2.png" alt="twitter" />
-                </a>
-              }
-              {// eslint-disable-next-line
-                <a href="https://www.youtube.com/channel/UCStX7YFUTZkhCoVSnz971iA" target="_blank" title="Watch our videos on youtube">
-                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/youtube-2.png" alt="youtube" />
-                </a>
-              }
+
             </div>
-            <div className="translate">
-              <h4>Choose Your Preferred Language</h4>
-              <div id="google_language_translator" className="default-language-en">
-                <div className="skiptranslate goog-te-gadget" >
-                  <div id="targetLanguage" >
-                    <select className="goog-te-combo" aria-label="Language Translate Widget">
-                      <option value="">Select Language</option>
-                      <option value="zh-CN">Chinese (Simplified)</option>
-                      <option value="zh-TW">Chinese (Traditional)</option>
-                      <option value="fr">French</option>
-                      <option value="pt">Portuguese</option>
-                      <option value="es">Spanish</option>
-                    </select>
-                  </div>
-                  &nbsp;&nbsp;Powered by
-                  <span >
-                    { // eslint-disable-next-line 
-                      <a className="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank">
-                        <img className="img1" src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" alt="Google Translate" />
-                        Translate</a>
-                    }
-                  </span>
-                </div>
-              </div>
-            </div>
+
+
           </div >
-
-          <div className="newsletter">
-
-            {/* <h4>
-          Helpful links
-        </h4>
-        <p>
-          <a href="/resorts/" title="Resorts">Resorts</a><br />
-          <a href="/for-sale/" title="For Sale">For Sale</a><br />
-          <a href="/rent/" title="Rent">Rent</a><br />
-          <a href="/about/" title="About">About</a><br />
-          <a href="/about/careers/" title="Careers">Job Postings</a><br />
-          <a href="/contact/" title="Contact">Contact</a>
-        </p>*/}
-          </div>
 
         </div >
 

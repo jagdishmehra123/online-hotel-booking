@@ -20,7 +20,7 @@ const Header = ({ auth, setAuth }) => {
     //eslint-disable-next-line
   }, [token])
 
-  
+
 
 
 
@@ -80,6 +80,7 @@ const Header = ({ auth, setAuth }) => {
             <Button className='btn-item' onClick={() => navigate('/gallery')}>GALLERY</Button>
 
             <Button className='btn-item' onClick={() => navigate('/aboutus')}>About Us</Button>
+            <Button className='btn-item' onClick={() => navigate('/contactus')}>Contact Us</Button>
             {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings') }}>MY BOOKINGS</Button>) : (null)}
 
             {auth ?
@@ -100,15 +101,17 @@ const Header = ({ auth, setAuth }) => {
       {/* mobile view navbar */}
       <div className='right-side-navbar' style={{ display: showNavbar }}>
         <Box className='col-2-box' style={{ display: 'flex', flexDirection: 'column' }}>
-        <div>
-            <Icon icon={cross} size={15} style={{ float: 'left', paddingLeft: '1rem',marginTop:'1rem' }}
+          <div>
+            <Icon icon={cross} size={15} style={{ float: 'left', paddingLeft: '1rem', marginTop: '1rem' }}
               onClick={handleCloseNavbar} />
           </div>
           <Button className='btn-item' onClick={() => { navigate('/'); handleCloseNavbar() }}>Home</Button>
           <Button className='btn-item' onClick={() => { navigate('/our-properties'); handleCloseNavbar() }}>OUR PROPERTIES</Button>
           <Button className='btn-item' onClick={() => { navigate('/spa'); handleCloseNavbar() }}>SPA</Button>
+          <Button className='btn-item' onClick={() => { navigate('/aboutus'); handleCloseNavbar() }}>About Us</Button>
+          <Button className='btn-item' onClick={() => { navigate('/contactus'); handleCloseNavbar(); }}>Contact Us</Button>
           {auth ? (<Button className='btn-item' onClick={() => { navigate('/my-bookings'); handleCloseNavbar() }}>MY BOOKINGS</Button>) : (null)}
-          <Button className='btn-item' onClick={() => {navigate('/aboutus');handleCloseNavbar()}}>About Us</Button>
+
 
           {auth ?
             (<Button className='btn-item' onClick={() => {

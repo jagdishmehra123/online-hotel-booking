@@ -26,9 +26,7 @@ app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 // app.use("/", user);
 // app.use("/", booking);
 // app.use("/", spa);
-
-app.use(require('./router/adminRouter'))
-app.use(require('./router/clientRouter'))
+app.use(require('./router/user'))
 app.use(require('./router/post-property'))
 app.use(require('./router/spaRouter'))
 app.use(require('./router/booking-form'))

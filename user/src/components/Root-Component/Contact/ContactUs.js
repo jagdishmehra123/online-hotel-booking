@@ -106,7 +106,6 @@ const ContactUs = () => {
 
   
     </main>
-    <Footer/>      
 </> 
   )
 }

@@ -1,18 +1,24 @@
-.log-in{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.siginWrapper {
+    width: 50%;
+    margin: auto;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    /* background-color: azure; */
 }
 
-.login-form{
+.siginWrapper .houseDealLogo{
+    width:5rem;
+    height:5rem;
+}
 
-    padding: 20px;
-    background-color: rgb(37, 37, 60);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 5px;
-    width: 400px;
-    height: fit-content;
+
+@media only screen and (min-width:200px) and (max-width:1000px) {
+    .siginWrapper {
+        width: 95%;
+        margin: auto;
+        margin-top: 6rem;
+    }
 }
