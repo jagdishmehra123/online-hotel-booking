@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './BookingPage.css'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from '../../../../helpers/axios'
+import axios from 'axios'
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-hot-toast'
 
@@ -16,7 +16,7 @@ const BookingPage = ({ }) => {
         try {
             const response = await axios.get(`http://localhost:4001/resort-room/${resortId}/${roomId}`)
             if (response.data.success) {
-                // console.log(response.data)
+                console.log(response.data)
                 setRoom(response.data.data)
             }
             else {
@@ -24,9 +24,10 @@ const BookingPage = ({ }) => {
             }
         }
         catch (err) {
-
+            console.log(err)
         }
     }
+
     useEffect(() => {
         getRoom();
         console.log('setroom', room)
@@ -46,7 +47,6 @@ const BookingPage = ({ }) => {
     }
     //handle checkout
     const checkout = async () => {
-        const token = localStorage.getItem('token')
         console.log(bookingForm)
         const bookingData = {
             name: bookingForm.name,
@@ -61,11 +61,8 @@ const BookingPage = ({ }) => {
             totalAmount: room.ratePerNight
         }
         try {
-            const response = await axios.post('/booking-form', bookingData, {
-                headers: {
-                    authorization: token
-                }
-            })
+            const token = localStorage.getItem('token')
+            const response = await axios.post('http://localhost:4001/booking-form', bookingData)
             console.log(response)
             toast.success('Thanks! we reserved a room for you')
             navigate('/my-bookings')
@@ -202,12 +199,12 @@ const BookingPage = ({ }) => {
 
 
             <p>Note: Please carefully go through our terms and conditions carefully before booking confirmation
-                <span  style={{
-                    marginLeft:'1rem', 
-                    color:'blue',
-                    cursor:'pointer'
+                <span style={{
+                    marginLeft: '1rem',
+                    color: 'blue',
+                    cursor: 'pointer'
                 }}
-                onClick={()=>{navigate('/terms')}}>click here</span>
+                    onClick={() => { navigate('/terms') }}>click here</span>
             </p>
 
         </div >

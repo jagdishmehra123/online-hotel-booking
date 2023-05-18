@@ -22,8 +22,8 @@ const Footer = () => {
 
           <div className='footer2'>
             <div>
-              <h3>CORPORATE OFFICE</h3>
-              <h4>612-A Welland Avenue St. Catharines,<br /> ON L2M 5V6Toll-Free: +1 877-814-4141<br /></h4>
+              {/* <h3>CORPORATE OFFICE</h3> */}
+              {/* <h4>612-A Welland Avenue St. Catharines,<br /> ON L2M 5V6Toll-Free: +1 877-814-4141<br /></h4> */}
               <img src={logo} alt="Great Blue Resorts"></img>
             </div>
 

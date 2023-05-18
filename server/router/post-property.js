@@ -186,7 +186,7 @@ router.get('/images', async (req, resp) => {
       }
     }
     console.log('imgArr=>', imgArr)
-    resp.json({success:true, data:imgArr})
+    resp.json({ success: true, data: imgArr })
   }
   catch (err) {
     resp.json({ success: false, message: err })

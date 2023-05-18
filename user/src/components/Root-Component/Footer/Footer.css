@@ -179,7 +179,7 @@ footer .row.footer .columns {
 
 
 .newsletter {
-    width: 15rem;
+    width: 20rem;
     /* border: 1px solid white; */
 }
 
@@ -197,7 +197,7 @@ footer .row.footer .columns {
     /* border:1px solid white; */
     margin-top: 0.3rem;
     text-align: left;
-    padding-left: 5rem;
+    padding-left: 7rem;
 }
 
 .newsletter p p:hover {

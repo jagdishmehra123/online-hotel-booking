@@ -21,6 +21,7 @@ const RoomCard = ({ room, resortId, resortname }) => {
   //HANDLE RESERVE BUTTON
   const handleReserve = (room, roomId, resortId) => {
     navigate(`/booking-summary/${resortname}/${resortId}/${roomId}`)
+    // console.log(resortId, roomId)
     // const exixstingRoom = cart.find((item) => item.room.roomId === id)
     // if (exixstingRoom) {
     //   setCart(
