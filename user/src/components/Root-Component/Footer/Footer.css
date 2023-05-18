@@ -178,12 +178,17 @@ footer .row.footer .columns {
 }
 
 
-.newsletter{
-    width: 25rem;
-    /* border:1px solid white; */
+.newsletter {
+    width: 15rem;
+    /* border: 1px solid white; */
 }
 
-.newsletter p p{
+.newsletter p {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter p p {
     font-size: 1.1rem;
     padding: 0;
     margin: 0;
@@ -191,21 +196,29 @@ footer .row.footer .columns {
     cursor: pointer;
     /* border:1px solid white; */
     margin-top: 0.3rem;
+    text-align: left;
+    padding-left: 5rem;
 }
 
-.newsletter p p:hover{
-    background-color: rgba(0, 0, 0,0.6);
+.newsletter p p:hover {
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
 }
 
-@media only screen and (max-width:900px){
-    .newsletter{
+@media only screen and (max-width:900px) {
+    .newsletter {
         /* border:1px solid white; */
-        width: 100%;
+        margin: auto;
         margin-bottom: 2rem;
+        margin-top: 1.5rem;
     }
-    
-    .newsletter p p{
+
+    .newsletter p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .newsletter p p {
         font-size: 1.1rem;
         padding: 0;
         margin: 0;
@@ -213,6 +226,7 @@ footer .row.footer .columns {
         display: flex;
         justify-content: flex-start;
         /* border:1px solid white; */
+        padding-left: 4rem;
     }
 }
 
@@ -245,7 +259,7 @@ footer .row.footer .columns {
     }
 
 
-    
+
 
 
 }
