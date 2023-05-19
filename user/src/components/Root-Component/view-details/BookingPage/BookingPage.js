@@ -14,7 +14,7 @@ const BookingPage = ({ }) => {
     //get room details
     const getRoom = async () => {
         try {
-            const response = await axios.get(`http://localhost:4001/resort-room/${resortId}/${roomId}`)
+            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-room/${resortId}/${roomId}`)
             if (response.data.success) {
                 console.log(response.data)
                 setRoom(response.data.data)

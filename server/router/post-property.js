@@ -149,17 +149,18 @@ router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
   // console.log(resortId, roomId)
   try {
     const resort = await HotelBook.findOne({ _id: resortId })
-    let resortRoom;
-    for (let i = 0; i < resort.rooms.length; i++) {
-      if (resort.rooms[i].roomId === roomId) {
-        // console.log('room found', resort.rooms[i])
-        resortRoom = resort.rooms[i]
-        break;
-      }
-      else {
-        console.log('room not found width this id')
-      }
-    }
+    let resortRoom = resort.rooms.find((room) => room.roomId === roomId)
+    console.log(resortRoom)
+    // for (let i = 0; i < resort.rooms.length; i++) {
+    //   if (resort.rooms[i].roomId === roomId) {
+    //     // console.log('room found', resort.rooms[i])
+    //     resortRoom = resort.rooms[i]
+    //     break;
+    //   }
+    //   else {
+    //     console.log('room not found width this id')
+    //   }
+    // }
     resp.json({ success: true, data: resortRoom })
   }
   catch (err) {
