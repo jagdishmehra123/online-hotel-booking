@@ -38,13 +38,34 @@ const BookingPage = ({ }) => {
 
     //booking form
     const [bookingForm, setBookingForm] = useState({
-        specialRequest: '',
+        specialRequest: '', noOfRooms: '',
         email: '', name: '', contact: '', checkIn: '', checkOut: ''
     })
     //handle inputs
     const handleInputs = (e) => {
         setBookingForm(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
     }
+
+
+    //UPDATE ROOM DATA IN BACKEND (i.e no of rooms)  when user book rooms
+    const UpdateRoom = async () => {
+        const updateData = {
+            noOfRooms: bookingForm.noOfRooms,
+            availableRooms: room.availableRooms
+        }
+        console.log('updateData', updateData)
+        try {
+            const response = await axios.patch(`https://online-hotel-booking-puce.vercel.app/update-room/${resortId}/${roomId}`, updateData)
+            console.log(response)
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+
+
+
     //handle checkout
     const checkout = async () => {
         console.log(bookingForm)
@@ -58,30 +79,46 @@ const BookingPage = ({ }) => {
             resortname: resortname,
             resortId: resortId,
             roomType: room.roomType,
+            roomId:roomId,
             checkIn: bookingForm.checkIn,
             checkOut: bookingForm.checkOut,
+            noOfRooms: bookingForm.noOfRooms,
             specialRequest: bookingForm.specialRequest,
             totalAmount: room.ratePerNight,
             bookingDate: bookingDate,
             bookingTime: bookingTime
-
         }
 
         try {
             const token = localStorage.getItem('token')
-            const response = await axios.post('http://localhost:4001/booking-form', bookingData, {
-                headers: {
-                    authorization: token
+            if (!token) {
+                toast.error('Please signIn to your account to book a room')
+            }
+            else {
+                const response = await axios.post('https://online-hotel-booking-puce.vercel.app/booking-form', bookingData, {
+                    headers: {
+                        authorization: token
+                    }
+                })
+                if (response.data.success) {
+                    console.log(response)
+                    UpdateRoom();
+                    toast.success('Thanks! we reserved a room for you')
+                    // navigate('/my-bookings')
                 }
-            })
-            console.log(response)
-            toast.success('Thanks! we reserved a room for you')
-            // navigate('/my-bookings')
+                else {
+                    toast.error(response.data.message)
+                }
+            }
         }
         catch (err) {
             console.log(err)
         }
     }
+
+
+
+
 
 
 
@@ -185,6 +222,12 @@ const BookingPage = ({ }) => {
                                 <TextField type='date' className='form-input'
                                     id="outlined-basic" variant="outlined" required
                                     name='checkOut' value={bookingForm.checkOut} onChange={handleInputs} />
+                            </div>
+                            <div style={{ marginTop: '2rem' }}>
+                                <lable>No of Rooms</lable>
+                                <TextField type='number' className='form-input'
+                                    id="outlined-basic" variant="outlined" required
+                                    name='noOfRooms' value={bookingForm.noOfRooms} onChange={handleInputs} />
                             </div>
                         </form>
                     </div>

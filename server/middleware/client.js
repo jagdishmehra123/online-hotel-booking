@@ -5,7 +5,7 @@ const clientMiddleware = (req, resp, next) => {
     try {
         if (token) {
             const { _id } = jwt.verify(token, 'secretKey')
-            console.log('id from middleware', token, 'secretKey')
+            // console.log('id from middleware', token, 'secretKey')
 
             if (_id) {
                 req.clientId = _id

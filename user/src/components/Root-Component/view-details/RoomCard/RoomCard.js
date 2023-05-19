@@ -110,17 +110,24 @@ const RoomCard = ({ room, resortId, resortname }) => {
       </div> */}
 
         <div className='row4' style={{ display: 'flex', justifyContent: 'space-between' }}>
-          {(room.availableRooms === 0) ? (<div style={{ width: '100%' }}
-          ><p style={{ textAlign: 'right', paddingTop: '0.5rem', fontSize: '1.2rem', color: 'red', fontWeight: 'bold' }}
-          >Room not available</p></div>) : (<div style={{ width: '100%' }}>
-            <button style={
-              {
-                float: 'right',
-              }
-            } onClick={() => {
-              handleReserve(room, room.roomId, resortId)
-            }}
-            >RESERVE</button></div>)}
+          {(room.availableRooms === 0) ? (
+            <div style={{ width: '100%' }}>
+              <p style={{
+                textAlign: 'right',
+                marginTop: '1rem',
+                fontSize: '1rem', float: 'right',
+                color: 'red', border: '1px solid red', width: 'fit-content',
+                padding: '0 1rem', paddingBottom: '0.2rem'
+              }}>Room not available</p></div>) :
+            (<div style={{ width: '100%' }}>
+              <button style={
+                {
+                  float: 'right',
+                }
+              } onClick={() => {
+                handleReserve(room, room.roomId, resortId)
+              }}
+              >RESERVE</button></div>)}
           <br />
         </div>
       </div>
