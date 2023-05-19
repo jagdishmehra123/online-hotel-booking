@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-.my-bookings-wrapper .wrapper{
+.my-bookings-wrapper .wrapper {
     display: flex;
 }
 
@@ -25,14 +25,14 @@
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-.booking-card .resort-details div{
+.booking-card .resort-details div {
     text-align: center;
-    border:1px solid black;
+    border: 1px solid black;
     width: 100%;
 }
 
 
-.booking-card .row1{
+.booking-card .row1 {
     display: flex;
 }
 
@@ -85,12 +85,15 @@
     font-family: "Rajdhani, sans-serif";
 
 }
-.revbtn-wrap{
+
+.revbtn-wrap {
     /* border:1px solid black; */
     display: flex;
     align-items: right;
-    justify-content: center;
+    justify-content: space-between;
+    
 }
+
 .review-btn {
     background-color: #4CAF50;
     border: none;
@@ -111,22 +114,22 @@
 
 
 
-@media only screen and (max-width:900px){
+@media only screen and (max-width:900px) {
     .my-bookings-wrapper {
         /* border: 1px solid black; */
         margin-top: 6rem;
     }
-    
+
     .my-bookings-wrapper h3 {
         text-align: center;
     }
-    
-    .my-bookings-wrapper .wrapper{
+
+    .my-bookings-wrapper .wrapper {
         display: flex;
         flex-direction: column;
         margin: auto;
     }
-    
+
     .booking-card {
         width: 95%;
         margin: auto;
@@ -137,77 +140,78 @@
         margin: 20px;
         transition: box-shadow 0.3s ease-in-out;
     }
-    
+
     .booking-card:hover {
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     }
-    
-    .booking-card .resort-details div{
+
+    .booking-card .resort-details div {
         text-align: center;
-        border:1px solid black;
+        border: 1px solid black;
         width: 100%;
     }
-    
-    
-    .booking-card .row1{
+
+
+    .booking-card .row1 {
         display: flex;
     }
-    
-    
+
+
     .resort-details {
         margin-bottom: 20px;
         width: 100%;
     }
-    
-    
-    
+
+
+
     .room-type {
         font-size: 1em;
         font-weight: bold;
         margin-bottom: 5px;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    
+
     .capacity {
         color: #666;
         font-size: 1.1em;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    
+
     .booking-dates {
         margin-bottom: 20px;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    
+
     .booking-rate {
         margin-bottom: 20px;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    
+
     .rate {
         font-size: 1em;
         font-weight: bold;
         margin-bottom: 5px;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    
+
     .total-amount {
         color: #666;
         font-size: 1em;
         font-family: "Rajdhani, sans-serif";
-    
+
     }
-    .revbtn-wrap{
+
+    .revbtn-wrap {
         /* border:1px solid black; */
         display: flex;
-        align-items: right;
-        justify-content: center;
+        justify-content: space-between;
     }
+
     .review-btn {
         background-color: #4CAF50;
         border: none;
@@ -221,7 +225,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
     }
-    
+
     .review-btn:hover {
         background-color: #3e8e41;
     }

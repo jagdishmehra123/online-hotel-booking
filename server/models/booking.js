@@ -12,7 +12,9 @@ const BookingSchema = {
   checkOut:String,
   specialRequest:String,
   totalAmount:Number,
-  // client:mongoose.Schema.Types.ObjectId
+  bookingDate:String,
+  bookingTime:String,
+  client:mongoose.Schema.Types.ObjectId,
 };
 
 module.exports = mongoose.model("bookings", BookingSchema);

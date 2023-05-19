@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-hot-toast'
-
+import moment from 'moment'
 
 const BookingPage = ({ }) => {
     const navigate = useNavigate()
@@ -48,6 +48,9 @@ const BookingPage = ({ }) => {
     //handle checkout
     const checkout = async () => {
         console.log(bookingForm)
+        const bookingDate = moment().format('DD/MM/YYYY')
+        const bookingTime = moment().format('HH:mm')
+
         const bookingData = {
             name: bookingForm.name,
             email: bookingForm.email,
@@ -58,14 +61,22 @@ const BookingPage = ({ }) => {
             checkIn: bookingForm.checkIn,
             checkOut: bookingForm.checkOut,
             specialRequest: bookingForm.specialRequest,
-            totalAmount: room.ratePerNight
+            totalAmount: room.ratePerNight,
+            bookingDate: bookingDate,
+            bookingTime: bookingTime
+
         }
+
         try {
             const token = localStorage.getItem('token')
-            const response = await axios.post('http://localhost:4001/booking-form', bookingData)
+            const response = await axios.post('http://localhost:4001/booking-form', bookingData, {
+                headers: {
+                    authorization: token
+                }
+            })
             console.log(response)
             toast.success('Thanks! we reserved a room for you')
-            navigate('/my-bookings')
+            // navigate('/my-bookings')
         }
         catch (err) {
             console.log(err)
