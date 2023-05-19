@@ -9,6 +9,7 @@
 
 .my-bookings-wrapper .wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .booking-card {
