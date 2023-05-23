@@ -28,3 +28,13 @@
     z-index: 1;
     opacity: 1;
 }
+
+
+@media only screen and (max-width:900px){
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        margin: auto;
+    }
+}

@@ -1,70 +1,98 @@
-import React, { useState, useEffect } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import './Gallery.css'
-import 'react-image-gallery/styles/css/image-gallery.css';
-import axios from '../../../helpers/axios';
-import { Icon } from 'react-icons-kit'
-import { circleLeft } from 'react-icons-kit/icomoon/circleLeft'
-import { circleRight } from 'react-icons-kit/icomoon/circleRight'
-import Footer from '../Footer/Footer';
+import axios from '../../../helpers/axios'
+import Images from '../view-details/Images'
+
+const Gallary = () => {
+
+    const [allProperties, setAllProperties] = useState([])
+    const [resortName, setResortName] = useState('')
+    const [getData, setGetData] = useState(false)
+    const [images, setImages] = useState([])
+    const [active, setActive] = useState(false)
+
+    const getPropertiesData = async () => {
+        // await axios.get(`/hotelbook`)
+        await axios.get(`http://localhost:4001/hotelbook`)
+            .then((res) => {
+                // console.log('property list', res.data)
+                setAllProperties(res.data)
+                setGetData(true)
+                //    setSelectedVal([res.data[0].resortName, res.data[0]._id])
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+    useEffect(() => {
+        getPropertiesData();
+        // eslint-disable-next-line
+    }, [])
+    useEffect(() => {
+        if (getData) {
+            setResortName(allProperties[0]?.resortName)
+
+            const arr = []
+            for (let i = 0; i < allProperties[0].rooms.length; i++) {
+                for (let j = 0; j < allProperties[0].rooms[i].imgUrl.length; j++) {
+                    arr.push(allProperties[0]?.rooms[i].imgUrl[j])
+                }
+            }
+            console.log('default arr', arr)
+            setImages(arr)
+        }
+        // eslint-disable-next-line
+    }, [getData])
 
 
-const Gallery = ({ images }) => {
-    const [imgData, setImgData] = useState([])
-    const [current, setCurrent] = useState(0)
 
-    const getImages = async () => {
+
+
+    // getImages
+    const handleGetImages = async (id, name) => {
         try {
-            const response = await axios.get('/images')
-            console.log(response)
-            setImgData(response.data.data)
+            const response = await axios.post(`http://localhost:4001/images/${id}`)
+            if (response.data.success) {
+                console.log(response.data.resort)
+                setActive(true)
+
+                setResortName(response.data.resort[0]?.resortName)
+                const arr = []
+                for (let i = 0; i < response.data.resort[0]?.rooms.length; i++) {
+                    for (let j = 0; j < response.data.resort[0]?.rooms[i].imgUrl.length; j++) {
+                        arr.push(response.data.resort[0]?.rooms[i].imgUrl[j])
+                    }
+                }
+                console.log(arr)
+
+            }
         }
         catch (err) {
             console.log(err)
         }
     }
-    useEffect(() => {
-        getImages();
-    }, [])
-
-
-
-    const prevBtn = () => {
-    setCurrent((current === 0) ? (imgData.length-1) : (current - 1))
-  }
-  const nextBtn = () => {
-    setCurrent((current === imgData.length-1) ? (0) : (current +1))
-  }
-
-
-    //handle on click image. it will set the index of image to currentImg
-    const handleCurrentImg = (index) => {
-        setCurrent(index)
-        console.log(index)
-    }
 
 
     return (
-        <>
-            <div className='gallary-wrap'>
-                <div className='img-wrap' >
-                    <div className='icon1'><Icon icon={circleLeft} onClick={prevBtn} size={25} /></div>
-                    <img src={imgData[current]} alt='roomimage' />
-                    <div className='icon2'><Icon icon={circleRight} onClick={nextBtn} size={25} /></div>
-                </div>
-                <div className='images-wrap'>
-                    {imgData.length > 0 && imgData.map((image, index) => {
-                        return (
-                            <img src={image} alt=''
-                                onClick={() => handleCurrentImg(index)} />
-                        )
-                    })}
-                </div>
+        <div className='gallery-wrap'>
+            <div className='header-navbar'>
+                {allProperties.map((resort, i) => {
+                    return (
+                        <div key={i + 1} >
+                            <p onClick={() => handleGetImages(resort._id, resort.resortName)}>
+                                {resort.resortName}
+                            </p>
+                        </div>
+                    )
+                })}
             </div>
-            <Footer />
-        </>
-    );
-};
 
+            <Images images={images} interval={1800} />
+            <div><h5>{resortName}</h5></div>
 
+        </div>
+    )
+}
 
-export default Gallery
+export default Gallary

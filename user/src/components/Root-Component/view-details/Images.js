@@ -20,7 +20,7 @@ const Images = ({ images, interval }) => {
   }, [images.length, interval]);
 
   return (
-      <div className="slider" data-aos='fade-in'>
+      <div className="slider" >
         {images.map((image, index) => (
           <img 
             key={index}

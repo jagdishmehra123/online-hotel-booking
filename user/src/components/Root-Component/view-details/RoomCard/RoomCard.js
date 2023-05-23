@@ -110,6 +110,11 @@ const RoomCard = ({ room, resortId, resortname }) => {
       </div> */}
 
         <div className='row4' style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            {
+              (room.availableRooms>0 && room.availableRooms <= 4) ? (<p>{`Hurry! only ${room.availableRooms} rooms available`}</p>) : (null)
+            }
+          </div>
           {(room.availableRooms === 0) ? (
             <div style={{ width: '100%' }}>
               <p style={{

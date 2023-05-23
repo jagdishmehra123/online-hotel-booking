@@ -2,29 +2,33 @@ const mongoose = require("mongoose");
 
 const PostPropertySchema = mongoose.Schema({
 
-    resortName: {
-        type: String,
-    },
-    resortLocation: {
-        type: String,
-    },
-    resortDescription: {
-        type: String,
-    },
-    resortImgURL: {
-        type: String
-    },
-
+    resortName: { type: String },
+    resortLocation: { type: String },
+    resortDescription: { type: String },
+    resortImgURL: { type: String },
+    aboutUs: { type: String },
+    resortAddress: { type: String },
+    pincode: { type: String },
+    resortPhoneNumber: { type: String },
+    resortEmail: { type: String },
+    cubaGoaHelpLineNumber: { type: String },
     rooms: [
         {
             imgUrl: [
                 { type: String },
             ],
             roomType: { type: String },
-            totalRooms: { type: Number },
-            capacity: { type: String },
-            availableRooms: { type: Number },
-            ratePerNight: { type: String },
+            totalRooms: { type: String },
+            adultCapacity: { type: String },
+            childrenCapacity: { type: String },
+            availableRooms: { type: String },
+            weekdayPerNightRate: { type: Number },
+            weekendPerNightRate: { type: Number },
+            occassionName: { type: String },
+            occassionStartDate: { type: String },
+            occassionEndDate: { type: String },
+            occassionPerNightRate: { type: Number },
+
             //aminities
             nonRefundable: { type: Boolean },
             wardrobe: { type: Boolean },
@@ -42,17 +46,6 @@ const PostPropertySchema = mongoose.Schema({
             swimmingPool: { type: Boolean },
             spa: { type: Boolean },
             roomId: { type: String }
-
-        }
-    ],
-
-    rating: [
-        {
-            name: String,
-            email: String,
-            platform: String,
-            additionalComments: String,
-            rating: Number
         }
     ]
 });

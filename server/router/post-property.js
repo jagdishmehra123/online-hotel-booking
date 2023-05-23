@@ -6,121 +6,6 @@ const router = express.Router();
 const HotelBook = require("../models/post-property");
 
 
-
-
-
-//post new property
-// router.post("/hotelbook", async (req, res) => {
-//   try {
-//     const resortData = await HotelBook.create(req.body);
-//     res.json({ success: true, data: resortData });
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(500).json({ message: error.message });
-//   }
-// });
-
-// //GET DATA OF SPECIFIC OWNER (login required)
-// router.get('/my-resorts', adminMiddleware, (req, resp) => {
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-//to update hotelBook by id
-// router.put("/hotelbook/:id", async (req, res) => {
-//   // console.log(req.params.id)
-//   // res.json({message: req.body})
-//   try {
-//     const { id } = req.params;
-//     const hotelBook = await HotelBook.findByIdAndUpdate(id, { rooms: req.body.rooms });
-//     //we cannot find any product in database
-//     if (!hotelBook) {
-//       return res
-//         .status(404)
-//         .json({ message: `cannot find any hotel Book with ${id}` });
-//     }
-//     const updatedHotelBook = await HotelBook.findById(id);
-//     res.status(200).json(updatedHotelBook);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// });
-
-
-
-//Update total rooms in DB after booking
-router.patch("/updateTotalRoomsinDb/:id", async (req, res) => {
-  try {
-    // console.log(req.params.id)
-    // const name = req.body.resort.resortName
-    // console.log(req.body.resort.resortName)
-    // const room = await HotelBook.find({resortName: name});
-    // console.log(room)
-    let acknowledged = false
-    for (let i = 0; i < req.body.length; i++) {
-      acknowledged = false;
-      console.log("ROOM", i, "=>")
-      const _id = req.body[i].room._id
-      const updatedAvailableRooms = req.body[i].room.availableRooms
-      let ack
-      const roomUpdated = await HotelBook.updateOne({
-        "rooms._id": _id
-      },
-        {
-          "$set": {
-            "rooms.$.availableRooms": updatedAvailableRooms
-          }
-        })
-      acknowledged = roomUpdated.acknowledged
-      console.log(roomUpdated)
-    }
-    if (acknowledged == true) {
-      res.status(200).json({
-        message: "Total Rooms Data Updated Successfully"
-      })
-    } else {
-      res.status(200).json({
-        message: "Total Rooms Data Updation Failed"
-      })
-    }
-  } catch (err) {
-    console.log(err)
-    res.status(400).json({ message: err.message, status: false });
-  }
-})
-
-
-
-
-// delete a hotel Book
-// router.delete("/hotelbook/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params.id;
-//     const hotelBook = await HotelBook.findByIdAndDelete(id, req.body);
-//     //we cannot find any product in database
-//     if (!hotelBook) {
-//       return res
-//         .status(404)
-//         .json({ message: `cannot find any hotel Book with ${id}` });
-//     }
-
-//     res.status(200).json(hotelBook);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// });
-
-
-
 //GET ALL HOTEL DATA TO SHOW TO CLIENTS
 router.get("/hotelbook", async (req, res) => {
   try {
@@ -130,6 +15,7 @@ router.get("/hotelbook", async (req, res) => {
     res.status(5009).json({ message: error.message });
   }
 });
+
 
 //GET SPECIFIC HOTEL BY ID
 router.get("/resort-details/:id", async (req, res) => {
@@ -143,6 +29,8 @@ router.get("/resort-details/:id", async (req, res) => {
   }
 });
 
+
+
 //get specific room details
 router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
   const { resortId, roomId } = req.params
@@ -150,7 +38,7 @@ router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
   try {
     const resort = await HotelBook.findOne({ _id: resortId })
     let resortRoom = resort.rooms.find((room) => room.roomId === roomId)
-    console.log(resortRoom)
+    // console.log(resortRoom)
     // for (let i = 0; i < resort.rooms.length; i++) {
     //   if (resort.rooms[i].roomId === roomId) {
     //     // console.log('room found', resort.rooms[i])
@@ -191,7 +79,18 @@ router.get('/images', async (req, resp) => {
 })
 
 
-
+//get images of specific property
+router.post('/images/:id', async (req, resp) => {
+  const resortId = req.params.id
+  try {
+    // console.log(resortId)
+    const resort = await HotelBook.find({ _id: resortId })
+    resp.json({ success: true, resort: resort })
+  }
+  catch (err) {
+    resp.json({ success: false, message:err })
+  }
+})
 
 
 module.exports = router;

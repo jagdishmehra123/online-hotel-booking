@@ -54,19 +54,20 @@ export default function Register() {
         event.preventDefault();
 
         if (inputData.password === inputData.confirmPassword) {
-            const response = await axios.post(`/register`, inputData);
+            const response = await axios.post(`https://online-hotel-booking-puce.vercel.app/register`, inputData);
             if (response.data.success) {
                 toast.success(response.data.message)
                 navigate('/signin')
             }
             else {
-                console.log('failure', response.data.message)
-                // response.data.message.forEach((err)=>{
-                //     toast.error(err.msg)
-                // })
-                const errors = response.data.message
-                for (let err of errors) {
-                    toast.error(err.msg)
+                if (response.data.message === 'Account already exist') {
+                    toast.error(response.data.message)
+                }
+                else {
+                    const errors = response.data.message
+                    for (let err of errors) {
+                        toast.error(err.msg)
+                    }
                 }
 
             }

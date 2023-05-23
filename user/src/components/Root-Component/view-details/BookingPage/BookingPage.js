@@ -5,16 +5,56 @@ import axios from 'axios'
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-hot-toast'
 import moment from 'moment'
+import { nanoid } from 'nanoid';
+
 
 const BookingPage = ({ }) => {
     const navigate = useNavigate()
     const { resortname, resortId, roomId } = useParams()
+    const [resort, setResort] = useState({})
     const [room, setRoom] = useState('a')
+    const [user, setUser] = useState([])
+    const [bookingStatus, setBookingStatus] = useState('')
 
+    const token = localStorage.getItem('token')
+    //get sigined in client details
+    const getUser = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4001/user-details`, {
+                headers: {
+                    authorization: token
+                }
+            })
+            // console.log('userdata=>', response)
+            if (response.data.success) {
+                setUser(response.data.details)
+            }
+            else {
+                console.log(response.data.message)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+
+    //get Resort
+    const getResort = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4001/resort-details/${resortId}`)
+            console.log('resort', response.data.resortData)
+            setResort(response.data.resortData)
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
     //get room details
     const getRoom = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-room/${resortId}/${roomId}`)
+            const response = await axios.get(`http://localhost:4001/resort-room/${resortId}/${roomId}`)
             if (response.data.success) {
                 console.log(response.data)
                 setRoom(response.data.data)
@@ -29,8 +69,10 @@ const BookingPage = ({ }) => {
     }
 
     useEffect(() => {
+        getResort();
         getRoom();
-        console.log('setroom', room)
+        getUser();
+        // console.log('setroom', room)
         // eslint-disable-next-line
     }, [])
 
@@ -38,8 +80,9 @@ const BookingPage = ({ }) => {
 
     //booking form
     const [bookingForm, setBookingForm] = useState({
-        specialRequest: '', noOfRooms: '',
-        email: '', name: '', contact: '', checkIn: '', checkOut: ''
+        email: '', name: '', contact: '', checkIn: '',
+        noOfRooms: '',
+        checkOut: '', specialRequest: ''
     })
     //handle inputs
     const handleInputs = (e) => {
@@ -53,9 +96,9 @@ const BookingPage = ({ }) => {
             noOfRooms: bookingForm.noOfRooms,
             availableRooms: room.availableRooms
         }
-        console.log('updateData', updateData)
         try {
-            const response = await axios.patch(`https://online-hotel-booking-puce.vercel.app/update-room/${resortId}/${roomId}`, updateData)
+            // eslint-disable-next-line
+            const response = await axios.patch(`http://localhost:4001/update-room/${resortId}/${roomId}`, updateData)
             console.log(response)
         }
         catch (err) {
@@ -73,48 +116,82 @@ const BookingPage = ({ }) => {
         const bookingTime = moment().format('HH:mm')
 
         const bookingData = {
-            name: bookingForm.name,
-            email: bookingForm.email,
-            contact: bookingForm.contact,
+            name: user.name,
+            email: user.email,
+            contact: user.contact,
             resortname: resortname,
             resortId: resortId,
             roomType: room.roomType,
-            roomId:roomId,
+            roomId: roomId,
             checkIn: bookingForm.checkIn,
             checkOut: bookingForm.checkOut,
             noOfRooms: bookingForm.noOfRooms,
             specialRequest: bookingForm.specialRequest,
-            totalAmount: room.ratePerNight,
+            totalAmount: room.weekdayPerNightRate,
             bookingDate: bookingDate,
-            bookingTime: bookingTime
+            bookingTime: bookingTime,
+            bookingStatus: bookingStatus,
+            reservationId: nanoid()
         }
+        console.log('bookingData', bookingData)
 
         try {
-            const token = localStorage.getItem('token')
+            // const token = localStorage.getItem('token')
             if (!token) {
                 toast.error('Please signIn to your account to book a room')
             }
             else {
-                const response = await axios.post('https://online-hotel-booking-puce.vercel.app/booking-form', bookingData, {
+                const response = await axios.post(`http://localhost:4001/booking-form/${resortId}/${roomId}`, bookingData, {
                     headers: {
                         authorization: token
                     }
                 })
                 if (response.data.success) {
                     console.log(response)
+                    setBookingStatus('confirmed')
                     UpdateRoom();
-                    toast.success('Thanks! we reserved a room for you')
-                    // navigate('/my-bookings')
+                    sendEmail(bookingData);
+                    toast.success('Checkout complete.')
                 }
                 else {
                     toast.error(response.data.message)
                 }
+                // console.log(response)
             }
         }
         catch (err) {
             console.log(err)
         }
     }
+
+    //send email after successful booking
+    const sendEmail = async (bookingData) => {
+        try {
+            toast.loading('waiting for confirmation')
+            // eslint-disable-next-line
+            const response = await fetch('http://localhost:4001/send-email', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    ...bookingData,
+                    resort,
+                    room,
+                })
+            });
+            toast.dismiss();
+            // navigate('/my-bookings')
+
+            toast.success('Booking confirmation email sent')
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+
+
 
 
 
@@ -153,7 +230,8 @@ const BookingPage = ({ }) => {
             <div className='row3' >
                 <div className='col1'>
                     <div className='row1'>
-                        <p >{room.roomType}
+                        Room Type
+                        <p>{room.roomType}
                             {
                                 (room.breakfast === true) ? (
                                     <span className='breakfast-option' style={
@@ -170,11 +248,11 @@ const BookingPage = ({ }) => {
                         {/* <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Check-out date : </p> */}
 
                         <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Adult Capacity : <span>{room.adultCapacity}</span></p>
-                        <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Charges Per Night : {`Rs. ${room.ratePerNight} +Taxes`} </p>
+                        <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Charges Per Night : {`Rs. ${room.weekdayPerNightRate} +Taxes`} </p>
                     </div>
                     <div className='row2'>
                         <div><p>Total</p></div>
-                        <div><p>{`Rs. ${room.ratePerNight}`}</p></div>
+                        <div><p>{`Rs. ${room.weekdayPerNightRate}`}</p></div>
                     </div>
                 </div>
                 <div className='col2'>
@@ -196,21 +274,21 @@ const BookingPage = ({ }) => {
                     <div className='col1'>
                         <h6>Personal Details</h6>
                         <form className='guestform'>
-                            <div><TextField type='email' className='form-input'
+                            {/* <div><TextField type='email' className='form-input'
                                 id="outlined-basic" label="Email address" variant="outlined" required
                                 name='email' value={bookingForm.email} onChange={handleInputs} />
-                            </div>
-                            <div>
+                            </div> */}
+                            {/* <div>
                                 <TextField type='text' className='form-input'
                                     id="outlined-basic" label="Full Name" variant="outlined" required
                                     name='name' value={bookingForm.name} onChange={handleInputs} />
-                            </div>
-                            <div>
+                            </div> */}
+                            {/* <div>
                                 <TextField type='number' className='form-input'
                                     id="outlined-basic" label="Phone Number" variant="outlined" required
                                     name='contact' value={bookingForm.contact} onChange={handleInputs} />
 
-                            </div>
+                            </div> */}
                             <div>
                                 <lable>Check-in date</lable>
                                 <TextField type='date' className='form-input'

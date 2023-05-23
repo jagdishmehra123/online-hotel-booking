@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 const UsersData = require('../models/registration')
 const jwt = require('jsonwebtoken')
 const { body, validationResult } = require('express-validator')
+const clientMiddleware = require('../middleware/client')
+
 
 // Create a new account
 router.post('/register', [
@@ -21,7 +23,7 @@ router.post('/register', [
     if (!errors.isEmpty()) {
       return resp.json({ success: false, message: errors.array() })
     }
-    const existingUser = await UsersData.findOne({ email: email })
+    const existingUser = await UsersData.findOne({ contact: contact })
     if (existingUser) {
       console.log('Account already exist', existingUser)
       resp.json({ success: false, message: 'Account already exist' })
@@ -72,5 +74,22 @@ router.post('/signin', [
   }
 })
 
+
+//get user/customer's data
+router.get('/user-details/', clientMiddleware, async (req, resp) => {
+  console.log(req.params.id)
+  try {
+    const details = await UsersData.findOne({ _id: req.clientId })
+    if (details) {
+      resp.json({ success: true, details: details })
+    }
+    else {
+      resp.json({ success: false, message: "Cannot find any details" })
+    }
+  }
+  catch (err) {
+    resp.json({ success: false, message: err })
+  }
+})
 
 module.exports = router;

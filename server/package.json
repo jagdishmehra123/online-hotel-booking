@@ -185,6 +185,7 @@
     "node-abi": "^3.40.0",
     "node-addon-api": "^5.1.0",
     "node-fetch": "^2.6.9",
+    "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
     "nopt": "^5.0.0",
     "normalize-path": "^3.0.0",

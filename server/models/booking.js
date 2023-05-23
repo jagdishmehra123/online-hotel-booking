@@ -16,6 +16,8 @@ const BookingSchema = {
   totalAmount:Number,
   bookingDate:String,
   bookingTime:String,
+  bookingStatus:String,
+  reservationId:String,
   client:mongoose.Schema.Types.ObjectId,
 };
 
