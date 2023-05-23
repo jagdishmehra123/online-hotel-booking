@@ -34,7 +34,7 @@ const ViewDetails = () => {
   //GET PROPERTY DETAILS
   const getProperty = async () => {
     try {
-      const response = await axios.get(`/resort-details/${id}`)
+      const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
       console.log('view details of resort', response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
