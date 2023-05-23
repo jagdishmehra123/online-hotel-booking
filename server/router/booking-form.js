@@ -85,7 +85,7 @@ router.patch('/update-room/:resortId/:roomId', async (req, resp) => {
 
 
 //send email of booking confirmation
-router.post('/send-email', async (req, resp) => {
+router.post('/send-email',clientMiddleware, async (req, resp) => {
   console.log('body from send email', req.body.resort)
 
 

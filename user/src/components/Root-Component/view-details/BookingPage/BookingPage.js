@@ -181,7 +181,7 @@ const BookingPage = ({ }) => {
                 })
             });
             toast.dismiss();
-            // navigate('/my-bookings')
+            navigate('/my-bookings')
 
             toast.success('Booking confirmation email sent')
         }
