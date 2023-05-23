@@ -85,12 +85,20 @@ router.patch('/update-room/:resortId/:roomId', async (req, resp) => {
 
 
 //send email of booking confirmation
-router.post('/send-email',clientMiddleware, async (req, resp) => {
-  console.log('body from send email', req.body.resort)
+router.post('/send-email', clientMiddleware, async (req, resp) => {
+  console.log(req.body.email)
+  console.log('=======================')
+  console.log(req.body.bookingData)
+  console.log("=========================")
+  console.log(req.body.resort)
+  console.log("======================")
+  console.log(req.body.room)
+  console.log("=======================")
 
 
   try {
     const { email } = req.body
+    console.log(email)
     const resort = await HotelBook.findOne({ _id: req.body.resortId })
     // console.log(resort)
 

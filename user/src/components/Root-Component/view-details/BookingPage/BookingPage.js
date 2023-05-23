@@ -20,7 +20,7 @@ const BookingPage = ({ }) => {
     //get sigined in client details
     const getUser = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/user-details`, {
+            const response = await axios.get(`http://localhost:4001/user-details`, {
                 headers: {
                     authorization: token
                 }
@@ -42,8 +42,8 @@ const BookingPage = ({ }) => {
     //get Resort
     const getResort = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${resortId}`)
-            console.log('resort', response.data.resortData)
+            const response = await axios.get(`http://localhost:4001/resort-details/${resortId}`)
+            // console.log('resort', response.data.resortData)
             setResort(response.data.resortData)
 
         }
@@ -54,9 +54,9 @@ const BookingPage = ({ }) => {
     //get room details
     const getRoom = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-room/${resortId}/${roomId}`)
+            const response = await axios.get(`http://localhost:4001/resort-room/${resortId}/${roomId}`)
             if (response.data.success) {
-                console.log(response.data)
+                // console.log(response.data)
                 setRoom(response.data.data)
             }
             else {
@@ -141,7 +141,7 @@ const BookingPage = ({ }) => {
                 toast.error('Please signIn to your account to book a room')
             }
             else {
-                const response = await axios.post(`https://online-hotel-booking-puce.vercel.app/booking-form/${resortId}/${roomId}`, bookingData, {
+                const response = await axios.post(`http://localhost:4001/booking-form/${resortId}/${roomId}`, bookingData, {
                     headers: {
                         authorization: token
                     }
@@ -166,22 +166,26 @@ const BookingPage = ({ }) => {
 
     //send email after successful booking
     const sendEmail = async (bookingData) => {
+        const { email } = user
+        console.log(`email sent to ${email}`)
         try {
             toast.loading('waiting for confirmation')
             // eslint-disable-next-line
-            const response = await fetch('https://online-hotel-booking-puce.vercel.app/send-email', {
+            const response = await fetch('http://localhost:4001/send-email', {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    authorization: token
                 },
                 body: JSON.stringify({
                     ...bookingData,
+                    email,
                     resort,
-                    room,
+                    room
                 })
             });
             toast.dismiss();
-            navigate('/my-bookings')
+            // navigate('/my-bookings')
 
             toast.success('Booking confirmation email sent')
         }

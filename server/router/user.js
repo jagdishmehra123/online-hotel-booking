@@ -76,11 +76,11 @@ router.post('/signin', [
 
 
 //get user/customer's data
-router.get('/user-details/', clientMiddleware, async (req, resp) => {
-  console.log(req.params.id)
+router.get('/user-details', clientMiddleware, async (req, resp) => {
   try {
     const details = await UsersData.findOne({ _id: req.clientId })
     if (details) {
+      console.log(details)
       resp.json({ success: true, details: details })
     }
     else {
