@@ -220,7 +220,7 @@ const BookingPage = ({ }) => {
                 </table>
             </div>
 
-            <div className='row3' style={{backgroundColor:'lightblue'}}>
+            <div className='row3' style={{ backgroundColor: 'lightblue' }}>
                 <div className='col1'>
                     <div className='row1' >
                         Room Type
@@ -240,8 +240,8 @@ const BookingPage = ({ }) => {
                         {/* <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Check-in date :</p> */}
                         {/* <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Check-out date : </p> */}
 
-                        <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Adult Capacity : <span>{room.adultCapacity}</span></p>
-                        <p style={{ lineHeight: '1rem', fontFamily: "'Ysabeau', sans-serif" }}>Charges Per Night : {`Rs. ${room.weekdayPerNightRate} +Taxes`} </p>
+                        <p style={{ lineHeight: '1rem' }}>Adult Capacity : <span>{room.adultCapacity}</span></p>
+                        <p style={{ lineHeight: '1rem' }}>Charges Per Night : {`Rs. ${room.weekdayPerNightRate} +Taxes`} </p>
                     </div>
                     <div className='row2'>
                         <div><p>Total</p></div>
@@ -259,7 +259,7 @@ const BookingPage = ({ }) => {
 
             {/* <div className='dummy-border'></div> */}
 
-            <div className='row4' style={{backgroundColor:'aliceblue'}}>
+            <div className='row4' style={{ backgroundColor: 'aliceblue' }}>
                 <h3>Guest Information</h3>
 
                 <div>
@@ -311,7 +311,7 @@ const BookingPage = ({ }) => {
                         <h6>Payment Information</h6>
                         <div>
                             <h5>Your Total Payable amount </h5>
-                            <h5 style={{ marginLeft:'10rem' }}>
+                            <h5 style={{ marginLeft: '10rem' }}>
                                 Rs.{room.weekdayPerNightRate + 100}</h5>
                         </div>
                     </div>
