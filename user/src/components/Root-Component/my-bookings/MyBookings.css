@@ -1,6 +1,10 @@
 .my-bookings-wrapper {
     /* border: 1px solid black; */
+    margin: auto;
     margin-top: 6rem;
+    width: 98%;
+    background-color: #e7fae8;
+    padding: 1rem;
 }
 
 .my-bookings-wrapper h3 {
@@ -13,7 +17,7 @@
 }
 
 .booking-card {
-    width: 25%;
+    width: 30%;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -118,7 +122,7 @@
 @media only screen and (max-width:900px) {
     .my-bookings-wrapper {
         /* border: 1px solid black; */
-        margin-top: 6rem;
+        margin-top: 6rem;width: 100%;
     }
 
     .my-bookings-wrapper h3 {

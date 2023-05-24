@@ -186,7 +186,16 @@
     /* border: 1px solid black; */
 }
 
+
+
 .booking-page-wrapper .row4 .col2 h6 {}
+
+
+.booking-page-wrapper .row4 .col2 div{
+    display: flex;
+    margin-top: 5rem;
+    font-family: 'Rajdhani', sans-serif;
+}
 
 
 @media only screen and (max-width:900px) {

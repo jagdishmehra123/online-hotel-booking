@@ -309,6 +309,11 @@ const BookingPage = ({ }) => {
                     {/* payment infomation */}
                     <div className='col2'>
                         <h6>Payment Information</h6>
+                        <div>
+                            <h5>Your Total Payable amount </h5>
+                            <h5 style={{ marginLeft:'10rem' }}>
+                                Rs.{room.weekdayPerNightRate + 100}</h5>
+                        </div>
                     </div>
                     {/* payment infomation ends */}
 
