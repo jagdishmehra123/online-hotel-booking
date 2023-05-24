@@ -192,14 +192,6 @@ const BookingPage = ({ }) => {
     }
 
 
-
-
-
-
-
-
-
-
     return (
         <div className='booking-page-wrapper container'>
             <div className='heading'>
