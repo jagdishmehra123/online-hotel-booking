@@ -168,7 +168,7 @@ const BookingPage = ({ }) => {
         try {
             toast.loading('waiting for confirmation')
             // eslint-disable-next-line
-            const response = await fetch('/send-email', {
+            const response = await fetch('https://online-hotel-booking-puce.vercel.app/send-email', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
