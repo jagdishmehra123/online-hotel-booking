@@ -50,7 +50,6 @@
 .property-card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     width: 87%;
     margin: auto;
     margin-top: 2rem;

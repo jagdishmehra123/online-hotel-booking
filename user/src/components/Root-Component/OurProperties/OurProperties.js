@@ -14,7 +14,7 @@ const OurProperties = () => {
 
   const getPropertiesData = async () => {
     // await axios.get(`/hotelbook`)
-      await axios.get(`http://localhost:4001/hotelbook`)
+    await axios.get(`http://localhost:4001/hotelbook`)
 
       .then((res) => {
         console.log('property list', res.data)
@@ -47,22 +47,22 @@ const OurProperties = () => {
           </div>
           <div className='properties-to-book'>
             <input type='text' placeholder='Search' name='searchResortName' value={searchResortName}
-              onChange={(e) => setSearchResortName(e.target.value)} style={{ width: '90%', paddingLeft: '1rem' }} />
+              onChange={(e) => setSearchResortName(e.target.value.toLowerCase())} style={{ width: '90%', paddingLeft: '1rem' }} />
           </div>
-
+          {/* {searchResortName} */}
           <div className='property-card-wrapper' >
             {allProperties.filter((property) => {
               if (searchResortName === "") {
                 return property
               }
               else {
-                if (property.resortName.includes(searchResortName)) {
+                if (property.resortName.toLowerCase().includes(searchResortName)) {
                   return property
                 }
               }
             }).map((property) => {
-              return(
-              <PropertyCard property={property} />
+              return (
+                <PropertyCard property={property} />
               )
             })}
 
