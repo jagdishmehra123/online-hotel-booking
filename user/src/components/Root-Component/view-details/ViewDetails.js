@@ -37,7 +37,7 @@ const ViewDetails = () => {
     const today = new Date()
     const dayOfWeek = today.getDay()
     try {
-      const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
+      const response = await axios.get(`/resort-details/${id}`)
       // console.log(response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
@@ -54,7 +54,7 @@ const ViewDetails = () => {
   useEffect(() => {
     getProperty()
 
-   
+
     // eslint-disable-next-line
   }, [id])
 
