@@ -14,7 +14,6 @@ const BookingPage = ({ }) => {
     const [resort, setResort] = useState({})
     const [room, setRoom] = useState('a')
     const [user, setUser] = useState([])
-    const [bookingStatus, setBookingStatus] = useState('')
 
     const token = localStorage.getItem('token')
     //get sigined in client details
@@ -42,7 +41,7 @@ const BookingPage = ({ }) => {
     //get Resort
     const getResort = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${resortId}`)
+            const response = await axios.get(`http://localhost:4001/resort-details/${resortId}`)
             // console.log('resort', response.data.resortData)
             setResort(response.data.resortData)
 
@@ -54,7 +53,7 @@ const BookingPage = ({ }) => {
     //get room details
     const getRoom = async () => {
         try {
-            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-room/${resortId}/${roomId}`)
+            const response = await axios.get(`http://localhost:4001/resort-room/${resortId}/${roomId}`)
             if (response.data.success) {
                 // console.log(response.data)
                 setRoom(response.data.data)
@@ -98,7 +97,7 @@ const BookingPage = ({ }) => {
         }
         try {
             // eslint-disable-next-line
-            const response = await axios.patch(`https://online-hotel-booking-puce.vercel.app/update-room/${resortId}/${roomId}`, updateData)
+            const response = await axios.patch(`http://localhost:4001/update-room/${resortId}/${roomId}`, updateData)
             console.log(response)
         }
         catch (err) {
@@ -114,7 +113,6 @@ const BookingPage = ({ }) => {
         console.log(bookingForm)
         const bookingDate = moment().format('DD/MM/YYYY')
         const bookingTime = moment().format('HH:mm')
-
         const bookingData = {
             name: user.name,
             email: user.email,
@@ -130,8 +128,8 @@ const BookingPage = ({ }) => {
             totalAmount: room.weekdayPerNightRate,
             bookingDate: bookingDate,
             bookingTime: bookingTime,
-            bookingStatus: bookingStatus,
-            reservationId: nanoid()
+            reservationId: nanoid(),
+            bookingStatus: 'confirmed'
         }
         console.log('bookingData', bookingData)
 
@@ -148,7 +146,6 @@ const BookingPage = ({ }) => {
                 })
                 if (response.data.success) {
                     console.log(response)
-                    setBookingStatus('confirmed')
                     UpdateRoom();
                     sendEmail(bookingData);
                     toast.success('Checkout complete.')

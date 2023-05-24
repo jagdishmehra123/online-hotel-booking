@@ -9,6 +9,7 @@ const nodemailer = require('nodemailer')
 
 router.post('/booking-form/:resortId/:roomId', clientMiddleware, async (req, resp) => {
   // console.log('client middilware id', req.client)
+  console.log('on of rooms', req.body.noOfRooms)
   let checkindate = req.body.checkIn
   let checkoutdate = req.body.checkOut
 
@@ -28,7 +29,7 @@ router.post('/booking-form/:resortId/:roomId', clientMiddleware, async (req, res
     if (getroom) {
       // console.log('room found', getroom)
       if (getroom.availableRooms === 0) {
-        // console.log('no room available')
+        console.log('no room available')
         resp.json({ success: false, message: 'Sorry, no rooms available' })
       }
       else if (getroom.availableRooms < noOfRooms) {
@@ -69,7 +70,7 @@ router.patch('/update-room/:resortId/:roomId', async (req, resp) => {
     console.log('initial rooms', getroom.availableRooms)
     if (getroom) {
       getroom.availableRooms = getroom.availableRooms - noOfRooms
-      // console.log('updatedRoom', getroom.availableRooms)
+      console.log('updatedRoom', getroom.availableRooms)
       await resort.save()
       resp.json({ success: true })
     }

@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router'
 // import { useParams } from 'react-router-dom'
 
 
-const RoomCard = ({ room, resortId, resortname }) => {
+const RoomCard = ({ room, resortId, resortname, price }) => {
   const navigate = useNavigate()
   const capacity = Number(room.adultCapacity)
 
@@ -62,7 +62,10 @@ const RoomCard = ({ room, resortId, resortname }) => {
         <div className='row1' >
           <div >
             <h5>{room.roomType}</h5>
-            <p style={{ fontWeight: 'bold', textDecoration: 'underline' }}>{room.ratePerNight} /night</p>
+            rate per night
+            <p style={{ fontWeight: 'bold', borderBottom: '1px solid black' }}>
+              Rs. {(price === 'weekendPrice') ? (room.weekendPerNightRate) : (room.weekdayPerNightRate)}
+            </p>
             <p style={{ display: 'flex' }}>
               Occupancy:
               <span style={{ paddingLeft: '1rem', fontSize: '1.2 rem' }}>{room.adultCapacity}</span>
@@ -112,10 +115,10 @@ const RoomCard = ({ room, resortId, resortname }) => {
         <div className='row4' style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             {
-              (room.availableRooms>0 && room.availableRooms <= 4) ? (<p>{`Hurry! only ${room.availableRooms} rooms available`}</p>) : (null)
+              (room.availableRooms > 0 && room.availableRooms <= 4) ? (<p>{`Hurry! only ${room.availableRooms} rooms available`}</p>) : (null)
             }
           </div>
-          {(room.availableRooms === 0) ? (
+          {(room.availableRooms === '0') ? (
             <div style={{ width: '100%' }}>
               <p style={{
                 textAlign: 'right',

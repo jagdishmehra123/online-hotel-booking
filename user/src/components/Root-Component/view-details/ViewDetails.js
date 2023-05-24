@@ -19,11 +19,12 @@ const ViewDetails = () => {
   const [imgArr, setImgArr] = useState([])
   const [roomArr, setRoomArr] = useState([])
   const [cart, setCart] = useState([])
-  const [formErr, setFormErr] = useState(false)
   const [reviews, setReviews] = useState([])
   const [msg, setMsg] = useState('')
   const [roomstatus, setroomstatus] = useState(false)
   const [activeBtn, setActiveBtn] = useState(true)
+  const [price, setPrice] = useState('')
+  const [occName, setOccName] = useState('')
 
 
   // eslint-disable-next-line
@@ -33,12 +34,18 @@ const ViewDetails = () => {
 
   //GET PROPERTY DETAILS
   const getProperty = async () => {
+    const today = new Date()
+    const dayOfWeek = today.getDay()
     try {
       const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
-      console.log('view details of resort', response.data.resortData[0].rooms)
+      // console.log(response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)
-      setImgArr(response.data.resortData[0].rooms[0].imgUrl)
+      setImgArr(response.data.resortData[0].rooms[0].imgUrl);
+
+
+      (dayOfWeek === 0 || dayOfWeek === 6) ? (setPrice('weekendPrice')) : (setPrice('weekdayPrice'))
+
     }
     catch (err) {
       console.log(err)
@@ -46,10 +53,12 @@ const ViewDetails = () => {
   }
   useEffect(() => {
     getProperty()
+
+   
     // eslint-disable-next-line
   }, [id])
 
- 
+
 
 
 
@@ -93,7 +102,7 @@ const ViewDetails = () => {
                   <RoomCard resortId={id} resortname={resortname}
                     room={room}
                     cart={cart} setCart={setCart}
-                    roomArr={roomArr}
+                    roomArr={roomArr} price={price}
                     msg={msg} setMsg={setMsg} setroomstatus={setroomstatus}
                     activeBtn={activeBtn} setActiveBtn={setActiveBtn}
                     key={i + 1} />
@@ -106,7 +115,7 @@ const ViewDetails = () => {
         {/* section3 booking section ends */}
 
 
-          <Reviews reviews={reviews} setReviews={setReviews} id={id} />
+        <Reviews reviews={reviews} setReviews={setReviews} id={id} />
       </div>
     </>
   )

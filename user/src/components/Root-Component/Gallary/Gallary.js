@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import axios from '../../../helpers/axios'
 import Images from '../view-details/Images'
+import Footer from '../Footer/Footer'
 
 const Gallary = () => {
 
@@ -75,23 +76,28 @@ const Gallary = () => {
 
 
     return (
-        <div className='gallery-wrap'>
-            <div className='header-navbar'>
-                {allProperties.map((resort, i) => {
-                    return (
-                        <div key={i + 1} >
-                            <p onClick={() => handleGetImages(resort._id, resort.resortName)}>
-                                {resort.resortName}
-                            </p>
-                        </div>
-                    )
-                })}
+        <>
+            <div className='gallery-wrap'>
+                <div className='header-navbar'>
+                    {allProperties.map((resort, i) => {
+                        return (
+                            <div key={i + 1} >
+                                <p onClick={() => handleGetImages(resort._id, resort.resortName)}>
+                                    {resort.resortName}
+                                </p>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                <Images images={images} interval={1800} />
+                <div><h5>{resortName}</h5></div>
+
             </div>
+            <Footer />
+        </>
 
-            <Images images={images} interval={1800} />
-            <div><h5>{resortName}</h5></div>
 
-        </div>
     )
 }
 

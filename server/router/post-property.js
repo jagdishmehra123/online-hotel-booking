@@ -10,6 +10,7 @@ const HotelBook = require("../models/post-property");
 router.get("/hotelbook", async (req, res) => {
   try {
     const hotelBook = await HotelBook.find({});
+    
     res.status(200).json(hotelBook);
   } catch (error) {
     res.status(5009).json({ message: error.message });
@@ -88,7 +89,7 @@ router.post('/images/:id', async (req, resp) => {
     resp.json({ success: true, resort: resort })
   }
   catch (err) {
-    resp.json({ success: false, message:err })
+    resp.json({ success: false, message: err })
   }
 })
 
