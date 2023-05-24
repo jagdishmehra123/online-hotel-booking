@@ -328,7 +328,7 @@ const BookingPage = ({ }) => {
             </div>
 
 
-            <p>Note: Please carefully go through our terms and conditions carefully before booking confirmation
+            <p>Note: Please go through our terms and conditions carefully before booking confirmation
                 <span style={{
                     marginLeft: '1rem',
                     color: 'blue',
