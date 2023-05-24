@@ -220,9 +220,9 @@ const BookingPage = ({ }) => {
                 </table>
             </div>
 
-            <div className='row3' >
+            <div className='row3' style={{backgroundColor:'lightblue'}}>
                 <div className='col1'>
-                    <div className='row1'>
+                    <div className='row1' >
                         Room Type
                         <p>{room.roomType}
                             {
@@ -259,7 +259,7 @@ const BookingPage = ({ }) => {
 
             {/* <div className='dummy-border'></div> */}
 
-            <div className='row4'>
+            <div className='row4' style={{backgroundColor:'aliceblue'}}>
                 <h3>Guest Information</h3>
 
                 <div>
