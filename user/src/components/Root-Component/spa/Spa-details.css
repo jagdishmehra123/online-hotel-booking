@@ -69,14 +69,21 @@
 
 
 .detailed-spa-container .form {
-    /* border: 1px solid black; */
+    border: 1px solid rgb(209, 209, 209);
     width: 30%;
+    height: 35rem;
     display: flex;
+    border-radius:2rem ;
+    box-shadow: 2px 2px 20px 2px lightgrey ;
+    background-color: #d7f7f9;
+
 }
 
 .detailed-spa-container .form form {
     /* border: 1px solid black; */
     width: 90%;
+    margin: auto;
+    padding: 1rem 0.5rem;
 
 
 }
@@ -95,13 +102,16 @@
 .detailed-spa-container .form form input[type="text"],
 .detailed-spa-container .form form input[type="email"],
 .detailed-spa-container .form form input[type="tel"],
-.detailed-spa-container .form form input[type="date"] {
+.detailed-spa-container .form form input[type="date"],
+.detailed-spa-container .form form input[type="number"] 
+    {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     height: 2rem;
+    outline: none;
 }
 
 .detailed-spa-container .form form input[type="submit"] {
@@ -137,6 +147,73 @@ button {
 button:hover {
     background-color: #ffc400;
 }
+
+
+.property-locations {
+    margin-top: 6rem;
+    margin-bottom: 0rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+
+.property-locations .location-header {
+    display: flex;
+    justify-content: center;
+
+}
+
+.property-locations .dummy-border {
+    width: 10%;
+    margin: auto;
+    border: 1px solid grey;
+}
+
+.property-locations .location-header div:first-child {
+    /* border: 1px solid black; */
+}
+
+.property-locations .location-header h3 {
+    margin-left: 1rem;
+    color: black;
+}
+
+
+.property-locations .location-addresses {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+    /* border: 1px solid black; */
+
+}
+
+.property-locations .location-addresses .address-section {
+    width: 17%;
+    padding: 0.5rem;
+
+}
+
+.property-locations .location-addresses .address-section h6 {
+    color: black;
+    font-weight: 700;
+}
+
+
+
+.property-locations .location-addresses section div {
+    width: 90%;
+    border-collapse: collapse;
+    border: 0.1px solid rgb(220, 218, 218);
+
+}
+
+.property-locations .location-addresses section p {
+    padding: 0.2rem;
+    color: black;
+    font-weight: 500;
+
+}
+
 
 
 
@@ -286,4 +363,75 @@ button:hover {
     button:hover {
         background-color: #ffc400;
     }
+
+
+    /* property-locations */
+
+    .property-locations {
+        margin-top: 6rem;
+        margin-bottom: 0rem;
+
+        /* border: 1px solid black; */
+    }
+
+
+    .property-locations .location-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .property-locations .dummy-border {
+        width: 25%;
+        margin: auto;
+        border: 1px solid grey;
+    }
+
+    .property-locations .location-header div:first-child {
+        /* border: 1px solid black; */
+    }
+
+    .property-locations .location-header h3 {
+        margin-left: 1rem;
+        color: black;
+    }
+
+
+    .property-locations .location-addresses {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+        /* border: 1px solid black; */
+
+    }
+
+    .property-locations .location-addresses .address-section {
+        width: 90%;
+        margin: auto;
+        padding: 0.5rem;
+        text-align: center;
+        margin-top: 2rem;
+
+    }
+
+    .property-locations .location-addresses .address-section h6 {
+        color: black;
+    }
+
+
+
+    .property-locations .location-addresses section div {
+        width: 70%;
+        border-collapse: collapse;
+        margin: auto;
+        border: 0.1px solid rgb(220, 218, 218);
+
+    }
+
+    .property-locations .location-addresses section p {
+        padding: 0.2rem;
+    }
+
+
+    
 }

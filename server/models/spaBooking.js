@@ -1,11 +1,13 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
-const SpaSchema=new mongoose.Schema({
-    name:String,
-    email:String,
-    contact:String,
-    date:Date
+const SpaSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    contact: String,
+    date: String,
+    therapyChoice: String,
+    noOfFemale: String
 })
 
-const SpaModel=mongoose.model('spaBookings', SpaSchema)
-module.exports=SpaModel
+const SpaModel = mongoose.model('spaBookings', SpaSchema)
+module.exports = SpaModel

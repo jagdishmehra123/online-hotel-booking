@@ -163,8 +163,9 @@ const Home = () => {
             <p>Tambli Val, Agonda Beach Road, Agonda, Canacona, Goa - 403702</p>
           </section>
         </div>
-
       </div>
+
+      
       <Footer />
     </>
   )
