@@ -38,7 +38,7 @@ export default function SpaDetails() {
         console.log(spaForm)
         e.preventDefault()
         try {
-            const response = await axios.post('/spa-booking', spaForm)
+            const response = await axios.post('https://online-hotel-booking-puce.vercel.app/spa-booking', spaForm)
             console.log(response.data)
             alert('We reserved your booking')
             navigate('/spa')
