@@ -6,6 +6,7 @@
 
 .home-content {
     padding: 1rem 1rem;
+    margin-bottom: 0;
 }
 
 .home-content .content-wrapper {
@@ -188,6 +189,7 @@
     margin-top: 6rem;
     padding: 1rem;
     border: 2px solid black;
+    margin-bottom: 0;
 }
 
 

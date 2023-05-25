@@ -6,7 +6,7 @@ import axios from '../../../helpers/axios';
 import { FaStar } from 'react-icons/fa';
 
 import Images from './Images';
-import RoomCard from './RoomCard/RoomCard';
+import RoomCard from './RoomCard/RoomCard/RoomCard';
 import Reviews from './reviews/Reviews';
 import { Icon } from 'react-icons-kit'
 import { bin } from 'react-icons-kit/icomoon/bin'
@@ -37,7 +37,7 @@ const ViewDetails = () => {
     const today = new Date()
     const dayOfWeek = today.getDay()
     try {
-      const response = await axios.get(`/resort-details/${id}`)
+      const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/resort-details/${id}`)
       // console.log(response.data.resortData[0].rooms)
       setResort(response.data.resortData[0])
       setRoomArr(response.data.resortData[0].rooms)

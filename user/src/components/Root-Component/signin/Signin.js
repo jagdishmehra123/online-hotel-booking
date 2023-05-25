@@ -54,7 +54,7 @@ export default function SignIn() {
     e.preventDefault()
     console.log(inputData)
     try {
-      const response = await axios.post('/signin', inputData)
+      const response = await axios.post('https://online-hotel-booking-puce.vercel.app/signin', inputData)
       if (response.data.success) {
         console.log(response.data.message)
         toast.success(response.data.message)

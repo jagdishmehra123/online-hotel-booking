@@ -2,7 +2,7 @@ import './OurProperties.css'
 import React, { useState, useEffect } from 'react'
 import axios from "../../../helpers/axios";
 import PropertyCard from './Property-Card/PropertyCard'
-
+import OurPropertyBannerVideo from './Our-Properties-Video/Our-Properties-Video';
 const Footer = React.lazy(() => import('../Footer/Footer'))
 
 
@@ -30,7 +30,7 @@ const OurProperties = () => {
   }, [])
   if (!allProperties) {
     return (
-      <p style={{ textAlign: 'center', marginTop: '20rem' }}>Loading...</p>
+      <h1>Loading...</h1>
     )
   }
 
@@ -40,10 +40,11 @@ const OurProperties = () => {
     <>
       <main className='our-properties-main'>
         <div className='quba-goa-search'>
-          <div className='banner'>
+          {/* <div className='banner'>
             <h2>The Cuba Goa Properties</h2>
             <h6 style={{ margin: '20px 0' }}>BEACH HUTS, BUNGALOWS & RESORTS</h6>
-          </div>
+          </div> */}
+            <OurPropertyBannerVideo />
           <div className='properties-to-book'>
             <input type='text' placeholder='Search' name='searchResortName' value={searchResortName}
               onChange={(e) => setSearchResortName(e.target.value.toLowerCase())} style={{ width: '90%', paddingLeft: '1rem' }} />

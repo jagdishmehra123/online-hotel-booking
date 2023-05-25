@@ -106,8 +106,10 @@
 }
 
 .quba-goa-search .banner {
-    height: 450px;
+    /* height: 450px; */
+    height: 100vh;
     padding: 0;
+    /* background: url('../../../assets/pexels-pixabay-87430.jpg'); */
     background: url('https://wallpaperaccess.com/full/3068226.jpg');
     background-size: cover;
     padding-top: 140px;
@@ -141,24 +143,33 @@
     box-shadow: 2px 3px 5px 2px rgba(51, 51, 90, 0.303);
 }
 
+.our-prop-banner-video-container{
+    position: relative;
+}
+
 .properties-to-book {
     background-color: white;
-    height: 90px;
-    width: 90%;
+    /* height: 60px; */
+    width: 55%;
     margin: auto;
-    margin-top: -20px;
-    padding: 22px;
+    /* margin-top: -20px; */
+    margin-top: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 2px 3px 5px 2px rgba(51, 51, 90, 0.303);
 }
 
-.properties-to-book .select-menu {
+.properties-to-book > input{
+    outline: none;
+    height: 30px;
+    border: 1px solid rgb(172, 171, 171);
+}
 
+.properties-to-book .select-menu {
     width: 450px;
     /* margin: 150px auto; */
-
-
 }
 
 .select-menu .select-btn {

@@ -13,7 +13,7 @@ const MyBookings = () => {
 
     const token = localStorage.getItem('token')
     const getBookingData = async () => {
-        const response = await axios.get('https://online-hotel-booking-puce.vercel.app/get-bookings', {
+        const response = await axios.get('/get-bookings', {
             headers: {
                 authorization: token
             }
@@ -32,6 +32,10 @@ const MyBookings = () => {
         console.log(id)
         navigate(`/rating-form/${id}`)
     }
+
+    // if (!list) {
+    //     return ('...loading')
+    // }
 
     return (
         <div className='my-bookings-wrapper'>

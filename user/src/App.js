@@ -15,6 +15,7 @@ import About from './components/Root-Component/About/About';
 import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
 import Gallary from './components/Root-Component/Gallary/Gallary'
 import TermsConditions from './components/Root-Component/terms-conditions/TermsConditions';
+import ViewRoomDetails from './components/Root-Component/view-details/View-Room-Details/View-Room-Details'
 import { Toaster } from 'react-hot-toast';
 
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -27,8 +28,6 @@ const ContactUs = React.lazy(() => import('./components/Root-Component/Contact/C
 const Signin = React.lazy(() => import('./components/Root-Component/signin/Signin'))
 const ShowInfoOfRoomCart = React.lazy(() => import('./components/Root-Component/Home/ShowInfoOfRoomCart'))
 const LearnMore = React.lazy(() => import('./components/Root-Component/Home/LearnMore'))
-
-
 
 
 
@@ -55,6 +54,11 @@ function App() {
               <>
                 <Home />
               </>
+            </Suspense>
+          } />
+          <Route path="/:resortId/:roomType/:roomId/details" element={
+            <Suspense fallback={<p>Loading....</p>}>
+              <ViewRoomDetails />
             </Suspense>
           } />
           <Route path='/rating-form/:resortId' element={<RatingForm />}> </Route>
