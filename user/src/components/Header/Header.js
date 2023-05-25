@@ -25,22 +25,22 @@ const Header = ({ auth, setAuth }) => {
 
 
   /*    navbar changing its color   */
-  // const [navBackground, setNavBackground] = useState('transparent');
-  // //handle scroll
-  // const handleScroll = () => {
-  //   if (window.pageYOffset > 10) {
-  //     setNavBackground('lightblue');
-  //   } else {
-  //     setNavBackground('transparent');
-  //   }
-  // }
+  const [navBackground, setNavBackground] = useState('transparent');
+  //handle scroll
+  const handleScroll = () => {
+    if (window.pageYOffset > 10) {
+      setNavBackground('lightblue');
+    } else {
+      setNavBackground('transparent');
+    }
+  }
   //useffect
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   // ***navbar changin its color ends
 
 
@@ -62,7 +62,7 @@ const Header = ({ auth, setAuth }) => {
 
 
   return (
-    <div className='app-bar' style={{ backgroundColor: '#98A8FC' }}>
+    <div className='app-bar' style={{ backgroundColor: navBackground }}>
 
       {/* desktop view navbar */}
       <div className='desktop-section'>
