@@ -39,17 +39,6 @@ router.get('/resort-room/:resortId/:roomId', async (req, resp) => {
   try {
     const resort = await HotelBook.findOne({ _id: resortId })
     let resortRoom = resort.rooms.find((room) => room.roomId === roomId)
-    // console.log(resortRoom)
-    // for (let i = 0; i < resort.rooms.length; i++) {
-    //   if (resort.rooms[i].roomId === roomId) {
-    //     // console.log('room found', resort.rooms[i])
-    //     resortRoom = resort.rooms[i]
-    //     break;
-    //   }
-    //   else {
-    //     console.log('room not found width this id')
-    //   }
-    // }
     resp.json({ success: true, data: resortRoom })
   }
   catch (err) {
@@ -83,9 +72,11 @@ router.get('/images', async (req, resp) => {
 //get images of specific property
 router.post('/images/:id', async (req, resp) => {
   const resortId = req.params.id
+  console.log(resortId)
   try {
     // console.log(resortId)
     const resort = await HotelBook.find({ _id: resortId })
+    console.log('clicked resort for images', resort)
     resp.json({ success: true, resort: resort })
   }
   catch (err) {

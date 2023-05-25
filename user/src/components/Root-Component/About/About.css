@@ -1,9 +1,11 @@
 .aboutus-wrapper {
-    /* background-color: red; */
     padding: 1rem;
     margin-top: 7rem;
-    margin-bottom: 10rem;
     /* border: 1px solid black; */
+    background-color:rgb(250, 229, 209);
+    height: 55rem;
+    padding-top: 3rem;
+    
 }
 
 .aboutus-wrapper .title {
@@ -76,6 +78,7 @@
 .aboutus-wrapper .aboutus-body .aboutus-lb p{
     text-align: justify;
     font-family: 'candara';
+    font-size: 1.1rem;
 }
 
 

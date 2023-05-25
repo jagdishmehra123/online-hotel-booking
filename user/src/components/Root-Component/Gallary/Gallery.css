@@ -1,10 +1,12 @@
 .gallery-wrap {
-  margin-top: 7rem;
+  margin-top: 5rem;
   /* border:3px solid red; */
-  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
-
+  /* background: linear-gradient(to right, rgb(171, 172, 172), rgb(232, 233, 233), rgb(232, 233, 233), rgb(171, 172, 172)); */
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  position: relative;
 }
 
 
@@ -13,8 +15,10 @@
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
-  width: 60%;
   margin: auto;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
   /* border-bottom: 1px solid rgb(233, 233, 233); */
 }
 
@@ -35,16 +39,53 @@
   background-color: aliceblue;
 }
 
-.gallery-wrap>div:last-child{
+.gallery-wrap>div:last-child {
   /* border:1px solid red; */
   margin-top: 1rem;
   text-align: center;
 }
 
-.gallery-wrap div:last-child p{
+.gallery-wrap div:last-child p {
   text-align: center;
 }
 
+.gallery-wrap .galleryimg-wrapper {
+  margin: auto;
+  width: 100%;
+  margin-left: 0;
+}
+
+.gallery-wrap .gallery-innerwrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.gallery-wrap .gallery-innerwrap div {
+  width: 20rem;
+  height: 20rem;
+  transition: box-shadow 0.3s ease-in-out;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.gallery-wrap .gallery-innerwrap div img {
+  width: 20rem;
+  height: 20rem;
+  padding: 0;
+  border-radius: 1rem;
+  cursor: pointer;
+
+
+
+}
+
+.gallery-wrap .gallery-innerwrap div:hover {
+  box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-wrap .gallery-innerwrap div img:hover {}
 
 
 

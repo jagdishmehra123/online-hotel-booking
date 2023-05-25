@@ -1,0 +1,43 @@
+.slider {
+    position: relative;
+    width: 85%;
+    height: 40rem;
+    margin: auto;
+}
+
+.slider img {
+    position: absolute;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+
+
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slider img.active {
+    z-index: 1;
+    opacity: 1;
+}
+
+
+@media only screen and (max-width:900px){
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        margin: auto;
+    }
+}

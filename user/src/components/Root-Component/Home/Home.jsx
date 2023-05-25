@@ -63,14 +63,14 @@ const Home = () => {
 
 
   return (
-    <>
+    <div>
       <Video />
       {/* <div style={{ marginTop: '1rem' }} className=''>
         <h2 style={{ textAlign: 'center', marginTop: '2rem', marginBottom: '2.5rem' }}>FEATURED PROPERTIES</h2>
         <HomeList currentList={currentList} />
         <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div> */}
-      <div className='home-content' >
+      <div className='home-content'  >
         <div className='content-wrapper' data-aos='zoom-in' data-aos-delay='80'>
           <h6>
             Discover CUBA GOA, a distinguished collection of independent luxury hotels in the captivating region of Goa, India. Uncover a world of unparalleled hospitality and luxury.
@@ -165,9 +165,9 @@ const Home = () => {
         </div>
       </div>
 
-      
+
       <Footer />
-    </>
+    </div>
   )
 }
 
