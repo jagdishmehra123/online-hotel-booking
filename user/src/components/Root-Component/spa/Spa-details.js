@@ -36,7 +36,6 @@ export default function SpaDetails() {
     }
     const handleBooking = async (e) => {
         console.log(spaForm)
-        // Redirect user to booking page
         e.preventDefault()
         try {
             const response = await axios.post('/spa-booking', spaForm)
