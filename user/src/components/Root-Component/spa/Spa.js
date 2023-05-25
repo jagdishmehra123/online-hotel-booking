@@ -3,13 +3,17 @@ import "./Spa.css";
 import axios from "../../../helpers/axios";
 import SpaCard from "./SpaCard";
 import { Row } from "react-bootstrap";
+import { Icon } from 'react-icons-kit'
+import arrow from '../../../assets/arrow.png'
+import { useNavigate } from 'react-router-dom'
 
 const Spa = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate()
 
   const getSpaList = async () => {
     try {
-      const response = await axios.get("/allSpaList");
+      const response = await axios.get("http://localhost:4001/allSpaList");
       if (response.data.success) {
         console.log(response.data.data);
         setData(response.data.data);
@@ -26,73 +30,64 @@ const Spa = () => {
   }, []);
 
   return (
-    <>
-      <main className="main-spa">
-        <main class="spa-parent">
-          <section className="entry-point-spa">
+    <main class="spa-parent">
+      <section className="entry-point-spa" style={{ padding: '0' }}>
 
-            <div className="spa-main-cont">
-              <div className="firts-content-spa">
-                <h2>SPA</h2>
+        <div className="spa-main-cont">
+          <div className="firts-content-spa">
+            <h2>SPA</h2>
+          </div>
+          <h4 >AYURVEDIC SPA TREATMENTS IN GOA</h4>
+        </div>
+
+
+        <div style={{ marginTop: '2rem' }}>
+          <h5 style={{ textAlign: 'center' }}>
+            Welcome to a World of Rejuvenation. At Kalpaka Spa– Find Yourself
+            In The Hands Of Our Expert Masseurs – All The Way From Kerala.
+          </h5>
+        </div>
+
+      </section>
+
+
+      <div className='card-wrapper'>
+        {data.map((spa, index) => {
+          return (
+            <div className='card' key={index + 1} data-aos={(index % 2 === 0) ? ('flip-left') : ('flip-right')} data-aos-delay="10" >
+              <div className='img-wrap1'>
+                <img src={spa.imgUrl} alt='resortImg'></img>
               </div>
-              <h4>AYURVEDIC SPA TREATMENTS IN GOA</h4>
-              <h4>“Kalpaka Spa”</h4>
-
-
-            </div>
-
-            <div>
-              <h5 style={{ textAlign: 'center' }}>
-                Welcome to a World of Rejuvenation. At Kalpaka Spa– Find Yourself
-                In The Hands Of Our Expert Masseurs – All The Way From Kerala.
-              </h5>
-            </div>
-
-            <div className="spa-quots">
-              <div className="spa-quots-content">
-                <h6>CALM THOSE NERVES, AWAY FROM SUBURBS . . .</h6>
+              <div className='content'>
+                <h3 style={{}}>{spa.name}</h3>
                 <p>
-                  Calm Those Nerves, Away From Suburbs . . . Fatigued, tired, and
-                  stressed out? We have something just for you that would provide
-                  a perfect escape from the hustle and bustle of the city life. A
-                  full body massage with natural oils that permeate the body and
-                  relieve those tense muscles, allowing you to get rid of
-                  lassitude and filling you with vigour. The vitamin E in the oils
-                  will bring back the shine to your skin and help your body to
-                  loosen up. Choose from below:
+                  {spa.details}
                 </p>
+                <p>
+                  {spa.benefits}
+                </p>
+                <div className='button-wrap' style={{ cursor: 'pointer' }}>
+                  <p style={{ color: 'darkblue' }}
+                    onClick={() => { navigate(`/spa-details/${spa._id}`) }}
+                  >Book Session</p>
+                  <div
+                    style={{ cursor: 'pointer' }}>
+                    <img src={arrow} alt='' /></div>
+                </div>
               </div>
 
+              <div className='img-wrap2'>
+                <img src={spa.imgUrl} alt='resortImg'></img>
+              </div>
             </div>
-          </section>
+          )
+        })}
+      </div>
+    </main>
 
 
-          <Row
-            className="spaListWrapper image-row image-card"
-            style={{
-              display: "flex",
-              marginTop: "2rem",
-              padding: "1rem 3rem",
-            }}
-          >
-            {data.map((card, index) => {
-              return <SpaCard card={card} />;
-            })}
-          </Row>
 
-          <section>
-            <div className="spa-footer">
-              <p className="normal-text-spa">
-                For more details,
-                <a className="cta" href="/pages/beach-huts-bungalows-resorts">
-                  Get in Touch With Cuba Goa Today!
-                </a>
-              </p>
-            </div>
-          </section>
-        </main>
-      </main>
-    </>
+
   );
 };
 

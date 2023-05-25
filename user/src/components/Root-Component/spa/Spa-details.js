@@ -12,7 +12,7 @@ export default function SpaDetails() {
     const fetchDetails = async (id) => {
         console.log(spaId)
         try {
-            const response = await axios.get(`/spaDetails/${spaId}`);
+            const response = await axios.get(`https://online-hotel-booking-puce.vercel.app/spaDetails/${spaId}`);
             console.log(response.data.data);
             setDetails(response.data.data)
 

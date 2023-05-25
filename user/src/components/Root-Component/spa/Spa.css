@@ -1,30 +1,27 @@
-.main-spa {
-padding:3rem 0rem;
-overflow-x: hidden;
+.spa-parent {
+  margin-bottom: 7rem;
+  margin-top: 4rem;
 }
-.spa-parent{
-  width: 100vw;
 
-}
 .main-spa .banner {
   width: 100%;
 }
-.spa-main-cont{
+
+.spa-main-cont {
   height: 40rem;
-  margin:1rem 0;
   text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap:0.7rem;
   color: rgb(255, 255, 255);
   background-size: 100%;
   background-image: url('../../../assets/spaCloud.jpg');
   background-size: cover;
   background-position: 'center center';
   text-align: center;
-  padding: 1rem; 
-  margin-top: 3rem;  
+  padding: 1rem;
+  margin-top: 7rem;
+  /* border:1px solid black; */
 }
 
 /* .entry-point-spa {
@@ -34,17 +31,16 @@ overflow-x: hidden;
 
 .spa-quots {
   display: grid;
-  padding: 40px;
   grid-template-columns: 1fr 400px;
   background-color: #fbeedd;
-  margin: 2rem;
 }
-.spa-button-container{
+
+.spa-button-container {
   margin: 2rem;
 }
 
-.firts-content-spa h2{
-  margin:1.5rem;
+.firts-content-spa h2 {
+  margin: 1.5rem;
   font-size: 40px;
 }
 
@@ -54,17 +50,20 @@ overflow-x: hidden;
   padding: 0;
   border-radius: 10px;
 }
-.spa-quots-content h6{
-  color:black;
+
+.spa-quots-content h6 {
+  color: black;
   font-size: 20px;
 
 }
+
 .spa-quots-content {
   width: 100%;
   padding: 1rem 1rem;
   font-size: 17px;
 }
-.spa-quots-content > p {
+
+.spa-quots-content>p {
   line-height: 30px;
 }
 
@@ -75,13 +74,16 @@ overflow-x: hidden;
   gap: 2.5rem;
   place-content: center;
 }
+
 .spa-containenr li {
   margin: 0;
   padding: 0;
 }
+
 .spa-containenr li .image-title {
   text-align: center;
 }
+
 .spa-containenr li .image-title a {
   text-decoration: none;
   color: black;
@@ -92,6 +94,7 @@ overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
+
 .bottom-spa {
   border: 1px solid black;
   background-color: transparent;
@@ -99,56 +102,335 @@ overflow-x: hidden;
   text-decoration: none;
   color: black;
 }
+
 .bottom-spa:hover {
   background-color: antiquewhite;
   color: black;
 }
+
 .normal-text-spa {
-  margin: 1.25rem ;
+  margin: 1.25rem;
   color: black;
   font-size: 1.25rem;
 }
-.normal-text-spa a{
+
+.normal-text-spa a {
   margin: 0.2rem;
   color: #f7941d;
 }
+
 .spa-butoon-parent {
   padding: 0.62rem 2.5rem;
   display: flex;
   justify-content: flex-end;
 }
+
 .spa-butoon {
   background-color: orange;
   padding: 10px 30px;
   border: none;
 }
+
 .spa-butoon:hover {
   background-color: #0693e3;
+}
+
+
+
+.card-wrapper {
+  /* border: 5px solid black; */
+}
+
+
+
+.card:nth-child(odd) {
+  width: 93%;
+  height: 25rem;
+  margin-top: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  border: 0;
+}
+
+.card:nth-child(even) {
+  width: 93%;
+  height: 25rem;
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  border: 0;
+  margin-left: 6rem;
+}
+
+.card:first-child {
+  margin-top: 4rem;
+}
+
+
+.card:nth-child(odd) .img-wrap1 {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.card:nth-child(odd) .img-wrap1 img {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.card:nth-child(odd) .img-wrap2 {
+  width: 50%;
+  height: 100%;
+  display: none;
+  /* border: 1px solid black; */
+}
+
+.card:nth-child(odd) .img-wrap2 img {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: none;
+}
+
+.card:nth-child(even) .img-wrap1 {
+  width: 50%;
+  height: 100%;
+  display: none;
+  /* border: 1px solid black; */
+}
+
+.card:nth-child(even) .img-wrap1 img {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: none;
+}
+
+.card:nth-child(even) .img-wrap2 {
+  width: 50%;
+  height: 100%;
+  display: block;
+  /* border: 1px solid black; */
+}
+
+.card:nth-child(even) .img-wrap2 img {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: block;
+}
+
+.card:nth-child(odd) .content {
+  width: 50%;
+  height: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin-top: 1.5rem;
+  background-color: rgb(242, 238, 233);
+  /* border: 1px solid black; */
+
+}
+
+.card:nth-child(even) .content {
+  width: 50%;
+  height: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin-top: 1.5rem;
+  background-color: rgb(242, 238, 233);
+
+  /* border: 1px solid black; */
+}
+
+
+.card .content .button-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3rem;
+  /* border: 1px solid black; */
+}
+
+
+.card .content .button-wrap div {
+  width: 1rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  /* border: 1px solid black; */
+  animation: expand 4s infinite;
+}
+
+@keyframes expand {
+  0% {
+    width: 1rem;
+  }
+
+  50% {
+    width: 3rem;
+  }
+
+  100% {
+    width: 1rem;
+  }
+}
+
+
+
+.card .content .button-wrap div img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 
 @media (max-width: 1000px) {
   .spa-quots {
     display: block;
   }
-  .entry-point-spa {
-    color: black;
-    padding: 20px 20px 20px 30px;
+
+  .spa-main-cont {
+    height: 40rem;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-size: 100%;
+    background-image: url('../../../assets/spaCloud.jpg');
+    background-size: cover;
+    background-position: 'center center';
+    text-align: center;
+    padding: 1rem;
+    margin-top: 7rem;
+    /* border:1px solid black; */
   }
+
   .spa-quots-content {
     width: 100%;
   }
 
-  .spa-footer {
-    padding: 50px;
-  }
+  .spa-footer {}
 
   .bottom-spa:hover {
     background-color: antiquewhite;
     color: black;
   }
+
   .normal-text-spa {
     margin: 20px 0;
     color: black;
-    font-size:20px;
-}
+    font-size: 20px;
+  }
+
+
+
+
+
+
+  .card:nth-child(odd) {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    margin-top: 3rem;
+
+  }
+
+  .card:nth-child(even) {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .card:first-child {
+    margin-top: 2rem;
+  }
+
+
+
+  .card:nth-child(odd) .img-wrap1 {
+    width: 90%;
+    height: 100%;
+    margin-right: 3rem;
+    /* border: 1px solid black; */
+  }
+
+
+
+  .card:nth-child(odd) .img-wrap1 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .card:nth-child(odd) .img-wrap2 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* border: 1px solid black; */
+  }
+
+  .card:nth-child(odd) .img-wrap2 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: none;
+  }
+
+  .card:nth-child(even) .img-wrap1 {
+    width: 95%;
+    height: 20rem;
+    margin-left: 0rem;
+    display: block;
+    /* border: 1px solid black; */
+  }
+
+  .card:nth-child(even) .img-wrap1 img {
+    height: 20rem;
+    width: 100%;
+    padding: 0;
+    display: block;
+  }
+
+  .card:nth-child(even) .img-wrap2 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* border: 1px solid black; */
+  }
+
+  .card:nth-child(even) .img-wrap2 img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: none;
+  }
+
+  .card:nth-child(odd) .content {
+    width: 90%;
+    height: fit-content;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-top: 0rem;
+    margin-left: 2.5rem;
+    background-color: rgb(243, 233, 221);
+    /* border: 1px solid black; */
+
+  }
+
+  .card:nth-child(even) .content {
+    width: 89%;
+    height: fit-content;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-top: 0rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    background-color: rgb(243, 233, 221);
+    /* border: 1px solid black; */
+
+  }
+
+
 }
