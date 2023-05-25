@@ -17,59 +17,59 @@ const Footer = () => {
 
 
       <footer id='footer'>
+        <div>
+          <div className='footer1 another '>
 
-        <div className='footer1 another '>
-
-          <div className='footer2'>
-            <div>
-              {/* <h3>CORPORATE OFFICE</h3> */}
-              {/* <h4>612-A Welland Avenue St. Catharines,<br /> ON L2M 5V6Toll-Free: +1 877-814-4141<br /></h4> */}
-              <img src={logo} alt="Great Blue Resorts"></img>
-            </div>
-
-          </div>
-
-
-
-          <div className="newsletter">
-            <h4>
-              Helpful links
-            </h4>
-            <p>
-              <p onClick={() => { navigate('/') }}>Home</p>
-              <p onClick={() => { navigate('/our-properties') }}>Properties</p>
-              <p onClick={() => { navigate('/spa') }}>Spa</p>
-              <p onClick={() => { navigate('/gallery') }}>Gallery</p>
-              <p onClick={() => { navigate('/aboutus') }}>Abouts us</p>
-              <p onClick={() => { navigate('/contactus') }}>Contact us</p>
-              <p onClick={() => { navigate('/terms') }}>Term and Conditions</p>
-            </p>
-          </div>
-          <div className="social page">
-            <h3>Let's Get Social</h3>
-
-            <div class="socialLinks">
-
-              {// eslint-disable-next-line
-                <a style={{ marginRight: '2rem' }}
-                  href="https://www.facebook.com/cubagoa/" target="_blank" title="Like us on facebook">
-                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/facebook-2.png" alt="Facebook" />
-                </a>
-              }
-              {// eslint-disable-next-line
-                <a href="https://www.instagram.com/cubagoa/?hl=en" target="_blank" title="Follow us on instagram">
-                  <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/instagram-2.png" alt="instagram" />
-                </a>
-              }
+            <div className='footer2'>
+              <div>
+                {/* <h3>CORPORATE OFFICE</h3> */}
+                {/* <h4>612-A Welland Avenue St. Catharines,<br /> ON L2M 5V6Toll-Free: +1 877-814-4141<br /></h4> */}
+                <img src={logo} alt="Great Blue Resorts"></img>
+              </div>
 
             </div>
 
+
+
+            <div className="newsletter">
+              <h4>
+                Helpful links
+              </h4>
+              <p>
+                <p onClick={() => { navigate('/') }}>Home</p>
+                <p onClick={() => { navigate('/our-properties') }}>Properties</p>
+                <p onClick={() => { navigate('/spa') }}>Spa</p>
+                <p onClick={() => { navigate('/gallery') }}>Gallery</p>
+                <p onClick={() => { navigate('/aboutus') }}>Abouts us</p>
+                <p onClick={() => { navigate('/contactus') }}>Contact us</p>
+                <p onClick={() => { navigate('/terms') }}>Term and Conditions</p>
+              </p>
+            </div>
+            <div className="social page">
+              <h3>Let's Get Social</h3>
+
+              <div class="socialLinks">
+
+                {// eslint-disable-next-line
+                  <a style={{ marginRight: '2rem' }}
+                    href="https://www.facebook.com/cubagoa/" target="_blank" title="Like us on facebook">
+                    <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/facebook-2.png" alt="Facebook" />
+                  </a>
+                }
+                {// eslint-disable-next-line
+                  <a href="https://www.instagram.com/cubagoa/?hl=en" target="_blank" title="Follow us on instagram">
+                    <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/instagram-2.png" alt="instagram" />
+                  </a>
+                }
+
+              </div>
+
+
+            </div >
 
           </div >
 
-        </div >
-
-
+        </div>
       </footer >
       {/* <div className='formTab tellMe open'>
         <h3 className="mainFormTitle open" onClick={() => navigate('/spa')}> DISCOVER MORE {<AiOutlineRight />}</h3>

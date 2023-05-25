@@ -5,15 +5,38 @@
 /* video heading geomanist */
 
 .home-content {
-    padding: 1rem 10rem;
+    padding: 1rem 1rem;
+
+}
+
+.home-content .content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content .content-wrapper h6 {
+    width: 50%;
+    text-align: justify;
+    padding: 2rem;
+    line-height: 2rem;
+}
+
+.home-content .content-wrapper .inner-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .home-content .content-wrapper p {
-    font-family: "Rajdhani, sans-serif";
-    text-align: center;
+    text-align: justify;
     line-height: 2rem;
     font-size: 1.1rem;
+    width: 30%;
+    float: inline-end;
+    padding: 1.5rem;
+    /* border: 1px solid black; */
 }
+
 
 .container {
     height: fit-content;
@@ -23,22 +46,22 @@
 }
 
 .card:nth-child(odd) {
-    width: 85%;
+    width: 93%;
     height: 25rem;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     display: flex;
     flex-direction: row;
     border: 0;
 }
 
 .card:nth-child(even) {
-    width: 85%;
+    width: 93%;
     height: 25rem;
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
     display: flex;
     flex-direction: row;
     border: 0;
-    margin-left: 14rem;
+    margin-left: 6rem;
 }
 
 .card:first-child {
@@ -46,13 +69,8 @@
 }
 
 
-
-
-
-
-
 .card:nth-child(odd) .img-wrap1 {
-    width: 40%;
+    width: 50%;
     height: 100%;
     /* border: 1px solid black; */
 }
@@ -64,7 +82,7 @@
 }
 
 .card:nth-child(odd) .img-wrap2 {
-    width: 40%;
+    width: 50%;
     height: 100%;
     display: none;
     /* border: 1px solid black; */
@@ -78,7 +96,7 @@
 }
 
 .card:nth-child(even) .img-wrap1 {
-    width: 40%;
+    width: 50%;
     height: 100%;
     display: none;
     /* border: 1px solid black; */
@@ -92,7 +110,7 @@
 }
 
 .card:nth-child(even) .img-wrap2 {
-    width: 40%;
+    width: 50%;
     height: 100%;
     display: block;
     /* border: 1px solid black; */
@@ -106,23 +124,21 @@
 }
 
 .card:nth-child(odd) .content {
-    width: 60%;
+    width: 50%;
     height: 100%;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     margin-top: 1.5rem;
-    background-color: rgb(243, 233, 221);
+    background-color: rgb(242, 238, 233);
     /* border: 1px solid black; */
-    font-family: "Nunito Sans", Arial, sans-serif;
 
 }
 
 .card:nth-child(even) .content {
-    width: 85%;
+    width: 50%;
     height: 100%;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     margin-top: 1.5rem;
-    background-color: rgb(243, 233, 221);
-    font-family: "Nunito Sans", Arial, sans-serif;
+    background-color: rgb(242, 238, 233);
 
     /* border: 1px solid black; */
 }
@@ -133,7 +149,6 @@
     justify-content: center;
     margin-top: 3rem;
     /* border: 1px solid black; */
-    font-family: "Nunito Sans", Arial, sans-serif;
 
 }
 
@@ -173,14 +188,15 @@
 .property-locations {
     margin-top: 6rem;
     margin-bottom: 3rem;
-
-    /* border: 1px solid black; */
+    padding: 1rem;
+    border: 2px solid black;
 }
 
 
 .property-locations .location-header {
     display: flex;
     justify-content: center;
+
 }
 
 .property-locations .dummy-border {
@@ -195,7 +211,6 @@
 
 .property-locations .location-header h3 {
     margin-left: 1rem;
-    font-family: 'Playfair Display, serif';
     color: black;
 }
 
@@ -211,14 +226,12 @@
 .property-locations .location-addresses .address-section {
     width: 17%;
     padding: 0.5rem;
-    font-family: "Nunito Sans", Arial, sans-serif;
 
 }
 
 .property-locations .location-addresses .address-section h6 {
     color: black;
-    opacity: 0.7;
-    font-weight: 550;
+    font-weight: 700;
 }
 
 
@@ -232,7 +245,8 @@
 
 .property-locations .location-addresses section p {
     padding: 0.2rem;
-    font-family: "Nunito Sans", Arial, sans-serif;
+    color: black;
+    font-weight: 500;
 
 }
 
@@ -243,13 +257,40 @@
 @media only screen and (max-width:900px) {
     .home-content {
         padding: 1rem 1rem;
+
+    }
+
+    .home-content .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-content .content-wrapper h6 {
+        width: 100%;
+        text-align: justify;
+        padding: 0;
+        padding-right: 1rem;
+        line-height: 2rem;
+        font-size: 1rem;
+    }
+
+    .home-content .content-wrapper .inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: 2rem;
+
     }
 
     .home-content .content-wrapper p {
-        font-family: "Rajdhani, sans-serif";
-        text-align: center;
-        line-height: 1.5rem;
+        text-align: none;
+        line-height: 2rem;
         font-size: 1.1rem;
+        width: 95%;
+        float: inline-end;
+        padding: 0rem;
+        padding-right: 2rem;
+        /* border: 1px solid black; */
     }
 
     .container {
@@ -351,7 +392,6 @@
         margin-left: 2.85rem;
         background-color: rgb(243, 233, 221);
         /* border: 1px solid black; */
-        font-family: "Rajdhani, sans-serif";
 
     }
 
@@ -364,7 +404,6 @@
         margin-left: 0rem;
         background-color: rgb(243, 233, 221);
         /* border: 1px solid black; */
-        font-family: "Rajdhani, sans-serif";
 
     }
 

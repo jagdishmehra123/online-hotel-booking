@@ -14,8 +14,8 @@ const Gallary = () => {
     const [active, setActive] = useState(false)
 
     const getPropertiesData = async () => {
-        // await axios.get(`/hotelbook`)
-        await axios.get(`http://localhost:4001/hotelbook`)
+        await axios.get(`https://online-hotel-booking-puce.vercel.app/hotelbook`)
+            // await axios.get(`http://localhost:4001/hotelbook`)
             .then((res) => {
                 // console.log('property list', res.data)
                 setAllProperties(res.data)

@@ -13,7 +13,7 @@ const OurProperties = () => {
 
 
   const getPropertiesData = async () => {
-    await axios.get(`/hotelbook`)
+    await axios.get(`https://online-hotel-booking-puce.vercel.app/hotelbook`)
 
       .then((res) => {
         console.log('property list', res.data)
@@ -30,7 +30,7 @@ const OurProperties = () => {
   }, [])
   if (!allProperties) {
     return (
-      <h1>Loading...</h1>
+      <p style={{ textAlign: 'center', marginTop: '20rem' }}>Loading...</p>
     )
   }
 
