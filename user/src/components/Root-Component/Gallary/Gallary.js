@@ -31,7 +31,7 @@ const Gallary = () => {
     const [fullimg, setFullimg] = useState('')
 
     const getPropertiesData = async () => {
-        await axios.get(`https://online-hotel-booking-puce.vercel.app/hotelbook`)
+        await axios.get(`/hotelbook`)
             // await axios.get(`http://localhost:4001/hotelbook`)
             .then((res) => {
                 // console.log('property list', res.data)
@@ -70,7 +70,7 @@ const Gallary = () => {
     // getImages
     const handleGetImages = async (id, name) => {
         try {
-            const response = await axios.post(`http://localhost:4001/images/${id}`)
+            const response = await axios.post(`/images/${id}`)
             if (response.data.success) {
                 // console.log(response.data.resort)
                 setActive(true)

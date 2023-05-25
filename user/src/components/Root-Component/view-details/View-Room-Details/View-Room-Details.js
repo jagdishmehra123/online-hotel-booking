@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './View-Room-Details.css'
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import axios from '../../../../helpers/axios'

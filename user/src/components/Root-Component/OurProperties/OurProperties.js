@@ -44,7 +44,7 @@ const OurProperties = () => {
             <h2>The Cuba Goa Properties</h2>
             <h6 style={{ margin: '20px 0' }}>BEACH HUTS, BUNGALOWS & RESORTS</h6>
           </div> */}
-            <OurPropertyBannerVideo />
+          <OurPropertyBannerVideo />
           <div className='properties-to-book'>
             <input type='text' placeholder='Search' name='searchResortName' value={searchResortName}
               onChange={(e) => setSearchResortName(e.target.value.toLowerCase())} style={{ width: '90%', paddingLeft: '1rem' }} />

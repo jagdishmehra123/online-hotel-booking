@@ -53,20 +53,20 @@ const RoomCard = ({ room, resortId, resortname, price }) => {
 
 
   return (
-    <div className='RoomCard' onClick={() => navigate(`/${resortId}/${room.roomType}/${room.roomId}/details`)}>
+    <div  data-aos="fade-up" className='RoomCard' onClick={() => navigate(`/${resortId}/${room.roomType}/${room.roomId}/details`)}>
       <section className='roomcard-r1'>
-        <img src={room.imgUrl[current]} />
+        <img src={room.imgUrl[current]} alt='' />
       </section>
-      <section className='roomcard-r2' style={{ fontFamily: 'Geomainist' }}>
+      <section data-aos="fade-up" className='roomcard-r2' style={{ fontFamily: 'Geomainist' }}>
         <p>{room.seaView ? "WITH SEA VIEW" : null}</p>
       </section>
-      <section className='roomcard-r3' style={{ fontFamily: 'Geomainist' }}>
+      <section data-aos="fade-up" className='roomcard-r3' style={{ fontFamily: 'Geomainist' }}>
         <h4>{room.roomType}</h4>
       </section>
-      <section className='roomcard-r4'>
-        <span>
-          <IoIosArrowDropright />
-        </span>
+      <section data-aos="fade-up" className='roomcard-r4'>
+       <span>
+        <IoIosArrowDropright/>
+       </span>
       </section>
 
       {/* <div className='imgwrap' data-aos='fade-in' data-aos-delay='400'>
