@@ -20,17 +20,19 @@ const Images = ({ images, interval }) => {
   }, [images.length, interval]);
 
   return (
-      <div className="slider" >
-        {images.map((image, index) => (
-          <img 
-            key={index}
-            src={image}
-            alt={`SliderImage ${index}`}
-            className={index === currentImage ? 'active' : ''}
-            style={{ animationDelay: `${index * interval}ms` }}
-          />
-        ))}
-      </div>
+    // <div style={{ border: '1px solid black' }}>
+    <div className="slider" style={{ width: '100%', padding: '0' }}  >
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`SliderImage ${index}`}
+          className={index === currentImage ? 'active' : ''}
+          style={{ animationDelay: `${index * interval}ms`, borderRadius: '0', padding:'0' }}
+        />
+      ))}
+    </div>
+    // </div>
 
   );
 

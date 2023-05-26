@@ -64,14 +64,16 @@ const ViewDetails = () => {
 
   return (
     <>
+
+
       <div className='view-details-wrapper'>
+        <Images images={imgArr} interval={1800} />
+
         <div className='resort-name'>
-          <h2 data-aos="fade-down">
-            {resortname}</h2>
+          <h2 data-aos='flip-left'>{resortname}</h2>
         </div>
 
         {/* section1 */}
-        <Images images={imgArr} interval={1800} />
         {/* section1 ends*/}
 
 
@@ -86,7 +88,7 @@ const ViewDetails = () => {
                 })
               }
             </div> */}
-            <p >{resort.resortDescription}</p>
+            <p data-aos='fade-down' >{resort.resortDescription}</p>
           </div>
 
         </div>
