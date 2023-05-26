@@ -75,7 +75,6 @@ const ViewRoomDetails = () => {
                             <div>Children<span>{roomDetails?.childrenCapacity}</span></div>
                         </div>
                     </div>
-
                     <p >
                         Our {roomDetails?.adultCapacity} -bed capacity {roomDetails?.roomType} rooms
                         are sleek and showcase understated comfort and design.
