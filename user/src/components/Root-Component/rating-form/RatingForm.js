@@ -25,7 +25,7 @@ const RatingForm = () => {
   const handleSubmit = async () => {
     console.log(ratingform)
     // try{
-    const response = await axios.post('http://localhost:4001/rate-us', ratingform, {
+    const response = await axios.post('/rate-us', ratingform, {
       headers: {
         authorization: token
       }

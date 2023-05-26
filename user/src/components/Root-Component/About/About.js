@@ -14,7 +14,7 @@ function About() {
   const [showAboutUsForm, setShowAboutUsForm] = useState(false);
 
   const fetchData = async () => {
-    await axios.get("http://localhost:4001/about-us")
+    await axios.get("https://online-hotel-booking-puce.vercel.app/about-us")
       .then((res) => {
         console.log(res.data.data[0])
         setAboutUsData(res.data.data[0])
