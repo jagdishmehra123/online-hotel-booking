@@ -31,6 +31,8 @@ app.use(require('./router/post-property'))
 app.use(require('./router/spaRouter'))
 app.use(require('./router/booking-form'))
 app.use(require('./router/rating'))
+app.use(require('./router/about-us'))
+
 
 app.get("/", (req, res) => {
   try{

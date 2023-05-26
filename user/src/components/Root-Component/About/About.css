@@ -1,11 +1,11 @@
 .aboutus-wrapper {
+    /* background-color: red; */
     padding: 1rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
     /* border: 1px solid black; */
-    background-color:rgb(250, 229, 209);
-    height: 55rem;
-    padding-top: 3rem;
-    
+    background-color: rgb(250, 229, 209);
+
 }
 
 .aboutus-wrapper .title {
@@ -75,10 +75,16 @@
     object-fit: cover;
 }
 
-.aboutus-wrapper .aboutus-body .aboutus-lb p{
+.aboutus-wrapper .aboutus-body .aboutus-lb p {
     text-align: justify;
     font-family: 'candara';
-    font-size: 1.1rem;
+}
+
+.abt-us-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
 
@@ -91,14 +97,21 @@
     }
 
     .aboutus-body {
+        width: 100%;
         flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .aboutus-wrapper .aboutus-body .aboutus-lb p {
+        padding-left: 25px;
+        padding-right: 0px;
     }
 
     .aboutus-lb {
         width: 100%;
         height: fit-content;
         margin-top: 1rem;
-        /* border: 1px solid black; */
+        padding: 25px;
     }
 
     .aboutus-rb {
@@ -112,22 +125,12 @@
         /* border: 1px solid black; */
     }
 
-
     .aboutus-wrapper .title {
         margin-top: 5rem;
         font-family: 'alkatra';
         text-align: center;
         letter-spacing: 3px;
     }
-
-    .aboutus-wrapper .aboutus-lb {
-        position: relative;
-        width: 100%;
-        height: fit-content;
-        margin-top: 1rem;
-        /* border: 1px solid black; */
-    }
-
 
     .aboutus-wrapper .carousel-inner {
         position: relative;
@@ -169,13 +172,13 @@
         font-size: 16px;
     }
 
-    .aboutus-wrapper .aboutus-body .aboutus-lb p{
-    text-align: justify;
-    font-family: 'candara';
-    font-size: 15px;
+    .aboutus-wrapper .aboutus-body .aboutus-lb p {
+        text-align: justify;
+        font-family: 'candara';
+        font-size: 15px;
     }
 
-    .aboutus-lb>div>h6{
+    .aboutus-lb>div>h6 {
         font-size: 15px;
     }
 }
