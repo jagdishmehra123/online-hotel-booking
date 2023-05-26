@@ -9,6 +9,7 @@ import Footer from '../../Footer/Footer'
 import { FaCheck } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
 import { Button } from '@mui/material';
+import { location2 } from 'react-icons-kit/icomoon/location2'
 
 
 const ViewRoomDetails = () => {
@@ -92,7 +93,7 @@ const ViewRoomDetails = () => {
                     }}>BOOK NOW</Button>
             </div>
 
-            <div className='view-details-container-row2' >
+            <div className='view-details-container-row2'  >
                 <h2>Aminities & Services</h2>
                 <div>
 
@@ -142,6 +143,42 @@ const ViewRoomDetails = () => {
                     </section>
                 </div>
             </div>
+            <div className='property-locations' style={{border:'0'}}>
+                <div className='location-header'>
+                    <div><Icon icon={location2} size={30} style={{ color: 'orange' }}></Icon></div>
+                    <h3 style={{}}>Cuba Goa Propery Locations</h3>
+                </div>
+                <div className='dummy-border' ></div>
+
+                <div className='location-addresses'>
+                    <section className='address-section'>
+                        <h6>CUBA BEACH BUNGALOWS</h6>
+                        <div></div>
+                        <p>Center of Palolem Beach, Palolem Beach, Canacona, Goa - 403702</p>
+                    </section>
+                    <section className='address-section'>
+                        <h6>CUBA PATNEM BEACH BUNGALOWS</h6>
+                        <div></div>
+                        <p>North side of Patnem Beach, Palolem-Patnem Road, Canacona, Goa - 403702</p>
+                    </section>
+                    <section className='address-section'>
+                        <h6>CUBA PREMIUM HUTS</h6>
+                        <div></div>
+                        <p>Center of Palolem Beach, Palolem Beach, Canacona, Goa - 403702</p>
+                    </section>
+                    <section className='address-section'>
+                        <h6>PALOLEM BEACH RESORT</h6>
+                        <div></div>
+                        <p>Entrance of Palolem Beach, Besides car parking area, Palolem Beach, Canacona, Goa - 403702</p>
+                    </section>
+                    <section className='address-section'>
+                        <h6>CUBA AGONDA</h6>
+                        <div></div>
+                        <p>Tambli Val, Agonda Beach Road, Agonda, Canacona, Goa - 403702</p>
+                    </section>
+                </div>
+            </div>
+
             <Footer />
         </>
     )
