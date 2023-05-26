@@ -31,10 +31,8 @@ const ViewRoomDetails = () => {
                 console.log(err)
             })
     }
+
     // console.log(roomDetails)
-
-
-
     const getresort = async () => {
         const resp = await axios.get(`/resort-details/${resortId}`)
         console.log('resort', resp.data.resortData)
@@ -69,7 +67,7 @@ const ViewRoomDetails = () => {
                         <img src={roomDetails?.imgUrl[3]} alt='' />
                     </section>
                 </div>
-                <section className='content-wrap' data-aos='fade-down' data-aos-delay='400'>
+                <section className='content-wrap' >
                     <div>
                         <h2>{roomType}</h2>
                         <div>
@@ -98,7 +96,7 @@ const ViewRoomDetails = () => {
             <div className='view-details-container-row2' >
                 <h2>Aminities & Services</h2>
                 <div>
-                    
+
                     <section>
                         <p >{roomDetails.Wifi ? <span className="room-amenities-yes"><FaCheck style={{ color: 'green' }} /></span> : <span className="room-amenities-no"><FaTimes style={{ color: 'darkred' }} /></span>}
                             <span syle={{ marginLeft: '1rem' }}>Wifi</span></p>
