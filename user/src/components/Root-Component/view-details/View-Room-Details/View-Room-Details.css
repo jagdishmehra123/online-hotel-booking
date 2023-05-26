@@ -1,0 +1,217 @@
+.view-details-container {
+    /* border: 2px solid red; */
+    margin-top: 5rem;
+    position: relative;
+    height: 90vh;
+
+}
+
+.view-details-container .row1 {
+    margin-bottom: 0;
+}
+
+.view-details-container .row1 .imgwrap {
+    width: 100%;
+    height: 30rem;
+    padding: 0;
+    background-color: rgb(244, 244, 244);
+}
+
+.view-details-container .row1 .imgwrap img {
+    width: 80%;
+    height: 100%;
+    padding: 0;
+    float: right;
+}
+
+.view-details-container .content-wrap {
+    position: absolute;
+    height: 15rem;
+    width: 80%;
+    background-color: white;
+    bottom: 0%;
+    padding: 2rem 1rem 0rem 5rem;
+    display: flex;
+    /* flex-direction: column; */
+    /* border:1px solid black; */
+    background-color: aliceblue;
+}
+
+.view-details-container .content-wrap div {
+    width: 100%;
+}
+
+.view-details-container .content-wrap div div {
+    display: flex;
+    width: 50%;
+    /* border:1px solid black; */
+}
+
+.view-details-container .content-wrap div div span {
+    margin-left: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.view-details-container .content-wrap div {
+    width: 40%;
+}
+
+.view-details-container .content-wrap p {
+    width: 50%;
+    line-height: 2rem;
+    font-size: 1.1rem;
+}
+
+.view-details-container-row2 {
+    background-color: rgb(244, 244, 244);
+    height: fit-content;
+    padding: 2rem 3rem;
+    /* border:1px solid black; */
+    margin-top: 0rem;
+}
+
+.view-details-container-row2 div {
+    /* border: 1px solid black; */
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.view-details-container-row2 div section {
+    display: flex;
+    /* border: 1px solid black; */
+    width: 40%;
+    padding-left: 0.2rem;
+
+}
+
+.view-details-container-row2 div section p span {
+    margin-left: 0.7rem;
+    /* border:1px solid black; */
+}
+
+.book-now-btn {
+    position: fixed;
+    z-index: 10;
+    top: 90%;
+    left: 87%;
+}
+
+
+
+@media only screen and (max-width:900px) {
+    .view-details-container {
+        /* border: 2px solid red; */
+        margin-top: 5rem;
+        position: relative;
+        height: 100vh;
+
+    }
+
+    .view-details-container .row1 {}
+
+    .view-details-container .row1 .imgwrap {
+        width: 100%;
+        height: 25rem;
+        padding: 0;
+        background-color: rgb(244, 244, 244);
+    }
+
+    .view-details-container .row1 .imgwrap img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        float: none;
+    }
+
+    .view-details-container .content-wrap {
+        position: absolute;
+        height: 15rem;
+        width: 100%;
+        background-color: white;
+        bottom: 0;
+        padding: 2rem 2rem 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .view-details-container .content-wrap div {
+        width: 100%;
+    }
+
+    .view-details-container .content-wrap div div {
+        display: flex;
+        width: 50%;
+        /* border:1px solid black; */
+    }
+
+    .view-details-container .content-wrap div div span {
+        margin-left: 0.3rem;
+        font-size: 1.2rem;
+    }
+
+    .view-details-container .content-wrap div {
+        width: 100%;
+    }
+
+    .view-details-container .content-wrap p {
+        width: 100%;
+        line-height: 2rem;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .view-details-container-row2 {
+        background-color: rgb(244, 244, 244);
+        height: 40rem;
+        margin-top: 8rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    /* aminities */
+    .view-details-container-row2 {
+        background-color: rgb(244, 244, 244);
+        height: fit-content;
+        padding: 2rem 1rem;
+        /* border:1px solid black; */
+        margin-top: 6rem;
+    }
+
+    .view-details-container-row2 div {
+        /* border: 1px solid black; */
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .view-details-container-row2 div section {
+        display: flex;
+        /* border: 1px solid black; */
+        width: 60%;
+        padding-left: 0.2rem;
+        padding: 0;
+
+    }
+
+
+    .view-details-container-row2 div section p span {
+        margin-left: 0.7rem;
+        /* border:1px solid black; */
+    }
+
+    .book-now-btn {
+        position: fixed;
+        z-index: 10;
+        top: 67%;
+        left: 70%;
+    }
+
+}
