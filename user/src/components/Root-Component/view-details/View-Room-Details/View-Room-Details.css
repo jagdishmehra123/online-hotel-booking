@@ -30,7 +30,7 @@
     width: 80%;
     background-color: white;
     bottom: 0%;
-    padding: 2rem 1rem 0rem 5rem;
+    padding: 1rem 1rem 0rem 5rem;
     display: flex;
     /* flex-direction: column; */
     /* border:1px solid black; */
@@ -132,7 +132,7 @@
         width: 100%;
         background-color: white;
         bottom: 0;
-        padding: 2rem 2rem 2rem 1rem;
+        padding: 1rem 2rem 2rem 1rem;
         display: flex;
         flex-direction: column;
     }
